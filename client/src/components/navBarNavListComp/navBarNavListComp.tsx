@@ -33,37 +33,52 @@ const NavBarNavListComp = () => {
 
   return (
     <ul className={navListStyles} >
-      <li onClick={handleClick} >
+      <li
+        className={styles.li}
+        onClick={handleClick}
+      >
         <NavLink
-          to="/" 
+          to="/"
           className={styles.navLink} 
-          >Inicio</NavLink>
+        >
+          Inicio
+        </NavLink>
       </li>
-      <li onClick={handleClick} >
+      <li 
+      className={styles.li}
+      onClick={handleClick} >
         <NavLink
           to="/about" 
           className={styles.navLink} 
           >Sobre Mi</NavLink>
       </li>
-      <li onClick={handleClick} >
+      <li 
+      className={styles.li}
+      onClick={handleClick} >
         <NavLink
           to="/projects" 
           className={styles.navLink} 
           >Proyectos</NavLink>
       </li>
-      <li onClick={handleClick} >
+      <li 
+      className={styles.li}
+      onClick={handleClick} >
         <NavLink
           to="/skills" 
           className={styles.navLink} 
           >Tecnologías</NavLink>
       </li>
-      <li onClick={handleClick} >
+      <li 
+      className={styles.li}
+      onClick={handleClick} >
         <NavLink
           to="/background" 
           className={styles.navLink} 
           >Formación</NavLink>
       </li>
-      <li onClick={handleClick} >
+      <li 
+      className={styles.li}
+      onClick={handleClick} >
         <NavLink
           to="/contact" 
           className={styles.navLink} 
