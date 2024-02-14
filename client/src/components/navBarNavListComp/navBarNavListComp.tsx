@@ -29,52 +29,47 @@ const NavBarNavListComp = () => {
     dispatch( falseMenu() );
   };
 
-  return (
-    <ul className={styles.navList} >
-        <li onClick={handleClick} >
-          <NavLink
-            to="/" 
-            className={styles.navLink} 
-           >Inicio</NavLink>
-        </li>
-        <li onClick={handleClick} >
-          <NavLink
-            to="/company" 
-            className={styles.navLink} 
-           >Empresa</NavLink>
-        </li>
-        <li onClick={handleClick} >
-          <NavLink
-            to="/appointment" 
-            className={styles.navLink} 
-           >Turnos online</NavLink>
-        </li>
-        <li onClick={handleClick} >
-          <NavLink
-            to="/equipment" 
-            className={styles.navLink} 
-           >Equipos</NavLink>
-        </li>
-        <li onClick={handleClick} >
-          <NavLink
-            to="/jobs" 
-            className={styles.navLink} 
-           >Trabajos</NavLink>
-        </li>
-        <li onClick={handleClick} >
-          <NavLink
-            to="/contact" 
-            className={styles.navLink} 
-           >Contacto</NavLink>
-        </li>
+  const navListStyles = `${styles.navList} ${menuReducer.menu ? styles.show : ''}`;
 
-        <div onClick={handleClick} >
-          <NavLink
-            to="/worker-login" 
-            className={styles.intranet} 
-           >Intranet</NavLink>
-        </div>
-      </ul>
+  return (
+    <ul className={navListStyles} >
+      <li onClick={handleClick} >
+        <NavLink
+          to="/" 
+          className={styles.navLink} 
+          >Inicio</NavLink>
+      </li>
+      <li onClick={handleClick} >
+        <NavLink
+          to="/about" 
+          className={styles.navLink} 
+          >Sobre Mi</NavLink>
+      </li>
+      <li onClick={handleClick} >
+        <NavLink
+          to="/projects" 
+          className={styles.navLink} 
+          >Proyectos</NavLink>
+      </li>
+      <li onClick={handleClick} >
+        <NavLink
+          to="/skills" 
+          className={styles.navLink} 
+          >Tecnologías</NavLink>
+      </li>
+      <li onClick={handleClick} >
+        <NavLink
+          to="/background" 
+          className={styles.navLink} 
+          >Formación</NavLink>
+      </li>
+      <li onClick={handleClick} >
+        <NavLink
+          to="/contact" 
+          className={styles.navLink} 
+          >Contacto</NavLink>
+      </li>
+    </ul>
   )
 }
 
