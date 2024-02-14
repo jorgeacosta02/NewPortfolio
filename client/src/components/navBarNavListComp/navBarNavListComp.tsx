@@ -5,7 +5,6 @@ import { selectMenuState, falseMenu } from "../../redux/slices/menuSlice";
 import { getDataFromLocalStorage } from "../localStorageComp/LocalStorageComp";
 
 
-
 const NavBarNavListComp = () => {
 
   const accessLogin = getDataFromLocalStorage('accessLogin');
@@ -30,40 +29,38 @@ const NavBarNavListComp = () => {
     dispatch( falseMenu() );
   };
 
-  const navListStyles = `${styles.navList} ${menuReducer.menu ? styles.show : ''}`;
-
   return (
-    <ul className={navListStyles} >
+    <ul className={styles.navList} >
         <li onClick={handleClick} >
           <NavLink
             to="/" 
             className={styles.navLink} 
            >Inicio</NavLink>
         </li>
-        {/* <li onClick={handleClick} >
+        <li onClick={handleClick} >
           <NavLink
             to="/company" 
             className={styles.navLink} 
            >Empresa</NavLink>
-        </li> */}
+        </li>
         <li onClick={handleClick} >
           <NavLink
             to="/appointment" 
             className={styles.navLink} 
            >Turnos online</NavLink>
         </li>
-        {/* <li onClick={handleClick} >
+        <li onClick={handleClick} >
           <NavLink
             to="/equipment" 
             className={styles.navLink} 
            >Equipos</NavLink>
-        </li> */}
-        {/* <li onClick={handleClick} >
+        </li>
+        <li onClick={handleClick} >
           <NavLink
             to="/jobs" 
             className={styles.navLink} 
            >Trabajos</NavLink>
-        </li> */}
+        </li>
         <li onClick={handleClick} >
           <NavLink
             to="/contact" 
@@ -77,38 +74,6 @@ const NavBarNavListComp = () => {
             className={styles.intranet} 
            >Intranet</NavLink>
         </div>
-
-
-        {/* {accessLogin?.user?.id || userAuthId?.data?.user?.id
-        ? <div className={styles.profileContainer}>
-            <li>
-              <NavLink
-                to='/user-profile'
-                className={styles.profile}
-              >
-                Mi perfil
-              </NavLink>
-            </li>
-          </div>
-          : <div  className={styles.loginLinks}>
-              <li onClick={handleClick} >
-                <NavLink
-                  to="/user-login" 
-                  className={styles.logLink} 
-                >
-                  Ingresar
-                </NavLink>
-              </li>
-              <li onClick={handleClick} >
-                <NavLink
-                  to="/user-register" 
-                  className={styles.logLink} 
-                  >
-                    Registrarse
-                  </NavLink>
-              </li>
-            </div>
-          } */}
       </ul>
   )
 }
