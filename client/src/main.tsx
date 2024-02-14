@@ -5,7 +5,7 @@ import App from './App.tsx'
 import './_main.module.scss'
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://localhost:6000'
+axios.defaults.baseURL = 'http://localhost:3600'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
