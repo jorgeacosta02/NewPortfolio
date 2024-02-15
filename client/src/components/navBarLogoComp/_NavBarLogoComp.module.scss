@@ -6,8 +6,7 @@
     .logo {
         margin: 0;
         padding: 0;
-        // font-weight: 400;
-        color: g.$white-color;
+        color: g.$main-color;
         overflow: hidden; /* Evita que el texto se muestre antes de la animación */
         white-space: nowrap; /* Evita que el texto se divida en varias líneas */
         border-right: 8px solid orange; /* Simula el cursor de escritura */
@@ -19,7 +18,6 @@
             height: 50px;
         }
     }
-
     .animationComplete {
         border-right: .15em solid transparent; /* Desaparece el cursor naranja */
     }

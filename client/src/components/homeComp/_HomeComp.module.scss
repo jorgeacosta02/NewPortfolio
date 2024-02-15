@@ -7,12 +7,10 @@
     padding: 0 5vw;
     @include g.create-flexbox(row, center);
     .slider {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         overflow: hidden;
-        height: 50vw;
-        // min-height: 50vh;
         height: 100%;
         width: 100%;
         z-index: 10;
@@ -28,7 +26,7 @@
             .img{
                 position: absolute;
                 top: 0;
-                height: 50vw;
+                height: 100vh;
                 min-height: 100vh;
                 width: 100%;
                 object-fit: cover; /* La imagen se ajusta manteniendo su relación de aspecto, mostrando todo el contenido */
@@ -42,7 +40,7 @@
         }
     }
     .background {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
@@ -59,17 +57,19 @@
         @include g.create-flexbox(column, space-between);
         @include  g.display-large{
             flex-direction: row;
+            gap: 6vw;
             max-width: 700px;
         }
         // background-color: blue;
         z-index: 30;
         .data{
-            height: 30vh;
+            // height: 30vh;
             width: 100%;
             max-width: 600px;
             margin-bottom: 4vh;
+            // background-color: blue;
             @include g.create-flexbox(column, space-between);
-
+            gap: 2vh;
             .hi{
                 width: 100%;
                 text-align: left;
@@ -77,19 +77,49 @@
             .name{
                 width: 100%;
                 text-align: center;
-                color: g.$red-color;
+                color: g.$main-color;
+                @include g.display-large{
+                    text-align: left;
+                }
             }
             .role{
                 width: 100%;
                 text-align: center;
+                @include g.display-large{
+                    text-align: left;
+                }
+            }
+            .linksContainer{
+                width: 100%;
+                @include g.create-flexbox(row, space-between);
+                gap: 3vw;
+                background-color: red;
+                .linkImg{
+                    width: 65%;
+                    max-width: 50px;
+                    border-radius: 50%;
+                }
+            }
+            .dwlResume{
+                text-decoration: none;
+                text-align: left;
+                // background-color: red;
             }
         }
         .img{
             position: relative;
-            width: 80%;
-            max-width: 250px;
+            height: 80%;
+            min-height: 50px;
+            max-height: 250px;
             border-radius: 5px;
-            // background-color: green;
         }
+        .text{
+            color: g.$white-color;
+            text-align: center;
+            @include g.display-large{
+                text-align: left;
+            }
+        }
+
     }
 }

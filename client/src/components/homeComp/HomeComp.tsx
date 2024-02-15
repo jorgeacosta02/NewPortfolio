@@ -14,7 +14,12 @@ import img10 from '../../assets/images/slider/laptop05.jpg';
 import img11 from '../../assets/images/slider/code06.jpg';
 import img12 from '../../assets/images/slider/laptop06.jpg';
 // Other images
-import Profile from '../../assets/images/profile/Profile.jpg'
+import ProfileImg from '../../assets/images/profile/Profile.jpg'
+import LinkedinImg from '../../assets/images/links/LinkedIn_icon.svg.png'
+import GithubImg from '../../assets/images/skills/GitHub-Mark.png'
+import FacebookImg from '../../assets/images/links/Facebook_icon_2013.svg.png'
+import XImg from '../../assets/images/links/x logo.png'
+
 
 
 const HomeComp = () => {
@@ -76,9 +81,51 @@ const HomeComp = () => {
             >
               Programador Web Full Stack
             </h5>
+            <p
+              className={styles.text}
+            >
+              Este es mi portafolio web, el cual muestra mis proyectos realizdos, habilidades técnicas y formación académica.
+            </p>
+            <div className={styles.linksContainer}>
+              <a
+                className={styles.linkImg}
+                href="https://www.linkedin.com/in/jorge-acosta-de-le%C3%B3n-8934a4122/" target="_blank">
+                <img
+                  className={styles.linkImg}
+                  src={LinkedinImg}/>
+              </a>
+              <a
+                className={styles.linkImg}
+                href="https://github.com/jorgeacosta02" target="_blank">
+                <img
+                  className={styles.linkImg}
+                  src={GithubImg}/>
+              </a>
+              <a
+                className={styles.linkImg}
+                href="https://www.facebook.com/jorge.acostadeleon" target="_blank">
+                <img
+                  className={styles.linkImg}
+                  src={FacebookImg}/>
+              </a>
+              <a
+                className={styles.linkImg}
+                href="https://twitter.com/JorgeA78789" target="_blank">
+                <img
+                  className={styles.linkImg}
+                  src={XImg}/>
+              </a>
+            </div>
+              <a
+                className={styles.dwlResume}
+                href="https://github.com/jorgeacosta02/Resume/raw/main/Jorge Acosta Resume.pdf" download="Mi_CV.pdf" target="_blank">
+                <h2
+                  
+                >Download Resume</h2>
+              </a>
           </div>
             <img
-              src={Profile}
+              src={ProfileImg}
               className={styles.img}
             />
         </div>
