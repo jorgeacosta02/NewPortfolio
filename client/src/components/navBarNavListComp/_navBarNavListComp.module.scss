@@ -13,9 +13,10 @@
     left: -100%;
     transition: left .2s ease;
     z-index: 200;
-    border: 2px solid g.$grey-color;
-    background-color: rgba(157, 157, 157, .4);
-    // border-radius: 10px;
+    border-top: 2px solid g.$grey-color;
+    border-right: 2px solid g.$grey-color;
+    border-bottom: 2px solid g.$grey-color;
+    background-color: rgba(110, 110, 110, 0.4);
     box-shadow: 7px 7px 5px 1px rgba(157, 157, 157, .4);
     height: calc(100vh - (g.$mobile-NavBar-height) - 20vh);
     font-weight: 600;
@@ -28,6 +29,7 @@
         box-shadow: none;
         flex-direction: row;
         top: 0;
+        left: 0;
         height: g.$desk-NavBar-height;
         font-size: g.$desk-NavBar-font-size;
         font-weight: 300;
@@ -36,7 +38,7 @@
         min-width: 480px;
         margin-right: 5vw;
         line-height: g.$desk-NavBar-height;
-        background-color: transparent
+        background-color: transparent;
     }
     .li{
         box-sizing: border-box;

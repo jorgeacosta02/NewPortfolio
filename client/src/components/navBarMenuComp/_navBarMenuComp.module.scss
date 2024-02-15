@@ -1,8 +1,9 @@
 @use "../../styles/globals" as g;
 
 .container{
-    height: g.$mobile-NavBar-height;
+    // height: g.$mobile-NavBar-height;
     @include g.create-flexbox(column, center);
+    // background-color: blue;
 }
 .menu{
     box-sizing: border-box;
@@ -12,7 +13,7 @@
     fill: g.$white-color;
     z-index: 1000;
     cursor: pointer;
-    margin-right: 5vw;
+    // margin-right: 5vw;
     @include g.display-large{
         display: none;
     }

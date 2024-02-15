@@ -5,13 +5,14 @@
     box-sizing: border-box;
     position: fixed;
     width: 100vw;
-    height: max(#{g.$mobile-NavBar-height}, #{25px});
+    height: max(#{g.$mobile-NavBar-height}, #{20px});
     top: 0;
     left: 0;
-    padding: 0 2vw;
+    padding: 0 6vw;
     margin: 0;
     @include g.create-flexbox(row, space-between);
     z-index: 100;
+    // background-color: red;
     @include g.display-large{
         // background-color: rgba(255, 255, 255, .6);
         // border-bottom: 10px solid g.$main-dark-color;
@@ -19,7 +20,6 @@
         height: g.$desk-NavBar-height;
         padding: 0;
         justify-content: flex-end;
-        // background-color: red;
 
 
     }
