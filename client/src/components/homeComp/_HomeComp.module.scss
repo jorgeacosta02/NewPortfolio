@@ -5,6 +5,7 @@
     width: 100%;
     height: 100%;
     padding: 0 5vw;
+    background-color: red;
     @include g.create-flexbox(row, center);
     .slider {
         position: fixed;
@@ -54,11 +55,12 @@
         color: g.$white-color;
         height: 80%;
         width: 90%;
+        // background-color: blue;
         @include g.create-flexbox(column, space-between);
         @include  g.display-large{
             flex-direction: row;
             gap: 6vw;
-            max-width: 700px;
+            max-width: 900px;
         }
         // background-color: blue;
         z-index: 30;
@@ -70,6 +72,9 @@
             // background-color: blue;
             @include g.create-flexbox(column, space-between);
             gap: 2vh;
+            @include g.display-large{
+                align-items: flex-start;
+            }
             .hi{
                 width: 100%;
                 text-align: left;
@@ -90,26 +95,28 @@
                 }
             }
             .linksContainer{
-                width: 100%;
+                width: 80%;
+                max-width: 300px;
                 @include g.create-flexbox(row, space-between);
-                gap: 3vw;
-                background-color: red;
+                @include g.display-large{
+                }
                 .linkImg{
-                    width: 65%;
-                    max-width: 50px;
+                    width:13vw;
+                    min-width: 20px;
+                    max-width: 40px;
                     border-radius: 50%;
                 }
             }
-            .dwlResume{
+            .dwlResumeContainer{
                 text-decoration: none;
                 text-align: left;
-                // background-color: red;
+                color: g.$main-color;
             }
         }
-        .img{
+        .profileImg{
             position: relative;
             height: 80%;
-            min-height: 50px;
+            min-height: 150px;
             max-height: 250px;
             border-radius: 5px;
         }

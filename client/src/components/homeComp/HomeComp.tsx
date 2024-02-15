@@ -117,16 +117,16 @@ const HomeComp = () => {
               </a>
             </div>
               <a
-                className={styles.dwlResume}
+                className={styles.dwlResumeContainer}
                 href="https://github.com/jorgeacosta02/Resume/raw/main/Jorge Acosta Resume.pdf" download="Mi_CV.pdf" target="_blank">
-                <h2
-                  
-                >Download Resume</h2>
+                <h4
+                  className={styles.dwlResume}
+                >Descargar CV</h4>
               </a>
           </div>
             <img
               src={ProfileImg}
-              className={styles.img}
+              className={styles.profileImg}
             />
         </div>
     </div>
