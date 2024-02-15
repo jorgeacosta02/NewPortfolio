@@ -13,6 +13,9 @@ import img09 from '../../assets/images/slider/code05.jpg';
 import img10 from '../../assets/images/slider/laptop05.jpg';
 import img11 from '../../assets/images/slider/code06.jpg';
 import img12 from '../../assets/images/slider/laptop06.jpg';
+// Other images
+import Profile from '../../assets/images/profile/Profile.jpg'
+
 
 const HomeComp = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -60,16 +63,24 @@ const HomeComp = () => {
             ))}
         </div>
         <div className={styles.background}></div>
-        <div className={styles.data}>
-          <div>
-            <h3>Hola soy</h3>
+        <div className={styles.dataContainer}>
+          <div className={styles.data}>
+            <h4 className={styles.hi}>Hola soy</h4>
             <h2
               className={styles.name}
             >
               Jorge
             </h2>
-            <h3>Programador Full Stack</h3>
+            <h5
+              className={styles.role}
+            >
+              Programador Web Full Stack
+            </h5>
           </div>
+            <img
+              src={Profile}
+              className={styles.img}
+            />
         </div>
     </div>
   );
