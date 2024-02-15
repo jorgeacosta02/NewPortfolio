@@ -10,9 +10,9 @@ const NavBarLogoComp = () => {
 
     return (
         <div className={styles.container}>
-            <h1 className={`${styles.logo} ${animationComplete && styles.animationComplete}`} onAnimationEnd={onAnimationEnd}>
-                Portfolio
-            </h1>
+            <h3 className={`${styles.logo} ${animationComplete && styles.animationComplete}`} onAnimationEnd={onAnimationEnd}>
+               Portafolio
+            </h3>
         </div>
     );
 }
