@@ -60,14 +60,16 @@ const HomeComp = () => {
             ))}
         </div>
         <div className={styles.background}></div>
-        <div className={styles.div}>
-            <h1>Título en letra h1</h1>
-            <h2>Título en letra h2</h2>
-            <h3>Título en letra h3</h3>
-            <h4>Título en letra h4</h4>
-            <h5>Título en letra h5</h5>
-            <h6>Título en letra h6</h6>
-            <p>Título en letra p</p>
+        <div className={styles.data}>
+          <div>
+            <h3>Hola soy</h3>
+            <h2
+              className={styles.name}
+            >
+              Jorge
+            </h2>
+            <h3>Programador Full Stack</h3>
+          </div>
         </div>
     </div>
   );

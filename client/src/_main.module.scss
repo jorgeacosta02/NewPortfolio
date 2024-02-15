@@ -42,11 +42,13 @@
   // }
   
   /**
-   * Correct the font size and margin on `h1` elements within `section` and
+   * Correct the font size and margin on `h` elements within `section` and
    * `article` contexts in Chrome, Firefox, and Safari.
    */
   
   h1 {
+    margin: 0;
+    padding: 0;
     font-size: g.$mobile-h1-font-size;
     font-weight: g.$mobile-h1-font-weight;
     @include g.display-large{
@@ -55,6 +57,8 @@
     }
   }
   h2 {
+    margin: 0;
+    padding: 0;
     font-size: g.$mobile-h2-font-size;
     font-weight: g.$mobile-h2-font-weight;
     @include g.display-large{
@@ -63,6 +67,8 @@
     }
   }
   h3 {
+    margin: 0;
+    padding: 0;
     font-size: g.$mobile-h3-font-size;
     font-weight: g.$mobile-h3-font-weight;
     @include g.display-large{
@@ -71,6 +77,8 @@
     }
   }
   h4 {
+    margin: 0;
+    padding: 0;
     font-size: g.$mobile-h4-font-size;
     font-weight: g.$mobile-h4-font-weight;
     @include g.display-large{
@@ -79,6 +87,8 @@
     }
   }
   h5 {
+    margin: 0;
+    padding: 0;
     font-size: g.$mobile-h5-font-size;
     font-weight: g.$mobile-h5-font-weight;
     @include g.display-large{
@@ -87,6 +97,8 @@
     }
   }
   h6 {
+    margin: 0;
+    padding: 0;
     font-size: g.$mobile-h6-font-size;
     font-weight: g.$mobile-h6-font-weight;
     @include g.display-large{
