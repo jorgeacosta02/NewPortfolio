@@ -6,6 +6,7 @@
     position: fixed;
     width: 100vw;
     height: max(#{g.$mobile-NavBar-height}, #{20px});
+    min-height: 35px;
     top: 0;
     left: 0;
     padding: 0 6vw;

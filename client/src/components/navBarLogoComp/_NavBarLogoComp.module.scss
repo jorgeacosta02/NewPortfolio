@@ -6,13 +6,12 @@
     .logo{
         margin: 0;
         padding: 0;
-        font-weight: 400;
+        // font-weight: 400;
         color: g.$white-color;
         // background-color: blue;
         @include g.display-large{
             width: auto;
             height: 50px;
-            // background-color: ;
         }
     }
 }
