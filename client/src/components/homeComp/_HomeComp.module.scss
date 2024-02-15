@@ -4,7 +4,7 @@
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    padding: 0 5vw;
+    padding: 0 15vw;
     background-color: red;
     @include g.create-flexbox(row, center);
     .slider {
@@ -51,10 +51,11 @@
     }
     .dataContainer{
         position: absolute;
-        top: 15vh;
+        top: 12vh;
         color: g.$white-color;
         height: 80%;
         width: 90%;
+        padding-bottom: 5vh;
         // background-color: blue;
         @include g.create-flexbox(column, space-between);
         @include  g.display-large{
@@ -69,6 +70,7 @@
             width: 100%;
             max-width: 600px;
             margin-bottom: 4vh;
+            // gap: 500px;
             // background-color: blue;
             @include g.create-flexbox(column, space-between);
             gap: 2vh;
@@ -94,11 +96,23 @@
                     text-align: left;
                 }
             }
+            .text{
+                display: none;
+                color: g.$white-color;
+                text-align: center;
+                @include g.display-large{
+                    display:inline-block;
+                    text-align: left;
+                    max-width: 400px;
+                }
+            }
             .linksContainer{
-                width: 80%;
+                // background-color: red;
+                width: 100%;
                 max-width: 300px;
                 @include g.create-flexbox(row, space-between);
                 @include g.display-large{
+                    margin-bottom: 10px;
                 }
                 .linkImg{
                     width:13vw;
@@ -108,9 +122,14 @@
                 }
             }
             .dwlResumeContainer{
+                height: 30px;
+                width: 120px;
                 text-decoration: none;
-                text-align: left;
-                color: g.$main-color;
+                text-align: center;
+                line-height: 30px;
+                color: g.$white-color;
+                border-radius: 5px;
+                background-color: g.$main-color;
             }
         }
         .profileImg{
@@ -119,13 +138,6 @@
             min-height: 150px;
             max-height: 250px;
             border-radius: 5px;
-        }
-        .text{
-            color: g.$white-color;
-            text-align: center;
-            @include g.display-large{
-                text-align: left;
-            }
         }
 
     }

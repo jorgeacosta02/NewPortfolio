@@ -115,13 +115,13 @@ const HomeComp = () => {
                   className={styles.linkImg}
                   src={XImg}/>
               </a>
-            </div>
+              </div>
               <a
                 className={styles.dwlResumeContainer}
                 href="https://github.com/jorgeacosta02/Resume/raw/main/Jorge Acosta Resume.pdf" download="Mi_CV.pdf" target="_blank">
-                <h4
+                <h6
                   className={styles.dwlResume}
-                >Descargar CV</h4>
+                  >Descargar CV</h6>
               </a>
           </div>
             <img
