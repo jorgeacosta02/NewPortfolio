@@ -60,12 +60,12 @@ const HomeComp = () => {
             ))}
         </div>
         <div className={styles.background}></div>
-        <div className={styles.div}>
+        {/* <div className={styles.div}>
             <h1>Presentación</h1>
             <h1>Especialidades</h1>
             <h1>Profesionales</h1>
             <h1>Ubicación</h1>
-        </div>
+        </div> */}
     </div>
   );
 }

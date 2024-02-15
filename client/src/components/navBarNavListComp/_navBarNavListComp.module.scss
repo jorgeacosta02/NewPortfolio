@@ -11,7 +11,7 @@
     max-width: 200px;
     top: calc(g.$mobile-NavBar-height - 16px + 3vh);
     left: -100%;
-    // transition: right .2s ease;
+    transition: left .2s ease;
     z-index: 200;
     border: 2px solid g.$grey-color;
     background-color: rgba(157, 157, 157, .4);
@@ -19,31 +19,35 @@
     box-shadow: 7px 7px 5px 1px rgba(157, 157, 157, .4);
     height: calc(100vh - (g.$mobile-NavBar-height) - 20vh);
     font-weight: 600;
-    padding: 2vh 4vw;
+    padding: 10px;
     z-index: 60;
     @include g.display-large{
-        background-color: transparent;
+        position: relative;
         border: none;
         border-radius: none;
         box-shadow: none;
-        justify-content: space-between;
         flex-direction: row;
-        top: -13px;
+        top: 0;
         height: g.$desk-NavBar-height;
         font-size: g.$desk-NavBar-font-size;
         font-weight: 300;
         width: 100%;
         padding-left: 5vh;
-        min-width: 420px;
-        right: 5%;
+        min-width: 480px;
+        margin-right: 5vw;
         line-height: g.$desk-NavBar-height;
-        background-color: transparent;
+        background-color: transparent
     }
     .li{
         box-sizing: border-box;
         width: 100%;
-        padding-left: 4vw;
+        padding-left: 10px;
         border: 1px solid g.$grey-color;
+        @include g.display-large{
+            padding: none;
+            border: none;
+            width: auto;
+        }
         .navLink{
             box-sizing: border-box;
             display: inline-block;
@@ -57,17 +61,14 @@
             color: g.$white-color;
             @include g.display-large{
                 color: g.$white-color;
-                width: 100%;
+                width: none;
                 border-radius: .5vw;
             }
         }
     }
     .navLink:hover{
         background-color: rgba(157, 157, 157, .1);
-        color:g.$dark-black-color;
-
-        // width: 100%;
-        // transition: .2s ease;
+        color: g.$main-dark-color;
         @include g.display-large{
             background-color: transparent;
             color: g.$main-dark-color;
@@ -117,4 +118,7 @@
 .show{// ul
     left: 0;
     transition: left .3s ease;
+    // @include g.display-large{
+    //     right: 100px;
+    // }
 }
