@@ -1,10 +1,25 @@
 import styles from './_NavBarOptionsComp.module.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectMoonState, toggleMoon } from '../../redux/slices/moonSlice';
 
 
 const NavBarOptionsComp = () => {
+
+  const dispatch = useDispatch();
+
+  const moonHandler = () => {
+    return dispatch(toggleMoon())
+  }
+
+  const moonState = useSelector(selectMoonState)
+
+  console.log(moonState)
+
+
   return (
     <div className={styles.container}>
       <svg
+        onClick={moonHandler}
         className={styles.option}
         xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"
       >

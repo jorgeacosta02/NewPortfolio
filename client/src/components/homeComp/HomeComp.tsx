@@ -1,4 +1,7 @@
+import styles from './_HomeComp.module.scss'
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { selectMoonState } from '../../redux/slices/moonSlice';
 
 // Importa tus imágenes
 import img01 from '../../assets/images/slider/code01.jpg';
@@ -18,7 +21,13 @@ import ProfileImg from '../../assets/images/profile/Profile.jpg'
 
 
 const HomeComp = () => {
+  
+  const moonState = useSelector(selectMoonState);
+
+  console.log(moonState)
+
   const [currentSlide, setCurrentSlide] = useState(0);
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -46,6 +55,10 @@ const HomeComp = () => {
     img12
   ];
 
+  const backColor = `${styles.background} ${moonState.moon ? styles.bckgndWhite : ''}`;
+  
+  const dataColor = `${styles.data} ${moonState.moon ? styles.dataWhite : ''}`;
+
   return (
     <div className={styles.container}>
         <div className={styles.slider}>
@@ -62,9 +75,9 @@ const HomeComp = () => {
             </div>
             ))}
         </div>
-        <div className={styles.background}></div>
+        <div className={backColor}></div>
         <div className={styles.dataContainer}>
-          <div className={styles.data}>
+          <div className={dataColor}>
             <h4 className={styles.hi}>Hola soy</h4>
             <h2
               className={styles.name}
@@ -145,29 +158,3 @@ const HomeComp = () => {
 }
 
 export default HomeComp;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import styles from './_HomeComp.module.scss'
-
-
-
-    <div className={styles.contenedor}>
-        <div className={styles.fondo}></div>
-        <div className={styles.contenido}>
-            <h1>Título</h1>
-            <p>Contenido</p>
-        </div>
-    </div>
-

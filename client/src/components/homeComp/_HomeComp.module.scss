@@ -49,6 +49,9 @@
         background-color: rgba(0,0,0,.9);
         z-index: 20;
     }
+    .bckgndWhite{
+        background-color: rgba(255,255,255,.8);
+    }
     .dataContainer{
         position: absolute;
         top: 12vh;
@@ -66,12 +69,9 @@
         // background-color: blue;
         z-index: 30;
         .data{
-            // height: 30vh;
             width: 100%;
             max-width: 600px;
             margin-bottom: 4vh;
-            // gap: 500px;
-            // background-color: blue;
             @include g.create-flexbox(column, space-between);
             gap: 2vh;
             @include g.display-large{
@@ -98,7 +98,7 @@
             }
             .text{
                 display: none;
-                color: g.$white-color;
+                // color: g.$white-color;
                 text-align: center;
                 @include g.display-large{
                     display:inline-block;
@@ -142,6 +142,9 @@
                 background-color: g.$main-dark-color;
                 transform: scale(1.2);
             }
+        }
+        .dataWhite{
+            color: g.$dark-black-color;
         }
         .profileImg{
             position: relative;
