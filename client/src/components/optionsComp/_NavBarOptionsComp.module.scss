@@ -8,8 +8,8 @@
     .option{
         box-sizing: border-box;
         font-size: 35px;
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
         fill: g.$white-color;
         z-index: 1000;
         cursor: pointer;
@@ -17,10 +17,10 @@
     }
     .option:hover{
         background-color: rgba(157, 157, 157, .1);
+        transform:scale(1.1);
+        fill: g.$main-color;
         @include g.display-large{
             background-color: transparent;
-            fill: g.$main-color;
-            transform:scale(1.1);
         }
     }
 }
