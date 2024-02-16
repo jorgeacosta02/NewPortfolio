@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import styles from './_NavBarNavListComp.module.scss';
 import { useDispatch, useSelector } from "react-redux";
 import { selectMenuState, falseMenu } from "../../redux/slices/menuSlice";
+import { selectMoonState } from "../../redux/slices/moonSlice";
 import { getDataFromLocalStorage } from "../localStorageComp/LocalStorageComp";
 
 
@@ -18,7 +19,9 @@ const NavBarNavListComp = () => {
   // si utilizo useSelector con menuReducer no necesito importarlo
   const menuCompleteReducer = useSelector((state: any) => state.menu.menu);
   // si lo utilizo con la slice separada, sí necesito importarlo.
-  const menuReducer:any = useSelector(selectMenuState)
+  const menuReducer = useSelector(selectMenuState)
+
+  const moonState = useSelector(selectMoonState)
 
   console.log('menuCompleteReducer: ', menuCompleteReducer)
 
@@ -31,15 +34,19 @@ const NavBarNavListComp = () => {
 
   const navListStyles = `${styles.navList} ${menuReducer.menu ? styles.show : ''}`;
 
+  const navLinkColor = `${styles.navLink} ${moonState.moon ? styles.navLinkWhite : ''}`
+
+  const navListColor = `${navListStyles} ${moonState.moon ? styles.navListWhite : ''}`
+
   return (
-    <ul className={navListStyles} >
+    <ul className={navListColor} >
       <li
         className={styles.li}
         onClick={handleClick}
       >
         <NavLink
           to="/"
-          className={styles.navLink} 
+          className={navLinkColor} 
         >
           Inicio
         </NavLink>
@@ -49,7 +56,7 @@ const NavBarNavListComp = () => {
       onClick={handleClick} >
         <NavLink
           to="/about" 
-          className={styles.navLink} 
+          className={navLinkColor} 
           >Sobre Mi</NavLink>
       </li>
       <li 
@@ -57,7 +64,7 @@ const NavBarNavListComp = () => {
       onClick={handleClick} >
         <NavLink
           to="/projects" 
-          className={styles.navLink} 
+          className={navLinkColor} 
           >Proyectos</NavLink>
       </li>
       <li 
@@ -65,7 +72,7 @@ const NavBarNavListComp = () => {
       onClick={handleClick} >
         <NavLink
           to="/skills" 
-          className={styles.navLink} 
+          className={navLinkColor} 
           >Tecnologías</NavLink>
       </li>
       <li 
@@ -73,7 +80,7 @@ const NavBarNavListComp = () => {
       onClick={handleClick} >
         <NavLink
           to="/background" 
-          className={styles.navLink} 
+          className={navLinkColor} 
           >Formación</NavLink>
       </li>
       <li 
@@ -81,7 +88,7 @@ const NavBarNavListComp = () => {
       onClick={handleClick} >
         <NavLink
           to="/contact" 
-          className={styles.navLink} 
+          className={navLinkColor} 
           >Contacto</NavLink>
       </li>
     </ul>
