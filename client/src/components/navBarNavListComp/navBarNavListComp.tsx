@@ -33,20 +33,6 @@ const NavBarNavListComp = () => {
 
   return (
     <ul className={navListStyles} >
-
-      <li
-        className={styles.li}
-        onClick={handleClick}
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M448 256c0-106-86-192-192-192V448c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>
-        <i className="fa-solid fa-circle-half-stroke"></i>
-      </li>
-      <li
-        className={styles.li}
-        onClick={handleClick}
-      >
-        <h5 className={styles.enEs}>EN</h5>
-      </li>
       <li
         className={styles.li}
         onClick={handleClick}

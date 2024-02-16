@@ -26,6 +26,7 @@
         position: relative;
         border: none;
         border-radius: none;
+        padding: 0;
         box-shadow: none;
         flex-direction: row;
         top: 0;
@@ -34,8 +35,8 @@
         font-size: g.$desk-NavBar-font-size;
         font-weight: 300;
         width: 100%;
-        min-width: 520px;
-        background-color: transparent;
+        min-width: 450px;
+        background-color: blue;
     }
     .li{
         box-sizing: border-box;
@@ -43,7 +44,7 @@
         padding-left: 10px;
         border: 1px solid g.$grey-color;
         @include g.display-large{
-            padding: none;
+            padding: 0;
             border: none;
             width: auto;
         }

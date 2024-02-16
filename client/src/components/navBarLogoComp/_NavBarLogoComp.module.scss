@@ -6,16 +6,19 @@
     .logo {
         margin: 0;
         padding: 0;
+        font-size: max(#{11px}, #{4vw});
         color: g.$main-color;
         overflow: hidden; /* Evita que el texto se muestre antes de la animación */
         white-space: nowrap; /* Evita que el texto se divida en varias líneas */
         border-right: 8px solid orange; /* Simula el cursor de escritura */
         animation: typing 1s steps(40, end); /* Define la animación */
-        // background-color: blue;
+        background-color: red;
+
 
         @include g.display-large {
             width: auto;
-            height: 50px;
+            // height: 50px;
+            font-size: g.$desk-h3-font-size;
         }
     }
     .animationComplete {

@@ -1,20 +1,21 @@
-@use "../../styles/globals" as g;
+@use '../../styles/globals' as g;
 
 .container{
-    @include g.create-flexbox(column, center);
-    .menu{
+    width: 36%;
+    max-width: 80px;
+    @include g.create-flexbox(row, space-between);
+    background-color: green;
+    .moon{
         box-sizing: border-box;
         font-size: 35px;
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
         fill: g.$white-color;
         z-index: 1000;
         cursor: pointer;
-        @include g.display-large{
-            display: none;
-        }
+
     }
-    .menu:hover{
+    .moon:hover{
         background-color: rgba(157, 157, 157, .1);
         @include g.display-large{
             background-color: transparent;
@@ -23,3 +24,5 @@
         }
     }
 }
+
+
