@@ -71,7 +71,7 @@
         color: g.$main-dark-color;
         @include g.display-large{
             background-color: transparent;
-            color: g.$main-dark-color;
+            color: g.$main-color;
             transform:scale(1.1);
         }
     }
