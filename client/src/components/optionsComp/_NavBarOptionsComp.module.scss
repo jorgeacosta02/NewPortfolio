@@ -1,7 +1,7 @@
 @use '../../styles/globals' as g;
 
 .container{
-    width: 36%;
+    width: 30%;
     max-width: 80px;
     @include g.create-flexbox(row, space-between);
     // background-color: green;
@@ -14,6 +14,9 @@
         z-index: 1000;
         cursor: pointer;
         transition: transform 0.3s ease;
+    }
+    .optionWhite{
+        fill: g.$dark-black-color;
     }
     .option:hover{
         background-color: rgba(157, 157, 157, .1);
