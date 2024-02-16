@@ -6,7 +6,6 @@ import styles from './_NavBarLayout.module.scss';
 import NavBarOptionsComp from "../../components/optionsComp/NavBarOptionsComp";
 
 
-
 const NavBarLayout: React.FC = () => {
 
   return (

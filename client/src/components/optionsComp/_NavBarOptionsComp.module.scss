@@ -4,7 +4,7 @@
     width: 36%;
     max-width: 80px;
     @include g.create-flexbox(row, space-between);
-    background-color: green;
+    // background-color: green;
     .moon{
         box-sizing: border-box;
         font-size: 35px;

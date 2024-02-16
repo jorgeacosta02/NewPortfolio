@@ -114,11 +114,12 @@
                 @include g.display-large{
                     margin-bottom: 10px;
                 }
-                .linkImg{
+                .linkSVG{
                     width:13vw;
                     min-width: 20px;
                     max-width: 40px;
                     border-radius: 50%;
+                    fill: g.$main-color;
                 }
             }
             .dwlResumeContainer{

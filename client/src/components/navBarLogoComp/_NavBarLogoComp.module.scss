@@ -12,7 +12,7 @@
         white-space: nowrap; /* Evita que el texto se divida en varias líneas */
         border-right: 8px solid orange; /* Simula el cursor de escritura */
         animation: typing 1s steps(40, end); /* Define la animación */
-        background-color: red;
+        // background-color: red;
 
 
         @include g.display-large {
