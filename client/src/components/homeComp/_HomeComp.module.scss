@@ -53,27 +53,33 @@
         background-color: rgba(255,255,255,.8);
     }
     .dataContainer{
+        box-sizing: border-box;
         position: absolute;
-        top: 12vh;
-        color: g.$white-color;
-        height: 80%;
+        top: g.$mobile-NavBar-height;
+        // height: 80%;
         width: 90%;
-        padding-bottom: 5vh;
+        padding: 5vh 0;
+        color: g.$white-color;
+
         // background-color: blue;
-        @include g.create-flexbox(column, space-between);
-        @include  g.display-large{
+        @include g.create-flexbox(column, center);
+        gap: 6vw;
+
+        @include g.display-large{
+            align-items: center;
             flex-direction: row;
-            gap: 6vw;
+            top: g.$desk-NavBar-height;
             max-width: 900px;
         }
         // background-color: blue;
         z-index: 30;
         .data{
             width: 100%;
-            max-width: 600px;
+            max-width: 500px;
             margin-bottom: 4vh;
             @include g.create-flexbox(column, space-between);
-            gap: 2vh;
+            gap: 5vh;
+            // background-color: red;
             @include g.display-large{
                 align-items: flex-start;
             }
@@ -97,7 +103,7 @@
                 }
             }
             .text{
-                display: none;
+                // display: none;
                 color: inherit;
                 text-align: center;
                 @include g.display-large{
@@ -148,8 +154,8 @@
         }
         .profileImg{
             position: relative;
-            height: 80%;
-            min-height: 150px;
+            height: 70vw;
+            min-height: 130px;
             max-height: 250px;
             border-radius: 5px;
         }
