@@ -3,6 +3,7 @@ import styles from './_NavBarNavListComp.module.scss';
 import { useDispatch, useSelector } from "react-redux";
 import { selectMenuState, falseMenu } from "../../redux/slices/menuSlice";
 import { selectMoonState } from "../../redux/slices/moonSlice";
+import { selectLangState } from "../../redux/slices/langSlice";
 import { getDataFromLocalStorage } from "../localStorageComp/LocalStorageComp";
 
 
@@ -23,12 +24,14 @@ const NavBarNavListComp = () => {
 
   const moonState = useSelector(selectMoonState)
 
+  const langState = useSelector(selectLangState).lang
+  console.log(langState)
+
   console.log('menuCompleteReducer: ', menuCompleteReducer)
 
   const dispatch = useDispatch<any>();
 
   const handleClick = () => {
-    console.log('click en NavLixt');
     dispatch( falseMenu() );
   };
 
@@ -48,7 +51,7 @@ const NavBarNavListComp = () => {
           to="/"
           className={navLinkColor} 
         >
-          Inicio
+          {langState ? 'Inicio' : 'Home'}
         </NavLink>
       </li>
       <li 
@@ -57,7 +60,9 @@ const NavBarNavListComp = () => {
         <NavLink
           to="/about" 
           className={navLinkColor} 
-          >Sobre Mi</NavLink>
+        >
+          {langState ? 'Sobre mí' : 'About me'}
+        </NavLink>
       </li>
       <li 
       className={styles.li}
@@ -65,7 +70,9 @@ const NavBarNavListComp = () => {
         <NavLink
           to="/projects" 
           className={navLinkColor} 
-          >Proyectos</NavLink>
+        >
+          {langState ? 'Proyectos' : 'Projects'}
+        </NavLink>
       </li>
       <li 
       className={styles.li}
@@ -73,7 +80,9 @@ const NavBarNavListComp = () => {
         <NavLink
           to="/skills" 
           className={navLinkColor} 
-          >Tecnologías</NavLink>
+        >
+          {langState ? 'Tecnologías' : 'Skills'}
+        </NavLink>
       </li>
       <li 
       className={styles.li}
@@ -81,7 +90,9 @@ const NavBarNavListComp = () => {
         <NavLink
           to="/background" 
           className={navLinkColor} 
-          >Formación</NavLink>
+        >
+          {langState ? 'Formación' : 'Background'}
+        </NavLink>
       </li>
       <li 
       className={styles.li}
@@ -89,7 +100,9 @@ const NavBarNavListComp = () => {
         <NavLink
           to="/contact" 
           className={navLinkColor} 
-          >Contacto</NavLink>
+        >
+          {langState ? 'Contacto' : 'Contact'}
+        </NavLink>
       </li>
     </ul>
   )

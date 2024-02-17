@@ -3,7 +3,7 @@ import NavBarLogoComp from "../../components/navBarLogoComp/NavBarLogoComp";
 import NavBarNavListComp from "../../components/navBarNavListComp/NavBarNavListComp";
 import NavBarMenuComp from "../../components/navBarMenuComp/NavBarMenuComp";
 import styles from './_NavBarLayout.module.scss';
-import NavBarOptionsComp from "../../components/optionsComp/NavBarOptionsComp";
+import NavBarOptionsComp from "../../components/navBarOptionsComp/NavBarOptionsComp";
 
 
 const NavBarLayout: React.FC = () => {

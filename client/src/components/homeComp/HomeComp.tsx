@@ -2,6 +2,7 @@ import styles from './_HomeComp.module.scss'
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { selectMoonState } from '../../redux/slices/moonSlice';
+import { selectLangState } from '../../redux/slices/langSlice';
 
 // Importa tus imágenes
 import img01 from '../../assets/images/slider/code01.jpg';
@@ -59,6 +60,8 @@ const HomeComp = () => {
   
   const dataColor = `${styles.data} ${moonState.moon ? styles.dataWhite : ''}`;
 
+  const langState = useSelector(selectLangState).lang;
+
   return (
     <div className={styles.container}>
         <div className={styles.slider}>
@@ -78,7 +81,9 @@ const HomeComp = () => {
         <div className={backColor}></div>
         <div className={styles.dataContainer}>
           <div className={dataColor}>
-            <h4 className={styles.hi}>Hola soy</h4>
+            <h4 className={styles.hi}>
+            {langState ? "Hola Soy" : "Hi I'm"}
+            </h4>
             <h2
               className={styles.name}
             >
@@ -87,12 +92,14 @@ const HomeComp = () => {
             <h5
               className={styles.role}
             >
-              Programador Web Full Stack
+              {langState ? 'Programador Web Full Stack' : 'Full Stack Web Developer'}
             </h5>
             <p
               className={styles.text}
             >
-              Este es mi portafolio web, el cual muestra mis proyectos realizdos, habilidades técnicas y formación académica.
+              {langState ? 
+                'Este es mi portafolio web, el cual muestra mis proyectos realizdos, habilidades técnicas y formación académica.' 
+                : 'This is my web portfolio, which shows my completed projects, technical skills and academic training.'}
             </p>
             <div className={styles.linksContainer}>
               <a href="https://www.linkedin.com/in/jorge-acosta-de-le%C3%B3n-8934a4122/" target='blank'>
@@ -145,7 +152,7 @@ const HomeComp = () => {
                 href="https://github.com/jorgeacosta02/Resume/raw/main/Jorge Acosta Resume.pdf" download="Mi_CV.pdf" target="_blank">
                 <h6
                   className={styles.dwlResume}
-                  >Descargar CV</h6>
+                  >{langState ? 'Descargar CV' : 'Download Resume'}</h6>
               </a>
           </div>
             <img
