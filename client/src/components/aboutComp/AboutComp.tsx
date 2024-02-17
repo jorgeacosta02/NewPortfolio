@@ -58,12 +58,12 @@ const AboutComp = () => {
 
   const backColor = `${styles.background} ${moonState.moon ? styles.bckgndWhite : ''}`;
   
-  const dataColor = `${styles.data} ${moonState.moon ? styles.dataWhite : ''}`;
+  const containerColor = `${styles.container} ${moonState.moon ? styles.containerWhite : ''}`;
 
   const langState = useSelector(selectLangState).lang;
 
   return (
-    <div className={styles.container}>
+    <div className={containerColor}>
         <div className={styles.slider}>
             {images.map((image, index) => (
             <div
@@ -79,12 +79,15 @@ const AboutComp = () => {
             ))}
         </div>
         <div className={backColor}></div>
+        <p className={styles.comment}>
+          Dedicación, compromiso, esfuerzo, responsabilidad, comunicación, colaboración, entre otras, pienso que son cualidades indispensables para alcanzar cualquier objetivo.
+        </p>
         <div className={styles.dataContainer}>
           <img
               src={ProfileImg}
               className={styles.profileImg}
           />
-          <div className={dataColor}>
+          <div className={styles.data}>
             <h4 className={styles.about}>
               {langState ? "Sobre mí" : "About me"}
             </h4>
@@ -92,8 +95,8 @@ const AboutComp = () => {
               className={styles.text}
             >
               {langState ? 
-                'Mi nombre es Jorge Acosta, vivo en la Provincia de San Juan, Argentina, tengo 50 años. En cuanto a lo laboral, comencé a buscar una alternativa con la que me sintiera más a gusto, me hablaron sobre programación y me interesó mucho, ya que siempre me sentí cómodo trabajando con una computadora. Empecé de forma autodidacta, hasta que decidí inscribirme en el bootcamp de SoyHenry que consta de 800 horas de trabajo teórico-práctico, en el cual realicé un proyecto individual y participé de uno grupal. Las tecnologías usadas incluyen HTML, CSS, javascript, typescript, además React, Redux, del lado del frontend y express, sequelize y postgre en backend.' 
-                : 'My name is Jorge Acosta, I live in the Province of San Juan, Argentina, I am 50 years old. As for work, I started looking for an alternative that I felt more comfortable with, they talked to me about programming and I was very interested, since I always felt comfortable working with a computer. I started self-taught, until I decided to enroll in the SoyHenry bootcamp, which consists of 800 hours of theoretical-practical work, in which I carried out an individual project and participated in a group project. The technologies used include HTML, CSS, javascript, typescript, as well as React, Redux, on the frontend side and express, sequelize and postgre on the backend.'}
+                'Mi nombre es Jorge Acosta, vivo en la Provincia de San Juan, Argentina, tengo 50 años. En cuanto a lo laboral, comencé a buscar una alternativa con la que me sintiera más a gusto, me hablaron sobre programación y me interesó mucho, ya que siempre me sentí cómodo trabajando con una computadora. Empecé de forma autodidacta, hasta que decidí inscribirme en el bootcamp de SoyHenry que consta de 800 horas de trabajo teórico-práctico, en el cual realicé un proyecto individual y participé de uno grupal. Las tecnologías usadas incluyen HTML, CSS, Javascript, Typescript, React, Redux, NodeJS Express, Sequelize y Postgres.' 
+                : 'My name is Jorge Acosta, I live in the Province of San Juan, Argentina, I am 50 years old. As for work, I started looking for an alternative that I felt more comfortable with, they talked to me about programming and I was very interested, since I always felt comfortable working with a computer. I started self-taught, until I decided to enroll in the SoyHenry bootcamp, which consists of 800 hours of theoretical-practical work, in which I carried out an individual project and participated in a group project. The technologies used include HTML, CSS, Javascript, Typescript, React, Redux, NodeJS Express, Sequelize and Postgres.'}
             </p>
             <p
               className={styles.text}

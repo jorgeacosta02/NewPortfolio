@@ -5,7 +5,8 @@
     width: 100%;
     height: 100%;
     padding: 0 15vw;
-    background-color: red;
+    color: g.$white-color;
+    // background-color: red;
     @include g.create-flexbox(row, center);
     .slider {
         position: fixed;
@@ -52,14 +53,28 @@
     .bckgndWhite{
         background-color: rgba(255,255,255,.8);
     }
+    .comment{
+        position: absolute;
+        color: inherit;
+        padding: 12px 24px;
+        top: 15%;
+        left: 10%;
+        z-index: 100;
+        width: 20%;
+        // border: 1px solid orange;
+        background-color: rgba(225, 145, 9, 0.064);
+        border-radius: 14px;
+        box-shadow: 0 0 10px 3px orange;
+
+    }
     .dataContainer{
         box-sizing: border-box;
         position: absolute;
         top: g.$mobile-NavBar-height;
         // height: 80%;
         width: 90%;
-        padding: 5vh 0;
-        color: g.$white-color;
+        padding: 15vh 0 5vh;
+        // color: g.$white-color;
 
         // background-color: blue;
         @include g.create-flexbox(column, center);
@@ -78,7 +93,6 @@
             max-width: 500px;
             margin-bottom: 4vh;
             @include g.create-flexbox(column, space-between);
-            // gap: 5vh;
             // background-color: grey;
             @include g.display-large{
                 align-items: flex-start;
@@ -95,13 +109,13 @@
                 @include g.display-large{
                     display:inline-block;
                     text-align: left;
-                    // max-width: 400px;
+                    line-height: 1.4;
                 }
             }
        }
-        .dataWhite{
-            color: g.$dark-black-color;
-        }
+        // .dataWhite{
+        //     color: g.$dark-black-color;
+        // }
         .profileImg{
             position: relative;
             height: 70vw;
@@ -111,4 +125,7 @@
         }
 
     }
+}
+.containerWhite{
+    color: g.$dark-black-color;
 }
