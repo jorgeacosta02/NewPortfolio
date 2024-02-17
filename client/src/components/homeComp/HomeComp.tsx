@@ -98,8 +98,8 @@ const HomeComp = () => {
               className={styles.text}
             >
               {langState ? 
-                'Este es mi portafolio web, el cual muestra mis proyectos realizdos, habilidades técnicas y formación académica.' 
-                : 'This is my web portfolio, which shows my completed projects, technical skills and academic training.'}
+                'Este es mi portafolio web, el cual muestra mis proyectos, habilidades y formación académica.' 
+                : 'This is my web portfolio, which shows my projects, skills and academic training.'}
             </p>
             <div className={styles.linksContainer}>
               <a href="https://www.linkedin.com/in/jorge-acosta-de-le%C3%B3n-8934a4122/" target='blank'>
