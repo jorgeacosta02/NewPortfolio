@@ -64,6 +64,8 @@ const AboutComp = () => {
 
   return (
     <div className={containerColor}>
+
+        {/* Background slider */}
         <div className={styles.slider}>
             {images.map((image, index) => (
             <div
@@ -78,7 +80,11 @@ const AboutComp = () => {
             </div>
             ))}
         </div>
+
+        {/* Background slider cover */}
         <div className={backColor}></div>
+
+        {/* Comment */}
         <div className={styles.commentContainer}>
           <p className={styles.comment}>
             {langState ?
@@ -87,6 +93,8 @@ const AboutComp = () => {
           }
             </p>
             </div>
+
+        {/* Main data container */}
         <div className={styles.dataContainer}>
           <img
               src={ProfileImg}
