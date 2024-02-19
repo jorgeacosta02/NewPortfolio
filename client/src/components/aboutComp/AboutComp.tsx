@@ -79,9 +79,11 @@ const AboutComp = () => {
             ))}
         </div>
         <div className={backColor}></div>
-        <p className={styles.comment}>
-          Dedicación, compromiso, esfuerzo, responsabilidad, comunicación, colaboración, entre otras, pienso que son cualidades indispensables para alcanzar cualquier objetivo.
-        </p>
+        <div className={styles.commentContainer}>
+          <p className={styles.comment}>
+            Dedicación, compromiso, esfuerzo, responsabilidad, comunicación, colaboración, entre otras, pienso que son cualidades indispensables para alcanzar cualquier objetivo.
+          </p>
+        </div>
         <div className={styles.dataContainer}>
           <img
               src={ProfileImg}
