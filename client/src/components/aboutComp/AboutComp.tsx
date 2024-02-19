@@ -81,9 +81,12 @@ const AboutComp = () => {
         <div className={backColor}></div>
         <div className={styles.commentContainer}>
           <p className={styles.comment}>
-            Dedicación, compromiso, esfuerzo, responsabilidad, comunicación, colaboración, entre otras, pienso que son cualidades indispensables para alcanzar cualquier objetivo.
-          </p>
-        </div>
+            {langState ?
+            'Dedicación, compromiso, esfuerzo, responsabilidad, comunicación y colaboración pienso que son cualidades indispensables para alcanzar cualquier objetivo.' :
+            'Dedication, commitment, effort, responsibility, communication and collaboration I think are essential qualities to achieve any goal.'
+          }
+            </p>
+            </div>
         <div className={styles.dataContainer}>
           <img
               src={ProfileImg}
@@ -97,8 +100,8 @@ const AboutComp = () => {
               className={styles.text}
             >
               {langState ? 
-                'Mi nombre es Jorge Acosta, vivo en la Provincia de San Juan, Argentina, tengo 50 años. En cuanto a lo laboral, comencé a buscar una alternativa con la que me sintiera más a gusto, me hablaron sobre programación y me interesó mucho, ya que siempre me sentí cómodo trabajando con una computadora. Empecé de forma autodidacta, hasta que decidí inscribirme en el bootcamp de SoyHenry que consta de 800 horas de trabajo teórico-práctico, en el cual realicé un proyecto individual y participé de uno grupal. Las tecnologías usadas incluyen HTML, CSS, Javascript, Typescript, React, Redux, NodeJS Express, Sequelize y Postgres.' 
-                : 'My name is Jorge Acosta, I live in the Province of San Juan, Argentina, I am 50 years old. As for work, I started looking for an alternative that I felt more comfortable with, they talked to me about programming and I was very interested, since I always felt comfortable working with a computer. I started self-taught, until I decided to enroll in the SoyHenry bootcamp, which consists of 800 hours of theoretical-practical work, in which I carried out an individual project and participated in a group project. The technologies used include HTML, CSS, Javascript, Typescript, React, Redux, NodeJS Express, Sequelize and Postgres.'}
+                'Mi nombre es Jorge Acosta, vivo en la Provincia de San Juan, Argentina, tengo 50 años. En cuanto a lo laboral, comencé a buscar una alternativa con la que me sintiera más a gusto, me hablaron sobre programación y me interesó mucho, ya que siempre me sentí cómodo trabajando con una computadora. Empecé de forma autodidacta, hasta que decidí inscribirme en el bootcamp de SoyHenry que consta de 800 horas de trabajo teórico-práctico, en el cual realicé un proyecto individual y participé de uno grupal. Las tecnologías usadas incluyen HTML, CSS, Javascript, Typescript, React, Redux, NodeJS, Express, Sequelize y Postgres.' 
+                : 'My name is Jorge Acosta, I live in the Province of San Juan, Argentina, I am 50 years old. As for work, I started looking for an alternative that I felt more comfortable with, they talked to me about programming and I was very interested, since I always felt comfortable working with a computer. I started self-taught, until I decided to enroll in the SoyHenry bootcamp, which consists of 800 hours of theoretical-practical work, in which I carried out an individual project and participated in a group project. The technologies used include HTML, CSS, Javascript, Typescript, React, Redux, NodeJS, Express, Sequelize and Postgres.'}
             </p>
             <p
               className={styles.text}

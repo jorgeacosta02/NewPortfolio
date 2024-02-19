@@ -8,6 +8,9 @@
     color: g.$white-color;
     // background-color: red;
     @include g.create-flexbox(column, center);
+    @include g.display-large{
+        justify-content: flex-start;
+    }
     .slider {
         position: fixed;
         top: 0;
@@ -61,8 +64,9 @@
         // background-color: red;
         @include g.create-flexbox(row, center);
         @include g.display-large{
+            position: absolute;
             justify-content: flex-start;
-            padding: 5vh 5vw;
+            padding: 3vh 5vw;
         }
         .comment{
             position: relative;
@@ -90,7 +94,7 @@
         // top: g.$mobile-NavBar-height;
         // height: 80%;
         width: 90%;
-        padding: 1vh 0 5vh;
+        padding: 12vh 0 5vh;
         // color: g.$white-color;
 
         // background-color: blue;
