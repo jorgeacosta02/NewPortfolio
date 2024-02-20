@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { selectMoonState } from '../../redux/slices/moonSlice';
 import { selectLangState } from '../../redux/slices/langSlice';
+import { NavLink } from 'react-router-dom';
 
 // Importa tus imágenes
 import img01 from '../../assets/images/slider/code01.jpg';
@@ -141,6 +142,24 @@ const ProjectsComp = () => {
                 'Aplicación para una empresa que presta servicios de perforación y voladura, desarrollada de forma individual, la cual muestra aspectos de la empresa como instalaciones, servicios, equipos, algunos trabajos, y como funciones debe permitir registrar el registro de partes diarios de producción e ingreso y egreso de insumos en almacenes, elaborando informres sobre esos temas.' :
                 'Application for a company that provides drilling and blasting services, developed individually, which shows aspects of the company such as facilities, services, equipment, some jobs, and as functions it must allow recording the registration of daily production and income parts and disbursement of supplies in warehouses, preparing reports on these topics.'}
               </p>
+              <div className={styles.linksContainer}>
+                <a
+                  className={styles.link}
+                  href="https://page-in-progress.netlify.app/"             target="_blank"
+                >
+                  {langState ?
+                  'Ir a la página':
+                  'Go to the page'}
+                </a>
+                <NavLink
+                  className={styles.link}
+                  to="/exploservice"
+                >
+                  {langState ?
+                  'Ir a la página':
+                  'Go to the page'}
+                </NavLink>
+              </div>
             </li> 
             <li
               key="3"
@@ -162,6 +181,8 @@ const ProjectsComp = () => {
                 'Ecommerce de cervezas artesanales en el que puden registrarse tanto vendedores como compradores, incluye realizar operaciones de compra venta, pasarela de pagos, filtros de búsqueda, carrito de compras, manejo de stocks de productos, consultas de historiales de compra y venta, además de autenticación y autorización de roles.' :
                 'Craft beer ecommerce in which both sellers and buyers can register, includes carrying out purchase and sale operations, payment gateway, search filters, shopping cart, product stock management, purchase and sale history queries, as well as authentication and role authorization.'}
               </p>
+              <div className={styles.buttons}>
+              </div>
             </li>
             <li
               key="4"
