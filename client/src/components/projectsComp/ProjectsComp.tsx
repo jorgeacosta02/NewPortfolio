@@ -116,6 +116,25 @@ const ProjectsComp = () => {
                 ' Aplicación para una clínica kinesiológica, desarrollada de forma individual, la que debe mostrar aspectos de ésta como instalaciones, especialidades, personal, etc., y funcionalidades como el manejo del sistema de turnos, registro de historias clínicas y chats privados entre profesionales y pacientes.' :
                 'Application for a kinesiology clinic, developed individually, which must show aspects of it such as facilities, specialties, staff, etc., and functionalities such as management of the shift system, registration of medical records and private chats between professionals and patients.'}
               </p>
+              <div className={styles.linksContainer}>
+                <a
+                  className={styles.link}
+                  href="#"
+                  target="_blank"
+                >
+                  {langState ?
+                  'Ir a la página':
+                  'Go to the page'}
+                </a>
+                <NavLink
+                  className={styles.link}
+                  to="/triar-detail"
+                >
+                  {langState ?
+                  'Más sobre la página':
+                  'More about the page'}
+                </NavLink>
+              </div>
             </li>
             <li
               key="2"
@@ -123,7 +142,7 @@ const ProjectsComp = () => {
             >
               <img
                 src={exploserviceLogoBrand}
-                alt="Triar Logo"
+                alt="Exploservice Logo"
               />
               <h5 className={styles.projectTitle}>
                   {langState ?
@@ -153,11 +172,11 @@ const ProjectsComp = () => {
                 </a>
                 <NavLink
                   className={styles.link}
-                  to="/exploservice"
+                  to="/exploservice-detail"
                 >
                   {langState ?
-                  'Ir a la página':
-                  'Go to the page'}
+                  'Más sobre la página':
+                  'More about the page'}
                 </NavLink>
               </div>
             </li> 
@@ -181,7 +200,23 @@ const ProjectsComp = () => {
                 'Ecommerce de cervezas artesanales en el que puden registrarse tanto vendedores como compradores, incluye realizar operaciones de compra venta, pasarela de pagos, filtros de búsqueda, carrito de compras, manejo de stocks de productos, consultas de historiales de compra y venta, además de autenticación y autorización de roles.' :
                 'Craft beer ecommerce in which both sellers and buyers can register, includes carrying out purchase and sale operations, payment gateway, search filters, shopping cart, product stock management, purchase and sale history queries, as well as authentication and role authorization.'}
               </p>
-              <div className={styles.buttons}>
+              <div className={styles.linksContainer}>
+                <a
+                  className={styles.link}
+                  href="https://craftbeer-team.netlify.app/"             target="_blank"
+                >
+                  {langState ?
+                  'Ir a la página':
+                  'Go to the page'}
+                </a>
+                <NavLink
+                  className={styles.link}
+                  to="/craftbeer-detail"
+                >
+                  {langState ?
+                  'Más sobre la página':
+                  'More about the page'}
+                </NavLink>
               </div>
             </li>
             <li
@@ -190,7 +225,7 @@ const ProjectsComp = () => {
             >
               <img
                 src={videogamesImage}
-                alt="CraftBeer Logo"
+                alt="Videogames Logo"
               />
               <h5 className={styles.projectTitle}>
                   {langState ?
@@ -204,6 +239,24 @@ const ProjectsComp = () => {
                 'Aplicación individual integradora del bootcamp SoyHenry, la que trabaja con una base de datos local y con datos de una API externa, permite filtrar y ordenar los videogames y cargar nuevos a la base de datos.' :
                 'Individual application integrating the SoyHenry bootcamp, which works with a local database and with data from an external API, allows you to filter and sort the video games and upload new ones to the database.'}
               </p>
+              <div className={styles.linksContainer}>
+                <a
+                  className={styles.link}
+                  href="https://videogames-pi.netlify.app/"             target="_blank"
+                >
+                  {langState ?
+                  'Ir a la página':
+                  'Go to the page'}
+                </a>
+                <NavLink
+                  className={styles.link}
+                  to="/videogames-detail"
+                >
+                  {langState ?
+                  'Más sobre la página':
+                  'More about the page'}
+                </NavLink>
+              </div>
             </li>
         </ul>
     </div>
