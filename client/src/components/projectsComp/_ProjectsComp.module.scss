@@ -84,6 +84,7 @@
         }
         // background-color: blue;
         .project{// li
+            box-sizing: border-box;
             width: 100%;
             max-width: 100%;
             margin-bottom: 4vh;
@@ -91,6 +92,8 @@
             gap: 5vh;
             align-items: center;
             text-align: center;
+            border: 1px solid g.$grey-color;
+            padding: 5vh 3vw;
             // background-color: yellow;
             @include g.display-large{
                 align-items: flex-start;

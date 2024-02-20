@@ -19,8 +19,10 @@ import img10 from '../../assets/images/slider/laptop05.jpg';
 import img11 from '../../assets/images/slider/code06.jpg';
 import img12 from '../../assets/images/slider/laptop06.jpg';
 
-import triarLogo from '../../assets/images/logos&Brands/logo.png'
+import triarLogo from '../../assets/images/logos&Brands/TriarLogo.png'
 import exploserviceLogoBrand from '../../assets/images/logos&Brands/ExploserviceLogoBrand.png'
+import craftBeerLogo from '../../assets/images/logos&Brands/craftBeerLogo.jpg'
+import videogamesImage from '../../assets/images/logos&Brands/Videogames.png'
 
 
 const ProjectsComp = () => {
@@ -86,68 +88,101 @@ const ProjectsComp = () => {
         {/* Background slider cover */}
         <div className={backColor}></div>
 
-        {/* Page title */}
-        <h3 className={styles.mainTitle}>
-          {langState ? 'Mis proyectos' :'My projects'}
-        </h3>
-
         {/* Projects */}
         <ul className={styles.projectsContainer}>
             <li
               key="1"
               className={styles.project}
             >
-                <h5 className={styles.projectTitle}>
-                    {langState ?
-                    'Clínica Kinesiológica Triar' :
-                    'Triar Kinesiology Clinic'}
-                </h5>
-                <h5 className={styles.projectTitle}>
-                    {langState ?
-                    '(En proceso)' :
-                    '(In progress)'}
-                </h5>
-                <div className={styles.projDataContainer}>
-                    <img
-                      src={triarLogo}
-                      alt="Triar Logo"
-                    />
-                    <p
-                      className={styles.projectDescription}
-                    >
-                      {langState ?
-                      ' Aplicación para una clínica kinesiológica que debe mostrar aspectos de ésta como instalaciones, especialidades, personal, etc., y funcionalidades como el manejo del sistema de turnos, registro de historias clínicas y chats privados entre profesionales y pacientes.' :
-                      'Application for a kinesiology clinic that must show aspects of it such as facilities, specialties, staff, etc., and functionalities such as management of the shift system, registration of medical histories and private chats between professionals and patients.'}
-                    </p>
-                </div>
+              <img
+                src={triarLogo}
+                alt="Triar Logo"
+              />
+              <h5 className={styles.projectTitle}>
+                  {langState ?
+                  'Clínica Kinesiológica Triar' :
+                  'Triar Kinesiology Clinic'}
+              </h5>
+              <h5 className={styles.projectTitle}>
+                  {langState ?
+                  '(En proceso)' :
+                  '(In progress)'}
+              </h5>
+              <p
+                className={styles.projectDescription}
+              >
+                {langState ?
+                ' Aplicación para una clínica kinesiológica, desarrollada de forma individual, la que debe mostrar aspectos de ésta como instalaciones, especialidades, personal, etc., y funcionalidades como el manejo del sistema de turnos, registro de historias clínicas y chats privados entre profesionales y pacientes.' :
+                'Application for a kinesiology clinic, developed individually, which must show aspects of it such as facilities, specialties, staff, etc., and functionalities such as management of the shift system, registration of medical records and private chats between professionals and patients.'}
+              </p>
             </li>
             <li
-              key="1"
+              key="2"
               className={styles.project}
             >
-                <h5 className={styles.projectTitle}>
-                    {langState ?
-                    'Empresa de perforación y voladura' :
-                    'Drilling and blasting company'}
-                </h5>
-                <h5 className={styles.projectTitle}>
-                    {langState ?
-                    '(En proceso)' :
-                    '(In progress)'}
-                </h5>
-                <div className={styles.projDataContainer}>
-                    <img
-                      src={exploserviceLogoBrand}
-                      alt="Triar Logo"
-                    />
-                    <p
-                      className={styles.projectDescription}
-                    >
-                      {langState ?
-                      ' Aplicación para una empresa que presta servicios de perforación y voladura, muestra aspectos de la empresa como instalaciones, servicios, equipos, algunos trabajos, y como funciones debe permitir registrar el registro de partes diarios de producción e ingreso y egreso de insumos en almacenes, elaborando informres sobre esos temas.' :
-                      'Application for a company that provides drilling and blasting services, shows aspects of the company such as facilities, services, equipment, some jobs, and as functions it must allow recording the record of daily production parts and entry and exit of supplies in warehouses, preparing inform about those topics.'}
-                    </p>
-                </div>
+              <img
+                src={exploserviceLogoBrand}
+                alt="Triar Logo"
+              />
+              <h5 className={styles.projectTitle}>
+                  {langState ?
+                  'Empresa de perforación y voladura' :
+                  'Drilling and blasting company'}
+              </h5>
+              <h5 className={styles.projectTitle}>
+                  {langState ?
+                  '(En proceso)' :
+                  '(In progress)'}
+              </h5>
+              <p
+                className={styles.projectDescription}
+              >
+                {langState ?
+                'Aplicación para una empresa que presta servicios de perforación y voladura, desarrollada de forma individual, la cual muestra aspectos de la empresa como instalaciones, servicios, equipos, algunos trabajos, y como funciones debe permitir registrar el registro de partes diarios de producción e ingreso y egreso de insumos en almacenes, elaborando informres sobre esos temas.' :
+                'Application for a company that provides drilling and blasting services, developed individually, which shows aspects of the company such as facilities, services, equipment, some jobs, and as functions it must allow recording the registration of daily production and income parts and disbursement of supplies in warehouses, preparing reports on these topics.'}
+              </p>
+            </li> 
+            <li
+              key="3"
+              className={styles.project}
+            >
+              <img
+                src={craftBeerLogo}
+                alt="CraftBeer Logo"
+              />
+              <h5 className={styles.projectTitle}>
+                  {langState ?
+                  'Ecommerce de cervezas artesanales' :
+                  'Craft beer ecommerce'}
+              </h5>
+              <p
+                className={styles.projectDescription}
+              >
+                {langState ?
+                'Ecommerce de cervezas artesanales en el que puden registrarse tanto vendedores como compradores, incluye filtros de búsqueda, carrito de compras, manejo de stocks de productos, además de autenticación y autorización de roles.' :
+                'Craft beer ecommerce in which both sellers and buyers can register, includes search filters, shopping cart, product stock management, as well as role authentication and authorization.'}
+              </p>
+            </li>
+            <li
+              key="4"
+              className={styles.project}
+            >
+              <img
+                src={videogamesImage}
+                alt="CraftBeer Logo"
+              />
+              <h5 className={styles.projectTitle}>
+                  {langState ?
+                  'Aplicación académica' :
+                  'Academic application'}
+              </h5>
+              <p
+                className={styles.projectDescription}
+              >
+                {langState ?
+                'Aplicación individual integradora del bootcamp SoyHenry, la que trabaja con una base de datos local y con datos de una API externa, permite filtrar y ordenar los videogames y cargar nuevos a la base de datos.' :
+                'Individual application integrating the SoyHenry bootcamp, which works with a local database and with data from an external API, allows you to filter and sort the video games and upload new ones to the database.'}
+              </p>
             </li>
         </ul>
     </div>

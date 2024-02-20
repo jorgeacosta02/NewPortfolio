@@ -1,9 +1,9 @@
+import styles from './_NavBarLayout.module.scss';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import NavBarLogoComp from "../../components/navBarLogoComp/NavBarLogoComp";
 import NavBarNavListComp from "../../components/navBarNavListComp/NavBarNavListComp";
 import NavBarMenuComp from "../../components/navBarMenuComp/NavBarMenuComp";
-import styles from './_NavBarLayout.module.scss';
 import NavBarOptionsComp from "../../components/navBarOptionsComp/NavBarOptionsComp";
 import { selectMoonState } from '../../redux/slices/moonSlice';
 
