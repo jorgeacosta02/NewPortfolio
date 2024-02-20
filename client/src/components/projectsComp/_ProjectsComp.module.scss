@@ -56,10 +56,14 @@
     }
     .mainTitle{
         position: relative;
-        top: g.$desk-NavBar-height;
         color: inherit;
         z-index: 30;
-        background-color: red;
+        top: g.$mobile-NavBar-height;
+        // background-color: red;
+        @include g.display-large{
+            top: g.$desk-NavBar-height;
+
+        }
     }
     .projectsContainer{ //ul
         box-sizing: border-box;
@@ -71,7 +75,7 @@
         color: inherit;
         z-index: 30;
 
-        background-color: blue;
+        // background-color: blue;
         @include g.create-flexbox(column, center);
         gap: 6vw;
 
@@ -88,18 +92,23 @@
             margin-bottom: 4vh;
             @include g.create-flexbox(column, space-between);
             gap: 5vh;
-            // background-color: red;
+            align-items: center;
+            text-align: center;
+            // background-color: yellow;
             @include g.display-large{
                 align-items: flex-start;
             }
-            // .projectTitle{
-            // }
+            .projectTitle{
+                // background-color: green;
+            }
             img{
-                width: min(80vw,80vh);
+                // background-color: red;
+                width: min(90%,90%);
             }
             .projectDescription{
                 color: inherit;
                 text-align: center;
+                // background-color: grey;
                 @include g.display-large{
                     display:inline-block;
                     text-align: left;
