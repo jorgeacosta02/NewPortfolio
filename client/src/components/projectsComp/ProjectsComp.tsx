@@ -152,15 +152,15 @@ const ProjectsComp = () => {
               />
               <h5 className={styles.projectTitle}>
                   {langState ?
-                  'Ecommerce de cervezas artesanales' :
-                  'Craft beer ecommerce'}
+                  'Ecommerce académico de cervezas artesanales' :
+                  'Academinc craft beer ecommerce'}
               </h5>
               <p
                 className={styles.projectDescription}
               >
                 {langState ?
-                'Ecommerce de cervezas artesanales en el que puden registrarse tanto vendedores como compradores, incluye filtros de búsqueda, carrito de compras, manejo de stocks de productos, además de autenticación y autorización de roles.' :
-                'Craft beer ecommerce in which both sellers and buyers can register, includes search filters, shopping cart, product stock management, as well as role authentication and authorization.'}
+                'Ecommerce de cervezas artesanales en el que puden registrarse tanto vendedores como compradores, incluye realizar operaciones de compra venta, pasarela de pagos, filtros de búsqueda, carrito de compras, manejo de stocks de productos, consultas de historiales de compra y venta, además de autenticación y autorización de roles.' :
+                'Craft beer ecommerce in which both sellers and buyers can register, includes carrying out purchase and sale operations, payment gateway, search filters, shopping cart, product stock management, purchase and sale history queries, as well as authentication and role authorization.'}
               </p>
             </li>
             <li
