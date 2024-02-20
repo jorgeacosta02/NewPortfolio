@@ -116,6 +116,23 @@
                     max-width: 400px;
                 }
             }
+            .linksContainer{
+                color: inherit;
+                @include g.create-flexbox(column, space-between);
+                gap:  2vh;
+                .link{
+                    color: inherit;
+                    text-decoration: none;
+                    font-size: 15px;
+                    border: 1px solid g.$grey-color;
+                    border-radius: 3px;
+                    padding:  2vh 6vw;
+                    background-color: g.$main-color;
+                }
+                .link:hover{
+                    background-color: g.$main-dark-color;
+                }
+            }
         }
     }
 }
