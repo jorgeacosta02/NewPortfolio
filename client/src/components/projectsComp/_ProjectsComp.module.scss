@@ -94,13 +94,14 @@
             text-align: center;
             border: 1px solid g.$grey-color;
             padding: 5vh 3vw;
+            border-radius: 8px;
             // background-color: yellow;
             @include g.display-large{
                 align-items: flex-start;
             }
-            .projectTitle{
-                // background-color: green;
-            }
+            // .projectTitle{
+            //     // background-color: green;
+            // }
             img{
                 // background-color: red;
                 width: min(90%,90%);
