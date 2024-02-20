@@ -99,16 +99,18 @@ const ProjectsComp = () => {
                 src={triarLogo}
                 alt="Triar Logo"
               />
-              <h5 className={styles.projectTitle}>
-                  {langState ?
-                  'Clínica Kinesiológica Triar' :
-                  'Triar Kinesiology Clinic'}
-              </h5>
-              <h5 className={styles.projectTitle}>
-                  {langState ?
-                  '(En proceso)' :
-                  '(In progress)'}
-              </h5>
+              <div className={styles.projectTitleContainer}>
+                <h5 className={styles.projectTitle}>
+                    {langState ?
+                    'Clínica Kinesiológica Triar' :
+                    'Triar Kinesiology Clinic'}
+                </h5>
+                <h5 className={styles.projectTitle}>
+                    {langState ?
+                    '(En proceso)' :
+                    '(In progress)'}
+                </h5>
+              </div>
               <p
                 className={styles.projectDescription}
               >
@@ -144,16 +146,18 @@ const ProjectsComp = () => {
                 src={exploserviceLogoBrand}
                 alt="Exploservice Logo"
               />
-              <h5 className={styles.projectTitle}>
-                  {langState ?
-                  'Empresa de perforación y voladura' :
-                  'Drilling and blasting company'}
-              </h5>
-              <h5 className={styles.projectTitle}>
-                  {langState ?
-                  '(En proceso)' :
-                  '(In progress)'}
-              </h5>
+              <div className={styles.projectTitleContainer}>
+                <h5 className={styles.projectTitle}>
+                    {langState ?
+                    'Empresa de perforación y voladura' :
+                    'Drilling and blasting company'}
+                </h5>
+                <h5 className={styles.projectTitle}>
+                    {langState ?
+                    '(En proceso)' :
+                    '(In progress)'}
+                </h5>
+              </div>
               <p
                 className={styles.projectDescription}
               >
@@ -188,11 +192,18 @@ const ProjectsComp = () => {
                 src={craftBeerLogo}
                 alt="CraftBeer Logo"
               />
-              <h5 className={styles.projectTitle}>
-                  {langState ?
-                  'Ecommerce académico de cervezas artesanales' :
-                  'Academinc craft beer ecommerce'}
-              </h5>
+              <div className={styles.projectTitleContainer}>
+                <h5 className={styles.projectTitle}>
+                    {langState ?
+                    'Ecommerce de cervezas artesanales' :
+                    'Craft beer ecommerce'}
+                </h5>
+                <h5 className={styles.projectTitle}>
+                    {langState ?
+                    '(Aplicación académica de equipo)' :
+                    '(Academic team application)'}
+                </h5>
+              </div>
               <p
                 className={styles.projectDescription}
               >
@@ -203,7 +214,8 @@ const ProjectsComp = () => {
               <div className={styles.linksContainer}>
                 <a
                   className={styles.link}
-                  href="https://craftbeer-team.netlify.app/"             target="_blank"
+                  href="https://craftbeershop.vercel.app/"
+                  target="_blank"
                 >
                   {langState ?
                   'Ir a la página':
@@ -227,11 +239,18 @@ const ProjectsComp = () => {
                 src={videogamesImage}
                 alt="Videogames Logo"
               />
-              <h5 className={styles.projectTitle}>
-                  {langState ?
-                  'Aplicación académica' :
-                  'Academic application'}
-              </h5>
+              <div className={styles.projectTitleContainer}>
+                <h5 className={styles.projectTitle}>
+                    {langState ?
+                    'Aplicación de carga y búsqueda de videojuegos' :
+                    'Video game loading and searching application'}
+                </h5>
+                <h5 className={styles.projectTitle}>
+                    {langState ?
+                    '(Aplicación académica individual)' :
+                    '(Individual academic application)'}
+                </h5>
+              </div>
               <p
                 className={styles.projectDescription}
               >

@@ -78,9 +78,8 @@
         gap: 6vw;
         @include g.display-large{
             align-items: center;
-            flex-direction: row;
             top: g.$desk-NavBar-height;
-            max-width: 900px;
+            gap: 20px;
         }
         // background-color: blue;
         .project{// li
@@ -95,16 +94,24 @@
             border: 1px solid g.$grey-color;
             padding: 5vh 3vw;
             border-radius: 8px;
+            box-shadow: 2px 2px 2px 2px  rgba(45, 45, 45, 0.9);
             // background-color: yellow;
             @include g.display-large{
                 align-items: flex-start;
+                flex-direction: row;
             }
-            // .projectTitle{
-            //     // background-color: green;
-            // }
             img{
                 // background-color: red;
                 width: min(90%,90%);
+                max-width: 260px;
+                @include g.display-large{
+                    max-width: 100px;
+                }
+            }
+            .projectTitleContainer{
+                @include g.create-flexbox(column, space-between);
+                height: 90%;
+
             }
             .projectDescription{
                 color: inherit;
@@ -113,20 +120,31 @@
                 @include g.display-large{
                     display:inline-block;
                     text-align: left;
-                    max-width: 400px;
+                    width: 50%;
+                    max-width: 500px;
                 }
             }
             .linksContainer{
+                box-sizing: border-box;
                 color: inherit;
                 @include g.create-flexbox(column, space-between);
                 gap:  2vh;
+                width: 150px;
+                // background-color: red;
+                @include g.display-large{
+                    justify-content: space-evenly;
+                    height: 100%;
+                }
                 .link{
                     color: inherit;
                     text-decoration: none;
-                    font-size: 15px;
+                    // font-size: 15px;
                     border: 1px solid g.$grey-color;
                     border-radius: 3px;
-                    padding:  2vh 6vw;
+                    // padding:  2vh 6vw;
+                    padding: 5px 10px;
+                    font-size: 13px;
+                    font-weight: 300;
                     background-color: inherit;
                 }
                 .link:hover{
