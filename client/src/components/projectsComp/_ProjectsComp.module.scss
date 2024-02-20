@@ -4,11 +4,11 @@
 .container{
     box-sizing: border-box;
     width: 100%;
-    height: 100%;
-    padding: 0 15vw;
+    min-height: 100%;
+    // padding: 0;
     // background-color: red;
     color: g.$white-color;
-    @include g.create-flexbox(row, center);
+    @include g.create-flexbox(column, center);
     .slider {
         position: fixed;
         top: 0;
@@ -19,11 +19,11 @@
         z-index: 10;
         @include g.create-flexbox(row, center);
         .slide {
-            position: absolute; // Establece el posicionamiento absoluto para cada imagen dentro del slider
+            position: absolute; 
             z-index: 1;
-            top: 0; // Coloca las imágenes en la parte superior del contenedor
-            opacity: 0; // Oculta inicialmente todas las imágenes
-            transition: opacity 1.5s ease-in-out; // Agrega una transición suave a la opacidad
+            top: 0;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
             width: 100%;
             align-items: center;
             .img{
@@ -54,16 +54,24 @@
     .backWhite{
         background-color: rgba(255,255,255,.8);
     }
-    .projectsContainer{
+    .mainTitle{
+        position: relative;
+        top: g.$desk-NavBar-height;
+        color: inherit;
+        z-index: 30;
+        background-color: red;
+    }
+    .projectsContainer{ //ul
         box-sizing: border-box;
-        position: absolute;
+        position: relative;
         top: g.$mobile-NavBar-height;
         // height: 80%;
         width: 90%;
         padding: 5vh 0;
         color: inherit;
+        z-index: 30;
 
-        // background-color: blue;
+        background-color: blue;
         @include g.create-flexbox(column, center);
         gap: 6vw;
 
@@ -74,10 +82,9 @@
             max-width: 900px;
         }
         // background-color: blue;
-        z-index: 30;
-        .project{
+        .project{// li
             width: 100%;
-            max-width: 500px;
+            max-width: 100%;
             margin-bottom: 4vh;
             @include g.create-flexbox(column, space-between);
             gap: 5vh;
@@ -85,27 +92,12 @@
             @include g.display-large{
                 align-items: flex-start;
             }
-            // .hi{
-            //     width: 100%;
-            //     text-align: left;
+            // .projectTitle{
             // }
-            // .name{
-            //     width: 100%;
-            //     text-align: center;
-            //     color: g.$main-color;
-            //     @include g.display-large{
-            //         text-align: left;
-            //     }
-            // }
-            // .role{
-            //     width: 100%;
-            //     text-align: center;
-            //     @include g.display-large{
-            //         text-align: left;
-            //     }
-            // }
+            img{
+                width: min(80vw,80vh);
+            }
             .projectDescription{
-                // display: none;
                 color: inherit;
                 text-align: center;
                 @include g.display-large{
@@ -114,57 +106,17 @@
                     max-width: 400px;
                 }
             }
-            .linksContainer{
-                // background-color: red;
-                width: 90%;
-                max-width: 250px;
-                @include g.create-flexbox(row, space-between);
-                @include g.display-large{
-                    margin-bottom: 10px;
-                }
-                .linkSVG{
-                    width:13vw;
-                    min-width: 20px;
-                    max-width: 40px;
-                    border-radius: 50%;
-                    fill: g.$main-color;
-                    transition: transform 0.2s ease;
-                }
-                .linkSVG:hover{
-                    transform: scale(1.3);
-                    fill: g.$main-dark-color;
-                }
-            }
-            .dwlResumeContainer{
-                // height: 30px;
-                text-decoration: none;
-                text-align: center;
-                // line-height: 30px;
-                padding:  8px 16px;
-                color: g.$white-color;
-                border-radius: 3px;
-                background-color: g.$main-color;
-                transition: transform 0.2s ease;
-            }
-            .dwlResumeContainer:hover{
-                background-color: g.$main-dark-color;
-                transform: scale(1.2);
-            }
         }
-        .profileImg{
-            position: relative;
-            height: 70vw;
-            min-height: 130px;
-            max-height: 250px;
-            border-radius: 5px;
-        }
-
+        // .profileImg{
+        //     position: relative;
+        //     height: 70vw;
+        //     min-height: 130px;
+        //     max-height: 250px;
+        //     border-radius: 5px;
+        // }
     }
 }
 .containerWhite{
     background-color: rgba(255,255,255,.8);
     color: g.$dark-black-color;
 }
-// .container{
-//     color: g.$dark-black-color
-// }

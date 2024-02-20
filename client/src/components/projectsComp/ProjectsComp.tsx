@@ -86,7 +86,7 @@ const ProjectsComp = () => {
         <div className={backColor}></div>
 
         {/* Page title */}
-        <h2 className={styles.mainTitle}>My projects</h2>
+        <h3 className={styles.mainTitle}>My projects</h3>
 
         {/* Projects */}
         <ul className={styles.projectsContainer}>
@@ -94,17 +94,22 @@ const ProjectsComp = () => {
               key="1"
               className={styles.project}
             >
-                <h3 className={styles.projectTitle}>
+                <h5 className={styles.projectTitle}>
                     {langState ?
                     'Clínica Kinesiológica Triar' :
                     'Triar Kinesiology Clinic'}
-                </h3>
+                </h5>
                 <div className={styles.projDataContainer}>
-                    <img src={triarLogo} alt="Triar Logo" />
-                    <p className={styles.projectDescription}>
-                    {langState ?
-                    ' Aplicación para una clínica kinesiológica que debe mostrar aspectos de ésta como instalaciones, especialidades, personal, etc., y funcionalidades como el manejo del sistema de turnos, registro de historias clínicas y chats privados entre profesionales y pacientes.' :
-                    'Application for a kinesiology clinic that must show aspects of it such as facilities, specialties, staff, etc., and functionalities such as management of the shift system, registration of medical histories and private chats between professionals and patients.'}
+                    <img
+                      src={triarLogo}
+                      alt="Triar Logo"
+                    />
+                    <p
+                      className={styles.projectDescription}
+                    >
+                      {langState ?
+                      ' Aplicación para una clínica kinesiológica que debe mostrar aspectos de ésta como instalaciones, especialidades, personal, etc., y funcionalidades como el manejo del sistema de turnos, registro de historias clínicas y chats privados entre profesionales y pacientes.' :
+                      'Application for a kinesiology clinic that must show aspects of it such as facilities, specialties, staff, etc., and functionalities such as management of the shift system, registration of medical histories and private chats between professionals and patients.'}
                     </p>
                 </div>
             </li>
