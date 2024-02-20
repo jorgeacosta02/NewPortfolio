@@ -55,30 +55,27 @@
         background-color: rgba(255,255,255,.8);
     }
     .mainTitle{
-        position: relative;
+        position: fixed;
         color: inherit;
-        z-index: 30;
+        z-index: 100;
+        padding: 10px 20px;
         top: g.$mobile-NavBar-height;
-        // background-color: red;
+        background-color: inherit;
         @include g.display-large{
             top: g.$desk-NavBar-height;
-
         }
     }
     .projectsContainer{ //ul
         box-sizing: border-box;
         position: relative;
-        top: g.$mobile-NavBar-height;
-        // height: 80%;
+        top: calc(g.$mobile-NavBar-height + 40px);
         width: 90%;
         padding: 5vh 0;
         color: inherit;
         z-index: 30;
-
         // background-color: blue;
         @include g.create-flexbox(column, center);
         gap: 6vw;
-
         @include g.display-large{
             align-items: center;
             flex-direction: row;
@@ -116,13 +113,6 @@
                 }
             }
         }
-        // .profileImg{
-        //     position: relative;
-        //     height: 70vw;
-        //     min-height: 130px;
-        //     max-height: 250px;
-        //     border-radius: 5px;
-        // }
     }
 }
 .containerWhite{

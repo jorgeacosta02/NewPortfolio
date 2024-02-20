@@ -20,6 +20,7 @@ import img11 from '../../assets/images/slider/code06.jpg';
 import img12 from '../../assets/images/slider/laptop06.jpg';
 
 import triarLogo from '../../assets/images/logos&Brands/logo.png'
+import exploserviceLogoBrand from '../../assets/images/logos&Brands/ExploserviceLogoBrand.png'
 
 
 const ProjectsComp = () => {
@@ -86,7 +87,9 @@ const ProjectsComp = () => {
         <div className={backColor}></div>
 
         {/* Page title */}
-        <h3 className={styles.mainTitle}>My projects</h3>
+        <h3 className={styles.mainTitle}>
+          {langState ? 'Mis proyectos' :'My projects'}
+        </h3>
 
         {/* Projects */}
         <ul className={styles.projectsContainer}>
@@ -99,6 +102,11 @@ const ProjectsComp = () => {
                     'Clínica Kinesiológica Triar' :
                     'Triar Kinesiology Clinic'}
                 </h5>
+                <h5 className={styles.projectTitle}>
+                    {langState ?
+                    '(En proceso)' :
+                    '(In progress)'}
+                </h5>
                 <div className={styles.projDataContainer}>
                     <img
                       src={triarLogo}
@@ -110,6 +118,34 @@ const ProjectsComp = () => {
                       {langState ?
                       ' Aplicación para una clínica kinesiológica que debe mostrar aspectos de ésta como instalaciones, especialidades, personal, etc., y funcionalidades como el manejo del sistema de turnos, registro de historias clínicas y chats privados entre profesionales y pacientes.' :
                       'Application for a kinesiology clinic that must show aspects of it such as facilities, specialties, staff, etc., and functionalities such as management of the shift system, registration of medical histories and private chats between professionals and patients.'}
+                    </p>
+                </div>
+            </li>
+            <li
+              key="1"
+              className={styles.project}
+            >
+                <h5 className={styles.projectTitle}>
+                    {langState ?
+                    'Empresa de perforación y voladura' :
+                    'Drilling and blasting company'}
+                </h5>
+                <h5 className={styles.projectTitle}>
+                    {langState ?
+                    '(En proceso)' :
+                    '(In progress)'}
+                </h5>
+                <div className={styles.projDataContainer}>
+                    <img
+                      src={exploserviceLogoBrand}
+                      alt="Triar Logo"
+                    />
+                    <p
+                      className={styles.projectDescription}
+                    >
+                      {langState ?
+                      ' Aplicación para una empresa que presta servicios de perforación y voladura, muestra aspectos de la empresa como instalaciones, servicios, equipos, algunos trabajos, y como funciones debe permitir registrar el registro de partes diarios de producción e ingreso y egreso de insumos en almacenes, elaborando informres sobre esos temas.' :
+                      'Application for a company that provides drilling and blasting services, shows aspects of the company such as facilities, services, equipment, some jobs, and as functions it must allow recording the record of daily production parts and entry and exit of supplies in warehouses, preparing inform about those topics.'}
                     </p>
                 </div>
             </li>
