@@ -65,6 +65,8 @@ const ProjectsComp = () => {
   
   const containerColor = `${styles.container} ${moonState.moon ? styles.containerWhite : ''}`;
 
+  const projectWhite = `${styles.project} ${moonState.moon ? styles.projectWhite : ''}`;
+
   const langState = useSelector(selectLangState).lang;
 
   return (
@@ -93,7 +95,7 @@ const ProjectsComp = () => {
         <ul className={styles.projectsContainer}>
             <li
               key="1"
-              className={styles.project}
+              className={projectWhite}
             >
               <img
                 src={triarLogo}
@@ -140,7 +142,7 @@ const ProjectsComp = () => {
             </li>
             <li
               key="2"
-              className={styles.project}
+              className={projectWhite}
             >
               <img
                 src={exploserviceLogoBrand}
@@ -186,7 +188,7 @@ const ProjectsComp = () => {
             </li> 
             <li
               key="3"
-              className={styles.project}
+              className={projectWhite}
             >
               <img
                 src={craftBeerLogo}
@@ -233,7 +235,7 @@ const ProjectsComp = () => {
             </li>
             <li
               key="4"
-              className={styles.project}
+              className={projectWhite}
             >
               <img
                 src={videogamesImage}
