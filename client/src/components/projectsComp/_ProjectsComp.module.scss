@@ -5,7 +5,6 @@
     box-sizing: border-box;
     width: 100%;
     min-height: 100%;
-    // padding: 0;
     // background-color: red;
     color: g.$white-color;
     @include g.create-flexbox(column, center);

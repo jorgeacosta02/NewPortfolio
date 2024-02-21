@@ -1,5 +1,36 @@
 @use '../../styles/globals' as g;
 
 .container{
-    background-color: black;
+    position: absolute;
+    .skillsContainer{
+        box-sizing: border-box;
+        position: relative;
+        top: calc(g.$mobile-NavBar-height + 40px);
+        width: 90%;
+        padding: 5vh 0;
+        color: inherit;
+        z-index: 30;
+        // background-color: blue;
+        @include g.create-flexbox(column, center);
+        gap: 6vw;
+        @include g.display-large{
+            align-items: center;
+            top: g.$desk-NavBar-height;
+            gap: 20px;
+        }
+        .skillLogo{
+            width: 25%;
+            min-width: 38px;
+            border-radius: 8px;
+            transition: 200ms ease;
+            &:hover{
+                box-shadow: 20px 20px 20px rgba(0,0,0,1);
+                transform:scale(1.2);
+                transform-origin: center;
+            }
+            @include g.display-large{
+                width: 10%;
+            }
+        }
+    }
 }
