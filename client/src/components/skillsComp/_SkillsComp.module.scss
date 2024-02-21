@@ -4,51 +4,73 @@
     position: absolute;
     box-sizing: border-box;
     width: 100vw;
-    // padding: 0 5vw;
+    color: g.$white-color;
     @include g.create-flexbox(row, center);
     align-items: center;
-    .skillsContainer{
-        box-sizing: border-box;
+    .dataContainer{
         position: relative;
-        top: calc(g.$mobile-NavBar-height + 10px);
+        top: g.$mobile-NavBar-height;
         width: 90%;
+        @include g.create-flexbox(column, space-between);
+        padding: 5vh 0;
+        gap: 8vh;
+        // background-color: red;
         color: inherit;
-        z-index: 30;
-        // background-color: blue;
-        @include g.create-flexbox(row, space-evenly);
-        flex-wrap: wrap;
-        gap: 6vw;
-        padding: 2vh;
-        border: 1px solid g.$grey-color;
-        border-radius: 3px;
-        box-shadow: 2px 2px 2px 2px  rgba(45, 45, 45, 0.9);
-        background-color: rgba(0,0,0,.45);
-       
-        @include g.display-large{
+        z-index: 50;
+
+        .comment{
             box-sizing: border-box;
-            margin-top: 7vh;
-            align-items: center;
-            top: g.$desk-NavBar-height;
-            gap: 20px;
-            padding: 7vh;
+            width: 90%;
+            color: inherit;
+            text-align: center;
         }
-        .skillLogo{
-            width: min(20vw, 20vh);
-            min-width: 50px;
-            max-width: 100px;
-            border-radius: 8px;
-            transition: 200ms ease;
-            &:hover{
-                box-shadow: 20px 20px 20px rgba(0,0,0,1);
-                transform:scale(1.2);
-                transform-origin: center;
-            }
+
+        .skillsContainer{
+            box-sizing: border-box;
+            position: relative;
+            // top: calc(g.$mobile-NavBar-height + 10px);
+            width: 100%;
+            color: inherit;
+            z-index: 30;
+            background-color: blue;
+            @include g.create-flexbox(row, space-evenly);
+            flex-wrap: wrap;
+            gap: 6vw;
+            padding: 2vh;
+            border: 1px solid g.$grey-color;
+            border-radius: 3px;
+            box-shadow: 2px 2px 2px 2px  rgba(45, 45, 45, 0.9);
+            background-color: rgba(0,0,0,.45);
+        
             @include g.display-large{
-                width: 10%;
+                box-sizing: border-box;
+                margin-top: 7vh;
+                align-items: center;
+                top: g.$desk-NavBar-height;
+                gap: 20px;
+                padding: 7vh;
+            }
+            .skillLogo{
+                width: min(20vw, 20vh);
+                min-width: 50px;
+                max-width: 100px;
+                border-radius: 8px;
+                transition: 200ms ease;
+                &:hover{
+                    box-shadow: 20px 20px 20px rgba(0,0,0,1);
+                    transform:scale(1.2);
+                    transform-origin: center;
+                }
+                @include g.display-large{
+                    width: 10%;
+                }
             }
         }
+        .skContWhite{
+            background-color: rgba(255,255,255,.7);
+        }
     }
-    .skContWhite{
-        background-color: rgba(255,255,255,.7);
-    }
+}
+.containerWhite{
+    color: g.$dark-black-color;
 }
