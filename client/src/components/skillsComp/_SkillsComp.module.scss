@@ -2,16 +2,19 @@
 
 .container{
     position: absolute;
+    width: 100vw;
+    padding: 0 5vw;
     .skillsContainer{
         box-sizing: border-box;
         position: relative;
-        top: calc(g.$mobile-NavBar-height + 40px);
+        top: calc(g.$mobile-NavBar-height + 10px);
         width: 90%;
-        padding: 5vh 0;
+        // padding: 5vh 0;
         color: inherit;
         z-index: 30;
         // background-color: blue;
-        @include g.create-flexbox(column, center);
+        @include g.create-flexbox(row, space-evenly);
+        flex-wrap: wrap;
         gap: 6vw;
         @include g.display-large{
             align-items: center;
@@ -21,6 +24,7 @@
         .skillLogo{
             width: 25%;
             min-width: 38px;
+            max-width: 100px;
             border-radius: 8px;
             transition: 200ms ease;
             &:hover{
