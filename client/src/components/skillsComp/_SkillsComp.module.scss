@@ -17,22 +17,27 @@
         // background-color: red;
         color: inherit;
         z-index: 50;
+        @include g.display-large{
+            top: g.$desk-NavBar-height;
+            // gap: 0;
+            justify-content: space-around;
+        }
 
         .comment{
             box-sizing: border-box;
             width: 90%;
             color: inherit;
             text-align: center;
+            // background-color: blue;
         }
 
         .skillsContainer{
             box-sizing: border-box;
             position: relative;
-            // top: calc(g.$mobile-NavBar-height + 10px);
             width: 100%;
             color: inherit;
             z-index: 30;
-            background-color: blue;
+            // background-color: blue;
             @include g.create-flexbox(row, space-evenly);
             flex-wrap: wrap;
             gap: 6vw;
@@ -44,9 +49,7 @@
         
             @include g.display-large{
                 box-sizing: border-box;
-                margin-top: 7vh;
                 align-items: center;
-                top: g.$desk-NavBar-height;
                 gap: 20px;
                 padding: 7vh;
             }
