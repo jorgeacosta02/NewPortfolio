@@ -125,16 +125,16 @@ const ProjectsComp = () => {
                   target="_blank"
                 >
                   {langState ?
-                  'Ir a la página':
-                  'Go to the page'}
+                  'Ir al sitio web':
+                  'Go to the web site'}
                 </a>
                 <NavLink
                   className={styles.link}
                   to="/triar-detail"
                 >
                   {langState ?
-                  'Más sobre la página':
-                  'More about the page'}
+                  'Más sobre el sitio':
+                  'More about the site'}
                 </NavLink>
               </div>
             </li>
@@ -149,8 +149,8 @@ const ProjectsComp = () => {
               <div className={styles.projectTitleContainer}>
                 <h5 className={styles.projectTitle}>
                     {langState ?
-                    'Empresa de perforación y voladura' :
-                    'Drilling and blasting company'}
+                    'Empresa de servicios de perforación y voladura' :
+                    'Drilling and blasting services company'}
                 </h5>
                 <h5 className={styles.projectTitle}>
                     {langState ?
@@ -171,16 +171,16 @@ const ProjectsComp = () => {
                   href="https://page-in-progress.netlify.app/"             target="_blank"
                 >
                   {langState ?
-                  'Ir a la página':
-                  'Go to the page'}
+                  'Ir al sitio web':
+                  'Go to the web site'}
                 </a>
                 <NavLink
                   className={styles.link}
                   to="/exploservice-detail"
                 >
                   {langState ?
-                  'Más sobre la página':
-                  'More about the page'}
+                  'Más sobre el sitio':
+                  'More about the site'}
                 </NavLink>
               </div>
             </li> 
@@ -218,16 +218,16 @@ const ProjectsComp = () => {
                   target="_blank"
                 >
                   {langState ?
-                  'Ir a la página':
-                  'Go to the page'}
+                  'Ir al sitio web':
+                  'Go to the web site'}
                 </a>
                 <NavLink
                   className={styles.link}
                   to="/craftbeer-detail"
                 >
                   {langState ?
-                  'Más sobre la página':
-                  'More about the page'}
+                  'Más sobre el sitio':
+                  'More about the site'}
                 </NavLink>
               </div>
             </li>
@@ -264,16 +264,16 @@ const ProjectsComp = () => {
                   href="https://videogames-pi.netlify.app/"             target="_blank"
                 >
                   {langState ?
-                  'Ir a la página':
-                  'Go to the page'}
+                  'Ir al sitio web':
+                  'Go to the web site'}
                 </a>
                 <NavLink
                   className={styles.link}
                   to="/videogames-detail"
                 >
                   {langState ?
-                  'Más sobre la página':
-                  'More about the page'}
+                  'Más sobre el sitio':
+                  'More about the site'}
                 </NavLink>
               </div>
             </li>

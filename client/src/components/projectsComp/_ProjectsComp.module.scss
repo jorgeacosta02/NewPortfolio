@@ -103,7 +103,7 @@
             }
             img{
                 // background-color: red;
-                width: min(90%,90%);
+                width: min(70%,70%);
                 max-width: 260px;
                 @include g.display-large{
                     max-width: 100px;
@@ -123,7 +123,8 @@
                     display:inline-block;
                     text-align: left;
                     width: 50%;
-                    max-width: 450px;
+                    max-width: 500px;
+                    line-height: 1.3;
                 }
             }
             .linksContainer{
