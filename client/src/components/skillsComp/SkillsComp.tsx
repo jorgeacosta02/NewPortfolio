@@ -1,7 +1,7 @@
 import styles from './_SkillsComp.module.scss'
 import { useSelector } from 'react-redux'
 import { selectMoonState } from '../../redux/slices/moonSlice'
-import { selectLangState } from '../../redux/slices/langSlice'
+// import { selectLangState } from '../../redux/slices/langSlice'
 import html from '../../assets/images/skills/HTML.png'
 import css from '../../assets/images/skills/CSS.png'
 import sass from '../../assets/images/skills/sass03.png'
@@ -9,8 +9,7 @@ import javascript from '../../assets/images/skills/javascript.png'
 import typescript from '../../assets/images/skills/Typescript.svg.png'
 import SliderComp from '../sliderComp/SliderComp'
 import react from '../../assets/images/skills/React js.png'
-import redux from '../../assets/images/skills/HTML.png'
-import reduxToolkit from '../../assets/images/skills/HTML.png'
+import redux from '../../assets/images/skills/reduxToolkit.png'
 import node from '../../assets/images/skills/node-4.jpg'
 import express from '../../assets/images/skills/Explress1.png'
 import sequelize from '../../assets/images/skills/Sequelize.png'
@@ -26,15 +25,15 @@ const SkillsComp = () => {
 
   const containerColor = `${styles.container} ${moonState.moon ? styles.containerWhite : ''}`;
 
-  const projectWhite = `${styles.project} ${moonState.moon ? styles.projectWhite : ''}`;
+  const skillsWhite = `${styles.skillsContainer} ${moonState.moon ? styles.skContWhite : ''}`;
 
-  const langState = useSelector(selectLangState).lang;
+  // const langState = useSelector(selectLangState).lang;
 
 
   return (
     <div className={containerColor}>
       <SliderComp/>
-      <div className={styles.skillsContainer}>
+      <div className={skillsWhite}>
         <img
           src={html}
           alt="HTML Logo"
@@ -70,11 +69,11 @@ const SkillsComp = () => {
           alt="Redux Logo"
           className={styles.skillLogo}
         />
-        <img
+        {/* <img
           src={reduxToolkit}
           alt="Redux Toolkit Logo"
           className={styles.skillLogo}
-        />
+        /> */}
         <img
           src={node}
           alt="Node Logo"
