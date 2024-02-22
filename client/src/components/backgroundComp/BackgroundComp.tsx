@@ -72,52 +72,6 @@ const BackgroundComp = () => {
               </div> */}
             </li>
             <li
-              key="2"
-              className={backgroundWhite}
-            >
-              <img
-                src={unsj}
-                alt="UNSJ image"
-              />
-              <div className={styles.backgroundTitleContainer}>
-                <h5 className={styles.backgroundTitle}>
-                    {langState ?
-                    'Universidad Nacional de San Juan' :
-                    'National University of San Juan'}
-                </h5>
-                {/* <h5 className={styles.backgroundTitle}>
-                    {langState ?
-                    '(En proceso)' :
-                    '(In progress)'}
-                </h5> */}
-              </div>
-              <p
-                className={styles.backgroundDescription}
-              >
-                {langState ?
-                'Cursé la carrera de Licenciatura en Administración de empresas, carrera universitaria de cinco años de duración, llegando a aprobar las materias de tercer año.' :
-                "I completed a Bachelor's degree in Business Administration, a five-year university degree, passing the third year subjects."}
-              </p>
-              {/* <div className={styles.linksContainer}>
-                <a
-                  className={styles.link}
-                  href="https://page-in-progress.netlify.app/"             target="_blank"
-                >
-                  {langState ?
-                  'Ir al sitio web':
-                  'Go to the web site'}
-                </a>
-                <NavLink
-                  className={styles.link}
-                  to="/exploservice-detail"
-                >
-                  {langState ?
-                  'Más sobre el sitio':
-                  'More about the site'}
-                </NavLink>
-              </div> */}
-            </li> 
-            <li
               key="3"
               className={backgroundWhite}
             >
@@ -164,6 +118,52 @@ const BackgroundComp = () => {
                 </NavLink>
               </div> */}
             </li>
+            <li
+              key="2"
+              className={backgroundWhite}
+            >
+              <img
+                src={unsj}
+                alt="UNSJ image"
+              />
+              <div className={styles.backgroundTitleContainer}>
+                <h5 className={styles.backgroundTitle}>
+                    {langState ?
+                    'Universidad Nacional de San Juan' :
+                    'National University of San Juan'}
+                </h5>
+                {/* <h5 className={styles.backgroundTitle}>
+                    {langState ?
+                    '(En proceso)' :
+                    '(In progress)'}
+                </h5> */}
+              </div>
+              <p
+                className={styles.backgroundDescription}
+              >
+                {langState ?
+                'Cursé la carrera de Licenciatura en Administración de empresas, carrera universitaria de cinco años de duración, llegando a aprobar las materias de tercer año.' :
+                "I completed a Bachelor's degree in Business Administration, a five-year university degree, passing the third year subjects."}
+              </p>
+              {/* <div className={styles.linksContainer}>
+                <a
+                  className={styles.link}
+                  href="https://page-in-progress.netlify.app/"             target="_blank"
+                >
+                  {langState ?
+                  'Ir al sitio web':
+                  'Go to the web site'}
+                </a>
+                <NavLink
+                  className={styles.link}
+                  to="/exploservice-detail"
+                >
+                  {langState ?
+                  'Más sobre el sitio':
+                  'More about the site'}
+                </NavLink>
+              </div> */}
+            </li> 
         </ul>
     </div>
   )

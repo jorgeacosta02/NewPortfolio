@@ -22,7 +22,7 @@
     .backgroundContainer{ //ul
         box-sizing: border-box;
         position: relative;
-        top: calc(g.$mobile-NavBar-height + 40px);
+        top: g.$mobile-NavBar-height;
         width: 90%;
         padding: 5vh 0;
         color: inherit;
@@ -32,7 +32,7 @@
         gap: 6vw;
         @include g.display-large{
             align-items: center;
-            top: g.$desk-NavBar-height;
+            top: 70px;
             gap: 20px;
         }
         // background-color: blue;
@@ -43,7 +43,7 @@
             margin-bottom: 4vh;
             @include g.create-flexbox(column, space-between);
             gap: 5vh;
-            align-items: center;
+            // align-items: center;
             text-align: center;
             border: 1px solid g.$grey-color;
             padding: 5vh 3vw;
