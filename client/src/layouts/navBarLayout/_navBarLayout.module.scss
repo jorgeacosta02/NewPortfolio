@@ -12,7 +12,7 @@
     padding: 0 3vw;
     margin: 0;
     @include g.create-flexbox(row, space-between);
-    z-index: 100;
+    z-index: 1000;
     @include g.display-large{
         width: 100%;
         height: g.$desk-NavBar-height;
