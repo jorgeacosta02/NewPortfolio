@@ -5,25 +5,33 @@
     max-width: 80px;
     @include g.create-flexbox(row, space-between);
     // background-color: green;
-    .option{
-        box-sizing: border-box;
-        font-size: 35px;
-        width: 20px;
-        height: 20px;
-        fill: g.$white-color;
-        z-index: 1000;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-    }
-    .optionWhite{
-        fill: g.$dark-black-color;
-    }
-    .option:hover{
-        background-color: rgba(157, 157, 157, .1);
-        transform:scale(1.1);
-        fill: g.$main-color;
-        @include g.display-large{
-            background-color: transparent;
+    .optionContainer{
+        @include g.create-flexbox(row, space-between);
+        width: 100px;
+
+        .option{
+            box-sizing: border-box;
+            font-size: 35px;
+            width: 20px;
+            height: 20px;
+            fill: g.$white-color;
+            z-index: 1000;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .optionWhite{
+            fill: g.$dark-black-color;
+        }
+        .option:hover{
+            background-color: rgba(157, 157, 157, .1);
+            transform:scale(1.1);
+            fill: g.$main-color;
+            @include g.display-large{
+                background-color: transparent;
+            }
+        }
+        .lang{
+            color: inherit;
         }
     }
 }
