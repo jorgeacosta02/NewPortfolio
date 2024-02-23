@@ -1,7 +1,8 @@
 import styles from './_NavBarOptionsComp.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectMoonState, toggleMoon } from '../../redux/slices/moonSlice';
-import { selectLangState, toggleLang } from '../../redux/slices/langSlice';
+import { selectLangState, setLang } from '../../redux/slices/langSlice';
+import { setInLocalStorage } from '../localStorageComp/LocalStorageComp';
 
 
 const NavBarOptionsComp = () => {
@@ -11,6 +12,7 @@ const NavBarOptionsComp = () => {
   const moonState = useSelector(selectMoonState).moon
 
   const moonHandler = () => {
+    setInLocalStorage('mode','dark');
     return dispatch(toggleMoon())
   }
 
@@ -18,7 +20,7 @@ const NavBarOptionsComp = () => {
   console.log(langState.lang)
 
   const langHandler = () => {
-    return dispatch(toggleLang())
+    return dispatch(setLang('es'))
   }
 
   const optionColor = `${styles.option} ${moonState ? styles.optionWhite : ''}`
