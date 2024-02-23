@@ -33,7 +33,7 @@ const BackgroundComp = () => {
               />
               <div className={styles.backgroundTitleContainer}>
                 <h5 className={styles.backgroundTitle}>
-                    {langState ?
+                    {langState === 'es' ?
                     'Bootcamp SoyHenry' :
                     'SoyHenry Bootcamp'}
                 </h5>
@@ -41,7 +41,7 @@ const BackgroundComp = () => {
               <p
                 className={styles.backgroundDescription}
               >
-                {langState ?
+                {langState === 'es' ?
                 ' Bootcamp de programación web con una carga horaria de +800 horas de teoría y práctica, en cual se realiza una aplicación de forma individual y otra de forma grupal con tecnología scrum. El título obtenido es DESARROLLADOR WEB FULLSTACK.' :
                 'Web programming bootcamp with a workload of +800 hours of theory and practice, in which an application is carried out individually and another in a group with scrum technology. The title obtained is FULLSTACK WEB DEVELOPER.'}
               </p>
@@ -51,7 +51,7 @@ const BackgroundComp = () => {
                   href="https://certificates.soyhenry.com/new-cert?id=386a42006838c15daf32c8515ccff37ecfa0260ccc72d6bf5e32b0772158cc4b"
                   target="_blank"
                 >
-                  {langState ?
+                  {langState === 'es' ?
                   'Ir al certificado':
                   'Go to the certificate'}
                 </a>
@@ -67,7 +67,7 @@ const BackgroundComp = () => {
               />
               <div className={styles.backgroundTitleContainer}>
                 <h5 className={styles.backgroundTitle}>
-                    {langState ?
+                    {langState === 'es' ?
                     'Test de Inglés de reconocimiento internacional' :
                     'Internationally recognized English test'}
                 </h5>
@@ -75,7 +75,7 @@ const BackgroundComp = () => {
               <p
                 className={styles.backgroundDescription}
               >
-                {langState ?
+                {langState === 'es' ?
                 'Realicé el test de inglés en Efset obteniendo una calificación de 48/100 en la sección "listening" quedando ubicado en la categoría B1, y 67/100 en la sección "reading" quedando ubicado en la categoría C1, lo que me da un promedio de categoría B2.' :
                 'I took the English test at Efset obtaining a score of 48/100 in the "listening" section, placing me in category B1, and 67/100 in the "reading" section, placing me in category C1, which gives me an average of category B2.'}
               </p>
@@ -85,7 +85,7 @@ const BackgroundComp = () => {
                   href="https://cert.efset.org/nuF14b"
                   target="_blank"
                 >
-                  {langState ?
+                  {langState === 'es' ?
                   'Ir al certificado':
                   'Go to the certificate'}
                 </a>
@@ -101,7 +101,7 @@ const BackgroundComp = () => {
               />
               <div className={styles.backgroundTitleContainer}>
                 <h5 className={styles.backgroundTitle}>
-                    {langState ?
+                    {langState === 'es' ?
                     'Universidad Nacional de San Juan' :
                     'National University of San Juan'}
                 </h5>
@@ -109,7 +109,7 @@ const BackgroundComp = () => {
               <p
                 className={styles.backgroundDescription}
               >
-                {langState ?
+                {langState === 'es' ?
                 'Cursé la carrera de Licenciatura en Administración de empresas, carrera universitaria de cinco años de duración, llegando a aprobar las materias de tercer año.' :
                 "I completed a Bachelor's degree in Business Administration, a five-year university degree, passing the third year subjects."}
               </p>

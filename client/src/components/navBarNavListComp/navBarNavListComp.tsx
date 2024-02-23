@@ -51,7 +51,7 @@ const NavBarNavListComp = () => {
           to="/"
           className={navLinkColor} 
         >
-          {langState ? 'Inicio' : 'Home'}
+          {langState === 'es' ? 'Inicio' : 'Home'}
         </NavLink>
       </li>
       <li 
@@ -61,7 +61,7 @@ const NavBarNavListComp = () => {
           to="/about" 
           className={navLinkColor} 
         >
-          {langState ? 'Sobre mí' : 'About me'}
+          {langState === 'es' ? 'Sobre mí' : 'About me'}
         </NavLink>
       </li>
       <li 
@@ -71,7 +71,7 @@ const NavBarNavListComp = () => {
           to="/projects" 
           className={navLinkColor} 
         >
-          {langState ? 'Proyectos' : 'Projects'}
+          {langState === 'es' ? 'Proyectos' : 'Projects'}
         </NavLink>
       </li>
       <li 
@@ -81,7 +81,7 @@ const NavBarNavListComp = () => {
           to="/skills" 
           className={navLinkColor} 
         >
-          {langState ? 'Tecnologías' : 'Skills'}
+          {langState === 'es' ? 'Tecnologías' : 'Skills'}
         </NavLink>
       </li>
       <li 
@@ -91,7 +91,7 @@ const NavBarNavListComp = () => {
           to="/background" 
           className={navLinkColor} 
         >
-          {langState ? 'Formación' : 'Background'}
+          {langState === 'es' ? 'Formación' : 'Background'}
         </NavLink>
       </li>
       <li 
@@ -101,7 +101,7 @@ const NavBarNavListComp = () => {
           to="/contact" 
           className={navLinkColor} 
         >
-          {langState ? 'Contacto' : 'Contact'}
+          {langState === 'es' ? 'Contacto' : 'Contact'}
         </NavLink>
       </li>
     </ul>

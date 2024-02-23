@@ -35,7 +35,7 @@ const SkillsComp = () => {
       <SliderComp/>
       <div className={styles.dataContainer}>
         <h5 className={styles.comment}>
-          {langState ?
+          {langState === 'es' ?
           'Estas son las tecnologías que utilizo actualmente en mis proyectos, con el tiempo seguiré incorporando otras más y totalmente dispuesto a involucrarme con cualquier tecnología que se necesite para encarar el proyecto que surja.':
           'These are the technologies that I currently use in my projects. Over time I will continue to incorporate more and I am totally willing to get involved with any technology that is needed to face the project that arises.'}
         </h5>

@@ -11,7 +11,7 @@ export const setInLocalStorage = (name:string, data: any) => {
     localStorage.setItem(name, JSON.stringify(info))
 }
 
-export const getInLocalStorage = (name:string) => {
+export const getFromLocalStorage = (name:string) => {
     const jsonDataFromLocalStorage: any = localStorage.getItem(name);
     console.log('jsonUserFromLocalStorage: ', jsonDataFromLocalStorage);
     const infoFLS = JSON.parse(jsonDataFromLocalStorage);

@@ -20,7 +20,7 @@ const HomeComp = () => {
         <div className={styles.dataContainer}>
           <div className={dataColor}>
             <h4 className={styles.hi}>
-            {langState ? "Hola Soy" : "Hi I'm"}
+            {langState === 'es' ? "Hola Soy" : "Hi I'm"}
             </h4>
             <h2
               className={styles.name}
@@ -30,12 +30,12 @@ const HomeComp = () => {
             <h5
               className={styles.role}
             >
-              {langState ? 'Programador Web Full Stack' : 'Full Stack Web Developer'}
+              {langState === 'es' ? 'Programador Web Full Stack' : 'Full Stack Web Developer'}
             </h5>
             <p
               className={styles.text}
             >
-              {langState ? 
+              {langState === 'es' ? 
                 'Este es mi portafolio web, el cual muestra mis proyectos, habilidades y formación académica.' 
                 : 'This is my web portfolio, which shows my projects, skills and academic training.'}
             </p>
@@ -90,7 +90,7 @@ const HomeComp = () => {
                 href="https://github.com/jorgeacosta02/Resume/raw/main/Jorge Acosta Resume.pdf" download="Mi_CV.pdf" target="_blank">
                 <h6
                   className={styles.dwlResume}
-                  >{langState ? 'Descargar CV' : 'Download Resume'}</h6>
+                  >{langState === 'es' ? 'Descargar CV' : 'Download Resume'}</h6>
               </a>
           </div>
             <img

@@ -17,7 +17,7 @@ const NavBarLogoComp = () => {
     return (
         <div className={styles.container}>
             <h3 className={`${styles.logo} ${animationComplete && styles.animationComplete}`} onAnimationEnd={onAnimationEnd}>
-            {langState ? 'Portafolio' : 'Portfolio'}
+            {langState === 'es' ? 'Portafolio' : 'Portfolio'}
             </h3>
         </div>
     );
