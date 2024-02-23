@@ -2,24 +2,24 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 interface ILang{
-    lang: boolean
+    lang: string
 }
 
 const initialState: ILang = {
-    lang: false
+    lang: 'en'
 }
 
 export const langSlice = createSlice({
     name: 'lang',
     initialState,
     reducers: {
-        toggleLang: (state) => {
-            state.lang = !state.lang
+        setLang: (state, action) => {
+            state.lang = action.payload
         }
     }
 })
 
-export const { toggleLang } = langSlice.actions;
+export const { setLang } = langSlice.actions;
 
 export const selectLangState = ( state:any ) => state.lang
 

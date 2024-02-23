@@ -1,39 +1,29 @@
-// import { IUserDataFromDB } from "../../Interfaces/userInterfaces"
-// import { IWorkerDataFromDB } from "../../Interfaces/workerInterfaces"
 
-export const localStorageSetUserData = (name:string, data: any) => {
+
+export const setInLocalStorage = (name:string, data: any) => {
 
     console.log('data en localStorageSetUserData', data)
 
-
-    const title = {
-        id: data.id,
-        firstName : data.firstName,
-        lastName : data.lastName,
-        dni: data.dni,
-        email: data.email,
-        active : data.active,
-        role : data.role,
+    const info = {
+        mode: data.mode,
+        lang : data.lang,
     }
 
-   
-
     console.log('data en localStorageSetUserData', data)
    
-    localStorage.setItem(name, JSON.stringify(title))
+    localStorage.setItem(name, JSON.stringify(info))
 }
 
-
-export const getDataFromLocalStorage = (name:string) => {
-    const jsonUserFromLocalStorage: any = localStorage.getItem(name);
-    console.log('jsonUserFromLocalStorage: ', jsonUserFromLocalStorage);
-    const userFLS = JSON.parse(jsonUserFromLocalStorage);
-    console.log('userFLS: ', userFLS);
-    console.log('userFLS.user :', userFLS?.user );
-    console.log('userFLS.user.role: ', userFLS?.user?.role);
-    return userFLS
+export const getInLocalStorage = (name:string) => {
+    const jsonDataFromLocalStorage: any = localStorage.getItem(name);
+    console.log('jsonUserFromLocalStorage: ', jsonDataFromLocalStorage);
+    const infoFLS = JSON.parse(jsonDataFromLocalStorage);
+    console.log('infoFLS: ', infoFLS);
+    // console.log('infoFLS :', infoFLS? );
+    // console.log('infoFLS.user.role: ', infoFLS?.user?.role);
+    return infoFLS
 }
 
-export const cleanDataInLocalStorage = (name:string) => {
+export const cleanInLocalStorage = (name:string) => {
     localStorage.removeItem(name);
 }
