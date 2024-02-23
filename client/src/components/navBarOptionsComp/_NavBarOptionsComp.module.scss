@@ -4,10 +4,11 @@
     width: 30%;
     max-width: 80px;
     @include g.create-flexbox(row, space-between);
+    color: g.$white-color;
     // background-color: green;
     .optionContainer{
         @include g.create-flexbox(row, space-between);
-        width: 100px;
+        gap: 4px;
 
         .option{
             box-sizing: border-box;
@@ -34,6 +35,9 @@
             color: inherit;
         }
     }
+}
+.containerWhite{
+    color: g.$dark-black-color;
 }
 
 
