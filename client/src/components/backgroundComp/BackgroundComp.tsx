@@ -1,10 +1,8 @@
 import styles from './_BackgroundComp.module.scss'
 import SliderComp from '../sliderComp/SliderComp'
 import { useSelector } from 'react-redux'
-import { NavLink } from 'react-router-dom'
 import { selectMoonState } from '../../redux/slices/moonSlice'
 import { selectLangState } from '../../redux/slices/langSlice'
-// import { NavLink } from 'react-router-dom'
 import soyHenry from '../../assets/images/background/SoyHenry.jpg'
 import unsj from '../../assets/images/background/UNSJ.jpg'
 import efset from '../../assets/images/background/Efset.jpg'
@@ -39,11 +37,6 @@ const BackgroundComp = () => {
                     'Bootcamp SoyHenry' :
                     'Bootcamp SoyHenry'}
                 </h5>
-                {/* <h5 className={styles.backgroundTitle}>
-                    {langState ?
-                    '(En proceso)' :
-                    '(In progress)'}
-                </h5> */}
               </div>
               <p
                 className={styles.backgroundDescription}
@@ -62,14 +55,6 @@ const BackgroundComp = () => {
                   'Ir al certificado':
                   'Go to the certificate'}
                 </a>
-                {/* <NavLink
-                  className={styles.link}
-                  to="/triar-detail"
-                >
-                  {langState ?
-                  'Más sobre el sitio':
-                  'More about the site'}
-                </NavLink> */}
               </div>
             </li>
             <li
@@ -86,11 +71,6 @@ const BackgroundComp = () => {
                     'Test de Inglés de reconocimiento internacional' :
                     'Internationally recognized English test'}
                 </h5>
-                {/* <h5 className={styles.backgroundTitle}>
-                    {langState ?
-                    '(Aplicación académica de equipo)' :
-                    '(Academic team application)'}
-                </h5> */}
               </div>
               <p
                 className={styles.backgroundDescription}
@@ -109,14 +89,6 @@ const BackgroundComp = () => {
                   'Ir al certificado':
                   'Go to the certificate'}
                 </a>
-                {/* <NavLink
-                  className={styles.link}
-                  to="/triar-detail"
-                >
-                  {langState ?
-                  'Más sobre el sitio':
-                  'More about the site'}
-                </NavLink> */}
               </div>
             </li>
             <li
@@ -133,11 +105,6 @@ const BackgroundComp = () => {
                     'Universidad Nacional de San Juan' :
                     'National University of San Juan'}
                 </h5>
-                {/* <h5 className={styles.backgroundTitle}>
-                    {langState ?
-                    '(En proceso)' :
-                    '(In progress)'}
-                </h5> */}
               </div>
               <p
                 className={styles.backgroundDescription}
@@ -146,24 +113,6 @@ const BackgroundComp = () => {
                 'Cursé la carrera de Licenciatura en Administración de empresas, carrera universitaria de cinco años de duración, llegando a aprobar las materias de tercer año.' :
                 "I completed a Bachelor's degree in Business Administration, a five-year university degree, passing the third year subjects."}
               </p>
-              {/* <div className={styles.linksContainer}>
-                <a
-                  className={styles.link}
-                  href="https://page-in-progress.netlify.app/"             target="_blank"
-                >
-                  {langState ?
-                  'Ir al sitio web':
-                  'Go to the web site'}
-                </a>
-                <NavLink
-                  className={styles.link}
-                  to="/exploservice-detail"
-                >
-                  {langState ?
-                  'Más sobre el sitio':
-                  'More about the site'}
-                </NavLink>
-              </div> */}
             </li> 
         </ul>
     </div>
