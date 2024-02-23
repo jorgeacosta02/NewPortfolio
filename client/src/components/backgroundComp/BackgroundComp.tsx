@@ -1,6 +1,7 @@
 import styles from './_BackgroundComp.module.scss'
 import SliderComp from '../sliderComp/SliderComp'
 import { useSelector } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 import { selectMoonState } from '../../redux/slices/moonSlice'
 import { selectLangState } from '../../redux/slices/langSlice'
 // import { NavLink } from 'react-router-dom'
@@ -51,25 +52,25 @@ const BackgroundComp = () => {
                 ' Bootcamp de programación web con una carga horaria de +800 horas de teoría y práctica, en cual se realiza una aplicación de forma individual y otra de forma grupal con tecnología scrum. El título obtenido es DESARROLLADOR WEB FULLSTACK.' :
                 'Web programming bootcamp with a workload of +800 hours of theory and practice, in which an application is carried out individually and another in a group with scrum technology. The title obtained is FULLSTACK WEB DEVELOPER.'}
               </p>
-              {/* <div className={styles.linksContainer}>
+              <div className={styles.linksContainer}>
                 <a
                   className={styles.link}
-                  href="#"
+                  href="https://certificates.soyhenry.com/new-cert?id=386a42006838c15daf32c8515ccff37ecfa0260ccc72d6bf5e32b0772158cc4b"
                   target="_blank"
                 >
                   {langState ?
-                  'Ir al sitio web':
-                  'Go to the web site'}
+                  'Ir al certificado':
+                  'Go to the certificate'}
                 </a>
-                <NavLink
+                {/* <NavLink
                   className={styles.link}
                   to="/triar-detail"
                 >
                   {langState ?
                   'Más sobre el sitio':
                   'More about the site'}
-                </NavLink>
-              </div> */}
+                </NavLink> */}
+              </div>
             </li>
             <li
               key="3"
@@ -98,25 +99,25 @@ const BackgroundComp = () => {
                 'Realicé el test de inglés en Efset obteniendo una calificación de 48/100 en la sección "listening" quedando ubicado en la categoría B1, y 67/100 en la sección "reading" quedando ubicado en la categoría C1, lo que me da un promedio de categoría B2.' :
                 'I took the English test at Efset obtaining a score of 48/100 in the "listening" section, placing me in category B1, and 67/100 in the "reading" section, placing me in category C1, which gives me an average of category B2.'}
               </p>
-              {/* <div className={styles.linksContainer}>
+              <div className={styles.linksContainer}>
                 <a
                   className={styles.link}
-                  href="https://craftbeershop.vercel.app/"
+                  href="https://cert.efset.org/nuF14b"
                   target="_blank"
                 >
                   {langState ?
-                  'Ir al sitio web':
-                  'Go to the web site'}
+                  'Ir al certificado':
+                  'Go to the certificate'}
                 </a>
-                <NavLink
+                {/* <NavLink
                   className={styles.link}
-                  to="/craftbeer-detail"
+                  to="/triar-detail"
                 >
                   {langState ?
                   'Más sobre el sitio':
                   'More about the site'}
-                </NavLink>
-              </div> */}
+                </NavLink> */}
+              </div>
             </li>
             <li
               key="2"

@@ -1,7 +1,7 @@
 @use '../../styles/globals' as g;
 
 .container{
-    width: 30%;
+    width: 40%;
     max-width: 80px;
     @include g.create-flexbox(row, space-between);
     color: g.$white-color;
