@@ -35,7 +35,7 @@ const BackgroundComp = () => {
                 <h5 className={styles.backgroundTitle}>
                     {langState ?
                     'Bootcamp SoyHenry' :
-                    'Bootcamp SoyHenry'}
+                    'SoyHenry Bootcamp'}
                 </h5>
               </div>
               <p
