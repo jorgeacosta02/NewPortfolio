@@ -4,10 +4,7 @@ export const setInLocalStorage = (name:string, data: any) => {
 
     console.log('data en localStorageSetUserData', data)
 
-    const info = {
-        mode: data.mode,
-        lang : data.lang,
-    }
+    const info = data
 
     console.log('data en localStorageSetUserData', data)
    

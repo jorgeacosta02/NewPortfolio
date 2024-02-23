@@ -4,15 +4,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectMenuState, falseMenu } from "../../redux/slices/menuSlice";
 import { selectMoonState } from "../../redux/slices/moonSlice";
 import { selectLangState } from "../../redux/slices/langSlice";
-import { getDataFromLocalStorage } from "../localStorageComp/LocalStorageComp";
+// import { getDataFromLocalStorage } from "../localStorageComp/LocalStorageComp";
 
 
 const NavBarNavListComp = () => {
 
-  const accessLogin = getDataFromLocalStorage('accessLogin');
-  console.log('user in navBarNavList:', accessLogin);
-  const userId = accessLogin?.user?.id;
-  console.log('userId en NavBarNavListComp: ', userId);
+  // const accessLogin = getDataFromLocalStorage('accessLogin');
+  // console.log('user in navBarNavList:', accessLogin);
+  // const userId = accessLogin?.user?.id;
+  // console.log('userId en NavBarNavListComp: ', userId);
   // const userAuth = useSelector(selectUserAuth); 
   // const userAuthId = userAuth?.data?.user?.id;
   // console.log(userAuth)
