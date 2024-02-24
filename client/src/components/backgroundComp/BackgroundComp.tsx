@@ -76,8 +76,8 @@ const BackgroundComp = () => {
                 className={styles.backgroundDescription}
               >
                 {langState === 'es' ?
-                'Realicé el test de inglés en Efset obteniendo una calificación de 48/100 en la sección "listening" quedando ubicado en la categoría B1, y 67/100 en la sección "reading" quedando ubicado en la categoría C1, lo que me da un promedio de categoría B2.' :
-                'I took the English test at Efset obtaining a score of 48/100 in the "listening" section, placing me in category B1, and 67/100 in the "reading" section, placing me in category C1, which gives me an average of category B2.'}
+                'Realicé el test de inglés en Efset obteniendo una calificación promedio de 58/100 en categoría B2, con 48/100 en la sección "listening" quedando ubicado en la categoría B1, y 67/100 en la sección "reading" quedando ubicado en la categoría C1.' :
+                'I took the English test at Efset obtaining an average score of 58/100 in category B2, with 48/100 in the "listening" section being placed in category B1, and 67/100 in the "reading" section being placed in category C1.'}
               </p>
               <div className={styles.linksContainer}>
                 <a
