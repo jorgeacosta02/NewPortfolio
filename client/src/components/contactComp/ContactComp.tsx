@@ -6,13 +6,16 @@ import { Link } from 'react-router-dom';
 import { IContactData } from '../../interfaces/ContactInterfaces';
 import { ContactSchema } from '../../validations/ContactValidations';
 import { selectLangState } from '../../redux/slices/langSlice';
+import { selectMoonState } from '../../redux/slices/moonSlice';
 import { useSelector } from 'react-redux';
 import SliderComp from '../sliderComp/SliderComp';
+
 
 const UserRegisterComp = () => {
 
 
     const langState = useSelector(selectLangState).lang;
+    const moonState = useSelector(selectMoonState).moon;
 
   const {
     register,
@@ -42,24 +45,26 @@ const UserRegisterComp = () => {
     }
   };
 
+  const containerColor = `${styles.container} ${moonState ? styles.containerWhite : ''}`;
+
   console.log(errors);
 
   return (
-    <div className={styles.container}>
+    <div className={containerColor}>
       <SliderComp/>
       <div className={styles.formContainer}>
         <form
           onSubmit={handleSubmit(onSubmit)}
         >
-          <h1 className={styles.title}>
+          <h3 className={styles.formTitle}>
             {langState ? 'Envíame un mensaje' : 'Send me a message'}
-          </h1>
+          </h3>
           <div className={styles.inputBlock}>
             <label htmlFor='name'>
                 {langState ? 'Nombre' : 'Name'}
             </label>
             <input {...register('name')}
-                placeholder='Ingrese nombre...'
+                placeholder={langState ? 'Ingrese nombre...' :  'Enter name...'}
             />
             {errors.name && <span>{errors.name.message}</span>}
           </div>
