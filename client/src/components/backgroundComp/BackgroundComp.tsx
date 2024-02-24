@@ -111,7 +111,7 @@ const BackgroundComp = () => {
               >
                 {langState === 'es' ?
                 'Cursé la carrera de Licenciatura en Administración de empresas, carrera universitaria de cinco años de duración, llegando a aprobar las materias de tercer año.' :
-                "I completed a Bachelor's degree in Business Administration, a five-year university degree, passing the third year subjects."}
+                "I studied a Bachelor's degree in Business Administration, a five-year university degree, passing the third year subjects."}
               </p>
             </li> 
         </ul>
