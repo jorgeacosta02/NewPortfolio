@@ -38,6 +38,10 @@
             background-color: inherit;
             color: inherit;
             font-size: g.$mobile-h6-font-size;
+            @include g.display-large{
+                font-size: g.$desk-h6-font-size;
+                width: 50px;
+            }
         }
     }
 }
