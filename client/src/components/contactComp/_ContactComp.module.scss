@@ -55,6 +55,14 @@
         z-index: 100;
         top: g.$mobile-NavBar-height;
         color: inherit;
+        @include g.create-flexbox(column, space-between);
+        gap: 3vh;
+        .formTitle{
+            text-align: center;
+        }
+        .form{
+            width: 90%;
+        }
     }
 }
 .containerWhite{

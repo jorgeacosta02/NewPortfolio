@@ -13,9 +13,10 @@ import SliderComp from '../sliderComp/SliderComp';
 
 const UserRegisterComp = () => {
 
+  const langState = useSelector(selectLangState).lang;
+  const moonState = useSelector(selectMoonState).moon;
 
-    const langState = useSelector(selectLangState).lang;
-    const moonState = useSelector(selectMoonState).moon;
+  console.log(langState)
 
   const {
     register,
@@ -53,24 +54,25 @@ const UserRegisterComp = () => {
     <div className={containerColor}>
       <SliderComp/>
       <div className={styles.formContainer}>
+        <h3 className={styles.formTitle}>
+          {langState === 'es' ? 'Envíame un mensaje' : 'Send me a message'}
+        </h3>
         <form
+          className={styles.form}
           onSubmit={handleSubmit(onSubmit)}
         >
-          <h3 className={styles.formTitle}>
-            {langState ? 'Envíame un mensaje' : 'Send me a message'}
-          </h3>
           <div className={styles.inputBlock}>
             <label htmlFor='name'>
-                {langState ? 'Nombre' : 'Name'}
+                {langState === 'es' ? 'Nombre' : 'Name'}
             </label>
             <input {...register('name')}
-                placeholder={langState ? 'Ingrese nombre...' :  'Enter name...'}
+                placeholder={langState === 'es' ? 'Ingrese nombre...' :  'Enter name...'}
             />
             {errors.name && <span>{errors.name.message}</span>}
           </div>
           <div className={styles.inputBlock}>
             <label htmlFor='email'>
-               {langState ? 'Correo'  : 'Email'}
+               {langState === 'es' ? 'Correo'  : 'Email'}
             </label>
             <input {...register(
               'email',
@@ -80,20 +82,24 @@ const UserRegisterComp = () => {
           {errors.email && <span>{errors.email.message}</span>}
           </div>
           <div className={styles.inputBlock}>
-            <label htmlFor='subject'>Apellido</label>
+            <label htmlFor='subject'>
+              {langState === 'es'  ? 'Asunto' : 'Subject'}
+            </label>
             <input {...register(
                 'subject',
                 { required: 'El apellido es requerido' })}
-                placeholder='Ingrese apellido...'
+                placeholder={langState === 'es' ? 'Ingrese asunto...' : 'Enter subject...'}
             />
             {errors.subject && <span>{errors.subject.message}</span>}
           </div>
           <div className={styles.inputBlock}>
-            <label htmlFor='message'>Apellido</label>
-            <input {...register(
+            <label htmlFor='message'>
+              {langState === 'es' ? 'Mensaje' : 'Message'}
+            </label>
+            <textarea {...register(
                 'message',
                 { required: 'El apellido es requerido' })}
-                placeholder='Ingrese apellido...'
+                placeholder={langState === 'es' ? 'Ingrese su mensaje...' : 'Enter your message...'}
             />
             {errors.message && <span>{errors.message.message}</span>}
           </div>
