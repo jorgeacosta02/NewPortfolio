@@ -64,13 +64,31 @@ const ContactComp = () => {
           {langState === 'es' ? 'Mis datos de contacto' : 'My contact data'}
         </h4>
         <div className={styles.dataContainer}>
-          <div className={styles.mailContainer}>
-            <h6>
-              {langState === 'es' ? 'Correo electrónico' : 'Email'}
-            </h6>
-            <p>
-              jorgeacostadeleon@yahoo.com
-            </p>
+          <div className={styles.data}>
+            <div className={styles.dataBlock}>
+              <h6>
+                {langState === 'es' ? 'Correo electrónico:' : 'Email:'}
+              </h6>
+              <p>
+                jorgeacostadeleon@yahoo.com
+              </p>
+            </div>
+            <div className={styles.dataBlock}>
+              <h6>
+                {langState === 'es' ? 'Teléfono:' : 'Phone number:'}
+              </h6>
+              <p>
+                +54 9 264-673 0581
+              </p>
+            </div>
+            <div className={styles.dataBlock}>
+              <h6>
+                {langState === 'es' ? 'Domicilio:' : 'Address:'}
+              </h6>
+              <p>
+                Barrio Cooperarq VIII - Manzana "A" - Casa 24 - Rivadavia - San Juan - Argentina. CP. 5400.
+              </p>
+            </div>
           </div>
           <LinksComp/>
         </div>

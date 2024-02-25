@@ -33,14 +33,19 @@
             @include g.create-flexbox(column, space-between);
             gap: 6vh;
             // background-color: green;
-            .mailContainer{
-                width: 90%;
-                max-width: 250px;
+            .data{
+                width: 100%;
                 @include g.create-flexbox(column, space-between);
-                gap: 15px;
-                align-items: flex-start;
-                padding: 10px 0;
-                // background-color: red;
+                gap: 2vh;
+                .dataBlock{
+                    width: 90%;
+                    max-width: 500px;
+                    @include g.create-flexbox(column, space-between);
+                    gap: 1vh;
+                    align-items: flex-start;
+                    padding: 10px 0;
+                    // background-color: grey;
+                }
             }
         }
     }
