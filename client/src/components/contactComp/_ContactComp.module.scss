@@ -7,15 +7,23 @@
     z-index: 100;
     color: g.$white-color;
     padding: g.$mobile-NavBar-height 5vw;
+    @include g.create-flexbox(column, space-between);
+    // gap: 6vh;
     .dataMainContainer{
         position: relative;
         z-index: 100;
-
+        width: 100%;
+        @include g.create-flexbox(column, space-between);
+        gap: 15px;
         .dataTitle{
             text-align: center;
         }
         .dataContainer{
+            width: 100%;
+            @include g.create-flexbox(column, space-between);
+            gap: 6vh;
             .mailContainer{
+                width: 100%;
                 @include g.create-flexbox(column, space-between);
                 gap: 15px;
                 align-items: flex-start;

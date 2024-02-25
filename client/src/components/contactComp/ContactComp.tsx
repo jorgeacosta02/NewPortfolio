@@ -8,6 +8,7 @@ import { selectLangState } from '../../redux/slices/langSlice';
 import { selectMoonState } from '../../redux/slices/moonSlice';
 import { useSelector } from 'react-redux';
 import SliderComp from '../sliderComp/SliderComp';
+import LinksComp from '../linksComp/LinksComp';
 
 
 const ContactComp = () => {
@@ -71,6 +72,7 @@ const ContactComp = () => {
               jorgeacostadeleon@yahoo.com
             </p>
           </div>
+          <LinksComp/>
         </div>
       </div>
       <div className={styles.formContainer}>

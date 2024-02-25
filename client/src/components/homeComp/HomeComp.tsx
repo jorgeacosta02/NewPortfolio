@@ -4,6 +4,7 @@ import { selectMoonState } from '../../redux/slices/moonSlice';
 import { selectLangState } from '../../redux/slices/langSlice';
 import SliderComp from '../sliderComp/SliderComp';
 import ProfileImg from '../../assets/images/profile/Profile.jpg'
+import LinksComp from '../linksComp/LinksComp';
 
 
 const HomeComp = () => {
@@ -39,7 +40,8 @@ const HomeComp = () => {
                 'Este es mi portafolio web, el cual muestra mis proyectos, habilidades y formación académica.' 
                 : 'This is my web portfolio, which shows my projects, skills and academic training.'}
             </p>
-            <div className={styles.linksContainer}>
+            <LinksComp/>
+            {/* <div className={styles.linksContainer}>
               <a href="https://www.linkedin.com/in/jorge-acosta-de-le%C3%B3n-8934a4122/" target='blank'>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +93,7 @@ const HomeComp = () => {
                 <h6
                   className={styles.dwlResume}
                   >{langState === 'es' ? 'Descargar CV' : 'Download Resume'}</h6>
-              </a>
+              </a> */}
           </div>
             <img
               src={ProfileImg}
