@@ -47,9 +47,11 @@ const ContactComp = () => {
 
   const containerColor = `${styles.container} ${moonState ? styles.containerWhite : ''}`;
 
-  const inputColor = `${styles.input} ${moonState ? styles.inputWhite : ''}`;
+  const inputColor = `${styles.input} ${moonState ? styles.backWhite : ''}`;
 
-  const textareaColor = `${styles.textarea} ${moonState ? styles.textareaWhite : ''}`;
+  const textareaColor = `${styles.textarea} ${moonState ? styles.backWhite : ''}`;
+
+  const submitColor = `${styles.submit} ${moonState ? styles.backWhite : ''}`;
 
   console.log(errors);
 
@@ -111,10 +113,12 @@ const ContactComp = () => {
             {errors.message && <span>{errors.message.message}</span>}
           </div>
           <button
-            className={styles.submit}
+            className={submitColor}
             type='submit'
           >
-            Enviar formulario
+            <p>
+              Enviar formulario
+            </p>
           </button>
         </form>
       </div>
