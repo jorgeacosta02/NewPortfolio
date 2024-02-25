@@ -1,16 +1,17 @@
 @use '../../styles/globals' as g;
 
 .container{
-    width: 50%;
+    width: 40%;
     max-width: 110px;
+    min-width: 93px;
     @include g.create-flexbox(row, space-between);
     color: g.$white-color;
     background-color: inherit;
     // background-color: green;
     .optionContainer{
         @include g.create-flexbox(row, space-between);
-        gap: 1px;
-        width: 80px;
+        gap: 4px;
+        // width: 30px;
         color: inherit;
         background-color: inherit;
         // background-color: red;

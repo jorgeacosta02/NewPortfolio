@@ -106,9 +106,9 @@
         }
         .profileImg{
             position: relative;
-            height: 70vw;
-            min-height: 130px;
-            max-height: 250px;
+            width: min(70vw, 70vh);
+            min-width: 100px;
+            max-width: 250px;
             border-radius: 5px;
         }
 

@@ -9,6 +9,7 @@
         height: 20px;
         fill: g.$white-color;
         z-index: 1000;
+        margin-right: 2vw;
         cursor: pointer;
         @include g.display-large{
             display: none;
