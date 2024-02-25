@@ -3,18 +3,29 @@
 .container{
     position: absolute;
     box-sizing: border-box;
-    width: 100vw;
+    width: 100%;
     z-index: 100;
     color: g.$white-color;
-    padding: g.$mobile-NavBar-height 5vw;
+    padding: g.$mobile-NavBar-height 5vw 0;
     @include g.create-flexbox(column, space-between);
-    // gap: 6vh;
+    @include g.display-large{
+        flex-direction: row;
+        padding: calc(g.$desk-NavBar-height + 3vh) 0 0;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        // gap: 5vw;
+    }
     .dataMainContainer{
         position: relative;
         z-index: 100;
         width: 100%;
+        // max-width: 500px;
         @include g.create-flexbox(column, space-between);
         gap: 15px;
+        // background-color: red;
+        @include g.display-large{
+            width: 50%;
+        }
         .dataTitle{
             text-align: center;
         }
@@ -22,8 +33,10 @@
             width: 100%;
             @include g.create-flexbox(column, space-between);
             gap: 6vh;
+            // background-color: green;
             .mailContainer{
-                width: 100%;
+                width: 90%;
+                max-width: 250px;
                 @include g.create-flexbox(column, space-between);
                 gap: 15px;
                 align-items: flex-start;
@@ -33,14 +46,19 @@
         }
     }
     .formContainer{
+        box-sizing: border-box;
         position: relative;
         width: 100%;
+        // max-width: 500px;
         z-index: 100;
-        top: g.$mobile-NavBar-height;
-        padding: 5vh 0;
+        padding: 10vh 0;
         color: inherit;
         @include g.create-flexbox(column, space-between);
         gap: 3vh;
+        @include g.display-large{
+            padding: 0 6%;
+            width: 50%;
+        }
         // background-color: blue;
         .formTitle{
             text-align: center;
@@ -53,11 +71,11 @@
             @include g.create-flexbox(column, space-evenly);
             width: 100%;
             .inputBlock{
-                    width: 100%;
-                    color: inherit;
-                    padding: 4px 0;
-                    label{
-                        font-size: g.$mobile-p-font-size;
+                width: 100%;
+                color: inherit;
+                padding: 4px 0;
+                label{
+                    font-size: g.$mobile-p-font-size;
                 }
                 .input{
                     box-sizing: border-box;
