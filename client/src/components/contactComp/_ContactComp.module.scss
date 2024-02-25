@@ -2,6 +2,8 @@
 
 .container{
     position: absolute;
+    box-sizing: border-box;
+    width: 100vw;
     z-index: 100;
     color: g.$white-color;
     padding: 0 5vw;
@@ -52,16 +54,49 @@
     }
     .formContainer{
         position: relative;
+        width: 100%;
         z-index: 100;
         top: g.$mobile-NavBar-height;
+        padding: 5vh 0;
         color: inherit;
         @include g.create-flexbox(column, space-between);
         gap: 3vh;
+        // background-color: blue;
         .formTitle{
             text-align: center;
         }
         .form{
+            // position: relative;
+            z-index: 110;
+            // background-color: red;
             width: 90%;
+            label{
+                font-size: g.$mobile-p-font-size;
+            }
+            .input{
+                box-sizing: border-box;
+                width: 100%;
+                height: 20px;
+                border: none;
+                font-size: g.$mobile-p-font-size;
+                background-color: rgba(0,0,0,.7);
+                color: inherit;
+            }
+            .inputWhite{
+                background-color: rgba(255,255,255,.8);
+            }
+            .textarea{
+                box-sizing: border-box;
+                width: 100%;
+                height: 150px;
+                border: none;
+                font-size: g.$mobile-p-font-size;
+                background-color: rgba(0,0,0,.7);
+                color: inherit;
+            }
+            .textareaWhite{
+                background-color: rgba(255,255,255,.8);
+            }
         }
     }
 }

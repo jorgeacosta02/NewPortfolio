@@ -2,7 +2,6 @@ import styles from './_ContactComp.module.scss';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import axios from 'axios'
-import { Link } from 'react-router-dom';
 import { IContactData } from '../../interfaces/ContactInterfaces';
 import { ContactSchema } from '../../validations/ContactValidations';
 import { selectLangState } from '../../redux/slices/langSlice';
@@ -11,7 +10,7 @@ import { useSelector } from 'react-redux';
 import SliderComp from '../sliderComp/SliderComp';
 
 
-const UserRegisterComp = () => {
+const ContactComp = () => {
 
   const langState = useSelector(selectLangState).lang;
   const moonState = useSelector(selectMoonState).moon;
@@ -48,6 +47,10 @@ const UserRegisterComp = () => {
 
   const containerColor = `${styles.container} ${moonState ? styles.containerWhite : ''}`;
 
+  const inputColor = `${styles.input} ${moonState ? styles.inputWhite : ''}`;
+
+  const textareaColor = `${styles.textarea} ${moonState ? styles.textareaWhite : ''}`;
+
   console.log(errors);
 
   return (
@@ -67,6 +70,7 @@ const UserRegisterComp = () => {
             </label>
             <input {...register('name')}
                 placeholder={langState === 'es' ? 'Ingrese nombre...' :  'Enter name...'}
+                className={inputColor}
             />
             {errors.name && <span>{errors.name.message}</span>}
           </div>
@@ -78,6 +82,7 @@ const UserRegisterComp = () => {
               'email',
               { required: 'El email es requerido' })}
               placeholder='Ingrese correo...'
+              className={inputColor}
             />
           {errors.email && <span>{errors.email.message}</span>}
           </div>
@@ -89,6 +94,7 @@ const UserRegisterComp = () => {
                 'subject',
                 { required: 'El apellido es requerido' })}
                 placeholder={langState === 'es' ? 'Ingrese asunto...' : 'Enter subject...'}
+                className={inputColor}
             />
             {errors.subject && <span>{errors.subject.message}</span>}
           </div>
@@ -100,6 +106,7 @@ const UserRegisterComp = () => {
                 'message',
                 { required: 'El apellido es requerido' })}
                 placeholder={langState === 'es' ? 'Ingrese su mensaje...' : 'Enter your message...'}
+                className={textareaColor}
             />
             {errors.message && <span>{errors.message.message}</span>}
           </div>
@@ -110,19 +117,10 @@ const UserRegisterComp = () => {
             Enviar formulario
           </button>
         </form>
-        <p className={styles.linkContainer}>
-          Ya tenés una cuenta?
-          <Link 
-            to='/user-login'
-            className={styles.login}
-          >
-            Ingresar
-          </Link>
-        </p>
       </div>
     </div>
   )
 }
 
-export default UserRegisterComp
+export default ContactComp
 
