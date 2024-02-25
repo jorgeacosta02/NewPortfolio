@@ -5,7 +5,7 @@ export const ContactSchema = z.object({
     name: z
         .string()
         .min(1, {
-            message: 'Debés ingresar un nombre.'
+            message: 'Debe ingresar un nombre.'
         })
         .min(3, {
             message: 'El nombre debe tener al menos de 3 caracteres.'
@@ -16,7 +16,7 @@ export const ContactSchema = z.object({
     email: z
             .string()
             .min(1, {
-                message: 'Debés ingresar un correo.'
+                message: 'Debe ingresar un correo.'
             })
             .email({
                 message: 'Por favor ingrese un correo válido.'
@@ -24,14 +24,11 @@ export const ContactSchema = z.object({
     subject: z
             .string()
             .min(1, {
-                message: 'Debés ingresar un apellido.'
+                message: 'Debe ingresar un asunto.'
             }),
     message: z
         .string()
         .min(1, {
-            message: 'Debés ingresar un contraseña.'
-        })
-        .min(10, {
-            message: 'La contraseña debe tener al menos 10 caracteres.'
+            message: 'Debe ingresar un mensaje.'
         }),
 })

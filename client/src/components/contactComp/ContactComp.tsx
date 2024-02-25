@@ -58,10 +58,15 @@ const ContactComp = () => {
   return (
     <div className={containerColor}>
       <SliderComp/>
+      <div className={styles.dataContainer}>
+        <h4 className={styles.dataTitle}>
+          {langState === 'es' ? 'Mis datos de contacto' : 'My contact data'}
+        </h4>
+      </div>
       <div className={styles.formContainer}>
-        <h3 className={styles.formTitle}>
+        <h4 className={styles.formTitle}>
           {langState === 'es' ? 'Envíame un mensaje' : 'Send me a message'}
-        </h3>
+        </h4>
         <form
           className={styles.form}
           onSubmit={handleSubmit(onSubmit)}
