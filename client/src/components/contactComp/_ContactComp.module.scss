@@ -13,7 +13,6 @@
         padding: calc(g.$desk-NavBar-height + 3vh) 0 0;
         align-items: flex-start;
         justify-content: space-evenly;
-        // gap: 5vw;
     }
     .dataMainContainer{
         position: relative;
@@ -49,7 +48,6 @@
         box-sizing: border-box;
         position: relative;
         width: 100%;
-        // max-width: 500px;
         z-index: 100;
         padding: 10vh 0;
         color: inherit;
@@ -64,8 +62,7 @@
             text-align: center;
         }
         .form{
-            // position: relative;
-            z-index: 110;
+            // z-index: 110;
             color: inherit;
             // background-color: red;
             @include g.create-flexbox(column, space-evenly);
