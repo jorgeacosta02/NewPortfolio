@@ -134,7 +134,7 @@ const ContactComp = () => {
             type='submit'
           >
             <p>
-              Enviar formulario
+              { langState === 'es' ? 'Enviar' : 'Submit' }
             </p>
           </button>
         </form>
