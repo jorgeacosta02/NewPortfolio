@@ -55,7 +55,6 @@
                 }
             }
             .text{
-                // display: none;
                 color: inherit;
                 text-align: center;
                 @include g.display-large{
@@ -86,10 +85,8 @@
                 }
             }
             .dwlResumeContainer{
-                // height: 30px;
                 text-decoration: none;
                 text-align: center;
-                // line-height: 30px;
                 padding:  8px 16px;
                 color: g.$white-color;
                 border-radius: 3px;
