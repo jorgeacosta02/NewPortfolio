@@ -61,22 +61,23 @@
         color: inherit;
         @include g.create-flexbox(column, space-between);
         gap: 3vh;
-        // background-color: blue;
+        background-color: blue;
         .formTitle{
             text-align: center;
         }
         .form{
             // position: relative;
             z-index: 110;
-            // background-color: red;
-            width: 90%;
+            background-color: red;
+            @include g.create-flexbox(column, space-evenly);
+            width: 100%;
             label{
                 font-size: g.$mobile-p-font-size;
             }
             .input{
                 box-sizing: border-box;
                 width: 100%;
-                height: 20px;
+                height: 23px;
                 border: none;
                 font-size: g.$mobile-p-font-size;
                 background-color: rgba(0,0,0,.7);
