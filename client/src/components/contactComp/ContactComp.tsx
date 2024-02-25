@@ -58,10 +58,20 @@ const ContactComp = () => {
   return (
     <div className={containerColor}>
       <SliderComp/>
-      <div className={styles.dataContainer}>
+      <div className={styles.dataMainContainer}>
         <h4 className={styles.dataTitle}>
           {langState === 'es' ? 'Mis datos de contacto' : 'My contact data'}
         </h4>
+        <div className={styles.dataContainer}>
+          <div className={styles.mailContainer}>
+            <h6>
+              {langState === 'es' ? 'Correo electrónico' : 'Email'}
+            </h6>
+            <p>
+              jorgeacostadeleon@yahoo.com
+            </p>
+          </div>
+        </div>
       </div>
       <div className={styles.formContainer}>
         <h4 className={styles.formTitle}>
