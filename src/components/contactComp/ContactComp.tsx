@@ -1,9 +1,7 @@
 import styles from './_ContactComp.module.scss';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
 import axios from 'axios'
 import { IContactData } from '../../interfaces/ContactInterfaces';
-import { ContactSchema } from '../../validations/ContactValidations';
 import { selectLangState } from '../../redux/slices/langSlice';
 import { selectMoonState } from '../../redux/slices/moonSlice';
 import { useSelector } from 'react-redux';
@@ -16,17 +14,14 @@ const ContactComp = () => {
   const langState = useSelector(selectLangState).lang;
   const moonState = useSelector(selectMoonState).moon;
 
-  console.log(langState)
-
   const {
     register,
     handleSubmit,
     // watch,
     reset,
     formState: { errors },
-  } = useForm<IContactData>({
-    resolver: zodResolver(ContactSchema)
-  });
+  } = useForm<IContactData>();
+
 
 
   const onSubmit: SubmitHandler<IContactData> = async (data) => {
@@ -47,14 +42,11 @@ const ContactComp = () => {
   };
 
   const containerColor = `${styles.container} ${moonState ? styles.containerWhite : ''}`;
-
   const inputColor = `${styles.input} ${moonState ? styles.backWhite : ''}`;
-
   const textareaColor = `${styles.textarea} ${moonState ? styles.backWhite : ''}`;
-
   const submitColor = `${styles.submit} ${moonState ? styles.backWhite : ''}`;
 
-  console.log(errors);
+  console.log('errors in form: ', errors);
 
   return (
     <div className={containerColor}>
@@ -102,48 +94,73 @@ const ContactComp = () => {
           onSubmit={handleSubmit(onSubmit)}
         >
           <div className={styles.inputBlock}>
-            <label htmlFor='name'>
-                {langState === 'es' ? 'Nombre' : 'Name'}
+            <label 
+              htmlFor='name'>
+              {langState === 'es' ? 'Nombre' : 'Name'}
             </label>
-            <input {...register('name')}
-                placeholder={langState === 'es' ? 'Ingrese nombre...' :  'Enter name...'}
-                className={inputColor}
+            <input 
+              {...register('name',{
+                required: true,
+                minLength: 2
+              })}
+              placeholder={langState === 'es' ? 'Ingrese nombre...' :  'Enter name...'}
+              className={inputColor}
             />
-            {errors.name && <span>{errors.name.message}</span>}
+            {errors.name && errors.name.type === "required" && (
+              <p>Debe ingresar un nombre</p>
+            )}
+            {errors.name && errors.name.type === "minLength" && (
+              <p>El nombre debe tener al menos 2 caracteres</p>
+            )}
           </div>
           <div className={styles.inputBlock}>
-            <label htmlFor='email'>
-               {langState === 'es' ? 'Correo'  : 'Email'}
+            <label 
+              htmlFor='email'>
+              {langState === 'es' ? 'Correo'  : 'Email'}
             </label>
-            <input {...register(
-              'email',
-              { required: 'El email es requerido' })}
+            <input 
+              {...register('email',{
+                required: true,
+                pattern: {
+                  value: /^\S+@\S+$/i,
+                  message: 'hola'
+                } // Expresión regular para validar el formato de correo electrónico
+              })}
               placeholder='Ingrese correo...'
               className={inputColor}
             />
-          {errors.email && <span>{errors.email.message}</span>}
+           {errors.email && errors.email.type === "required" && (
+              <p>Debe ingresar un correo</p>
+            )}
+           {errors.email && (
+              <p>{errors.email.message}</p>
+            )}
           </div>
           <div className={styles.inputBlock}>
-            <label htmlFor='subject'>
+            <label 
+              htmlFor='subject'>
               {langState === 'es'  ? 'Asunto' : 'Subject'}
             </label>
-            <input {...register(
+            <input 
+              {...register(
                 'subject',
-                { required: 'El apellido es requerido' })}
-                placeholder={langState === 'es' ? 'Ingrese asunto...' : 'Enter subject...'}
-                className={inputColor}
+              )}
+              placeholder={langState === 'es' ? 'Ingrese asunto...' : 'Enter subject...'}
+              className={inputColor}
             />
             {errors.subject && <span>{errors.subject.message}</span>}
           </div>
           <div className={styles.inputBlock}>
-            <label htmlFor='message'>
+            <label 
+              htmlFor='message'>
               {langState === 'es' ? 'Mensaje' : 'Message'}
             </label>
-            <textarea {...register(
+            <textarea 
+              {...register(
                 'message',
-                { required: 'El apellido es requerido' })}
-                placeholder={langState === 'es' ? 'Ingrese su mensaje...' : 'Enter your message...'}
-                className={textareaColor}
+              )}
+              placeholder={langState === 'es' ? 'Ingrese su mensaje...' : 'Enter your message...'}
+              className={textareaColor}
             />
             {errors.message && <span>{errors.message.message}</span>}
           </div>

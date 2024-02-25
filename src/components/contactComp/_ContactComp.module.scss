@@ -119,6 +119,7 @@
                 border: 1px solid g.$grey-color;
                 &:hover{
                     cursor: pointer;
+                    box-shadow: 0 0 2px 2px g.$grey-color;
                 }
                 p{
                     color:inherit;
