@@ -17,7 +17,7 @@ import { selectLangState } from '../../redux/slices/langSlice';
 import { selectMoonState } from '../../redux/slices/moonSlice';
 
 
-export interface FormDataShape {
+export interface IFormDataShape {
   name: string,
   email: string,
   subject: string,
@@ -26,7 +26,7 @@ export interface FormDataShape {
 
 const ContactComp: React.FC = () => {
   
-  const [formData, setFormData] = useState<FormDataShape>({
+  const [formData, setFormData] = useState<IFormDataShape>({
     name: '',
     email: '',
     subject: '',
@@ -34,7 +34,7 @@ const ContactComp: React.FC = () => {
   });
 
   
-  const [errors, setErrors] = useState<FormDataShape>({
+  const [errors, setErrors] = useState<IFormDataShape>({
     name: '',
     email: '',
     subject: '',
@@ -83,17 +83,21 @@ const ContactComp: React.FC = () => {
   // };
 
 
+  // const handleSubmit = (event) = {
+  //   event.preventDefault();
+  // }
+
   const nameRegExp = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]*$/;
   const emailRegExp = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
 
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
+    // Valida solo letras
     if (name === 'name'){
       if(!nameRegExp.test(value)){
         setErrors((prevData) => ({
           ...prevData,
-          [name]: 'eeeeerror',
+          [name]: 'El nombre debe contener solo letras.',
         }));
       }else{
         setFormData((prevData) => ({
@@ -104,15 +108,15 @@ const ContactComp: React.FC = () => {
           ...prevData,
           [name]: '',
         }));
-        console.log('name y value in handleInputChange: ',name, value);
-        console.log('formData y errors in handleInputChange: ',formData, errors);
       }
     }
+
+    // Valida formato de email
     if (name === 'email'){
       if(!emailRegExp.test(value)){
         setErrors((prevData) => ({
           ...prevData,
-          [name]: 'eeeeerror',
+          [name]: 'Debe ingresar un mail válido.',
         }));
         setFormData((prevData) => ({
           ...prevData,
@@ -127,10 +131,20 @@ const ContactComp: React.FC = () => {
           ...prevData,
           [name]: '',
         }));
-        console.log('name y value in handleInputChange: ',name, value);
-        console.log('formData y errors in handleInputChange: ',formData, errors);
       }
     }
+    if (name === 'subject' || name === 'message'){
+       setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+      setErrors((prevData) => ({
+        ...prevData,
+        [name]: '',
+      }));
+    }
+    console.log('name y value in handleInputChange: ',name, value);
+    console.log('formData y errors in handleInputChange: ',formData, errors);
   }
 
 
@@ -145,8 +159,36 @@ const ContactComp: React.FC = () => {
   //   };
   // };
 
+  const emptyMessage = 'Este campo debe ser completado.';
 
+  const emptyValidationHandler =()=>{
+    // console.log('entrando a errorGenreIdsgHandler');
+    if(!formData.name){
+      setErrors((prevData) => ({
+        ...prevData,
+        name: emptyMessage,
+      }));
+    };
+    if(!formData.email){
+      setErrors((prevData) => ({
+        ...prevData,
+        email: emptyMessage,
+      }));
+    };
+    if(!formData.subject){
+      setErrors((prevData) => ({
+        ...prevData,
+        subject: emptyMessage,
+      }));
+    };
+    if(!formData.message){
+      setErrors((prevData) => ({
+        ...prevData,
+        message: emptyMessage,
+      }));
+    };
 
+  };
 
 
 
@@ -198,6 +240,12 @@ const ContactComp: React.FC = () => {
   const textareaColor = `${styles.textarea} ${moonState ? styles.backWhite : ''}`;
   const submitColor = `${styles.submit} ${moonState ? styles.backWhite : ''}`;
   
+
+  const handleSubmit = (event:any) => {
+    event.preventDefault();
+    console.log('submit')
+    emptyValidationHandler()
+  }
   
   return (
     <div className={containerColor}>
@@ -242,7 +290,7 @@ const ContactComp: React.FC = () => {
         </h4>
         <form
           className={styles.form}
-          // onSubmit={handleSubmit}
+          onSubmit={handleSubmit}
         >
           <div className={styles.inputBlock}>
             <label 
@@ -290,6 +338,7 @@ const ContactComp: React.FC = () => {
               placeholder={langState === 'es' ? 'Ingrese asunto...' : 'Enter subject...'}
               className={inputColor}
             />
+            {errors.subject && errors.subject}
           </div>
           <div className={styles.inputBlock}>
             <label 
@@ -304,6 +353,7 @@ const ContactComp: React.FC = () => {
               placeholder={langState === 'es' ? 'Ingrese su mensaje...' : 'Enter your message...'}
               className={textareaColor}
             />
+            {errors.message && errors.message}
           </div>
           <button
             className={submitColor}
