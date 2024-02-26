@@ -27,13 +27,13 @@ const SliderComp = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
   
   
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setCurrentSlide((prevSlide) => (prevSlide + 1) % 12);
-      }, 2000); // Cambia a la siguiente imagen cada 3 segundos
+    // useEffect(() => {
+    //   const interval = setInterval(() => {
+    //     setCurrentSlide((prevSlide) => (prevSlide + 1) % 12);
+    //   }, 2000); // Cambia a la siguiente imagen cada 3 segundos
   
-      return () => clearInterval(interval);
-    }, []); // Se ejecuta solo una vez al montar el componente
+    //   return () => clearInterval(interval);
+    // }, []); // Se ejecuta solo una vez al montar el componente
   
     console.log(currentSlide)
   

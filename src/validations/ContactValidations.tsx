@@ -1,19 +1,28 @@
+import { useSelector } from "react-redux"
 import { FormDataShape } from "../components/contactComp/ContactComp"
+import { selectLangState } from "../redux/slices/langSlice"
 
 
 // REGEX
 const nameRegex = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
+
+console.log('validations')
 // NAME VALIDATIONS
 export const nameCorrectValidation = (data: FormDataShape, setErrors: React.Dispatch<React.SetStateAction<FormDataShape>>) => {
     
+    // const  langState = useSelector(selectLangState).lang
+    const  langState = 'en'
     const { name } = data;
+
+    console.log('data in validations: ', data)
+    console.log('data.name in validations: ', data.name)
  
     if (name !== '' && !nameRegex.test(name)){
         setErrors((prevErrors) => ({
             ...prevErrors,
-            name: "El nombre debe contener solo letras"
+            name: langState === 'es' ? 'El nombre debe contener solo letras' : 'The name must  contain only letters',
         }))
     } else {
         setErrors((prevErrors) => ({
@@ -25,12 +34,14 @@ export const nameCorrectValidation = (data: FormDataShape, setErrors: React.Disp
 }
 export const nameExistsValidation = (data: FormDataShape, setErrors: React.Dispatch<React.SetStateAction<FormDataShape>>) => {
     
+    const  langState = useSelector(selectLangState).lang
+    const response = langState ? 'Debe ingresar un nombre.' : 'You must enter a name.'
     const { name } = data;
  
     if (name === ''){
         setErrors((prevErrors) => ({
             ...prevErrors,
-            name: 'Ingresa un nombre'
+            name: response
         }))
     } else {
         setErrors((prevErrors) => ({

@@ -1,21 +1,20 @@
-import { selectLangState } from '../../redux/slices/langSlice';
-import { selectMoonState } from '../../redux/slices/moonSlice';
-import SliderComp from '../sliderComp/SliderComp';
-import LinksComp from '../linksComp/LinksComp';
+import styles from './_ContactComp.module.scss';
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import {
-  nameCorrectValidation,
-  nameExistsValidation,
-  emailCorrectValidation,
-  emailExistsValidation,
-  subjectExistsValidation,
-  messageExistsValidation
-} from '../../validations/ContactValidations';
-
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import styles from './_ContactComp.module.scss';
+// import {
+//   nameCorrectValidation,
+//   nameExistsValidation,
+//   emailCorrectValidation,
+//   emailExistsValidation,
+//   subjectExistsValidation,
+//   messageExistsValidation
+// } from '../../validations/ContactValidations';
+import SliderComp from '../sliderComp/SliderComp';
+import LinksComp from '../linksComp/LinksComp';
+import { selectLangState } from '../../redux/slices/langSlice';
+import { selectMoonState } from '../../redux/slices/moonSlice';
 
 
 export interface FormDataShape {
@@ -33,8 +32,7 @@ const ContactComp: React.FC = () => {
     subject: '',
     message: ''
   });
-  const langState = useSelector(selectLangState).lang;
-  const moonState = useSelector(selectMoonState).moon;
+
   
   const [errors, setErrors] = useState<FormDataShape>({
     name: '',
@@ -42,85 +40,165 @@ const ContactComp: React.FC = () => {
     subject: '',
     message: ''
   });
-
-  let submitOk = false;
-
-  if(
-    formData.name !== '' &&
-    formData.email !== '' &&
-    formData.subject !== '' &&
-    formData.message !== '' &&
-    errors.name === '' &&
-    errors.email === '' &&
-    errors.subject === '' &&
-    errors.message === '' 
-  ){
-    submitOk = true;
-  };
   
-  console.log('submitOK: ', submitOk);
+  // let submitOk = false;
+  
+  // if(
+  //   formData.name !== '' &&
+  //   formData.email !== '' &&
+  //   formData.subject !== '' &&
+  //   formData.message !== '' &&
+  //   errors.name === '' &&
+  //   errors.email === '' &&
+  //   errors.subject === '' &&
+  //   errors.message === '' 
+  // ){
+  //   submitOk = true;
+  // };
+  
+  // console.log('submitOK: ', submitOk);
+  // console.log('formData: ', formData);
+  // console.log('errors: ', errors);
+  
+  // useEffect(() => {
+  //   nameCorrectValidation(formData, setErrors);
+  // },[formData.name])
+  
+  // useEffect(() => {
+  //   emailCorrectValidation(formData, setErrors);
+  // },[formData.email])
+  
+  // const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prevData) => ({
+  //     ...prevData,
+  //     [name]: value,
+  //   }));
+  //   setErrors((prevData) => ({
+  //     ...prevData,
+  //     [name]: '',
+  //   }));
+  //   console.log('name y value in handleInputChange: ',name, value);
+  //   console.log('formData y errors in handleInputChange: ',formData, errors);
+  // };
 
-  useEffect(() => {
-    nameCorrectValidation(formData, setErrors);
-  },[formData.name])
- 
-  useEffect(() => {
-    emailCorrectValidation(formData, setErrors);
-  },[formData.email])
+
+  const nameRegExp = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]*$/;
+  const emailRegExp = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
+
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-    setErrors((prevData) => ({
-      ...prevData,
-      [name]: '',
-    }));
-    console.log(name, value);
-    console.log(formData, errors);
-  };
-
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (event) => {
-    event.preventDefault();
-    try {
-      if(!submitOk){
-        console.log('if en handleSubmit')
-        nameExistsValidation(formData, setErrors);
-        emailExistsValidation(formData, setErrors);
-        subjectExistsValidation(formData, setErrors);
-        return messageExistsValidation(formData, setErrors);
-      }
-        await axios.post('exploservice/contact', formData)
-        toast.success('Mensaje enviado exitosamente!!')
-        setTimeout(() => {
-          window.location.href = '/exploservice/company';
-        }, 2000);
-    } catch (error: any) {
-
-    if (error?.response?.data?.message) {
-        const errorMessage = error.response.data.message;
-        toast.error(errorMessage);
-      } else {
-      toast.error('Error al enviar el mensaje.');
+    if (name === 'name'){
+      if(!nameRegExp.test(value)){
+        setErrors((prevData) => ({
+          ...prevData,
+          [name]: 'eeeeerror',
+        }));
+      }else{
+        setFormData((prevData) => ({
+          ...prevData,
+          [name]: value,
+        }));
+        setErrors((prevData) => ({
+          ...prevData,
+          [name]: '',
+        }));
+        console.log('name y value in handleInputChange: ',name, value);
+        console.log('formData y errors in handleInputChange: ',formData, errors);
       }
     }
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-    })
-  };
+    if (name === 'email'){
+      if(!emailRegExp.test(value)){
+        setErrors((prevData) => ({
+          ...prevData,
+          [name]: 'eeeeerror',
+        }));
+        setFormData((prevData) => ({
+          ...prevData,
+          [name]: value,
+        }));
+      }else{
+        setFormData((prevData) => ({
+          ...prevData,
+          [name]: value,
+        }));
+        setErrors((prevData) => ({
+          ...prevData,
+          [name]: '',
+        }));
+        console.log('name y value in handleInputChange: ',name, value);
+        console.log('formData y errors in handleInputChange: ',formData, errors);
+      }
+    }
+  }
 
-// constantes de estilos para dark-mode
+
+
+  // const nameHandler =(event:any)=>{
+  //   const name = event.target.value;
+  //   if(!regexName.test(name)){
+  //       setErrorName('El nombre debe contener solo letras.');
+  //   }else{
+  //       setGameContent({...gameContent,name:name});
+  //       setErrorName('');
+  //   };
+  // };
+
+
+
+
+
+
+  
+  // const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (event) => {
+  //   console.log('errors in handleSubmit: ', errors)
+  //   console.log('formData in handleSubmit: ', formData)
+  //   event.preventDefault();
+  //   try {
+  //     if(!submitOk){
+  //       console.log('if en handleSubmit')
+  //       nameExistsValidation(formData, setErrors);
+  //       emailExistsValidation(formData, setErrors);
+  //       subjectExistsValidation(formData, setErrors);
+  //       return messageExistsValidation(formData, setErrors);
+  //       // console.log('errors in handleSubmit before return: ', errors)
+  //       // console.log('formData in handleSubmit before return: ', formData)
+  //       // return console.log('return in handleSubmit')
+  //     }
+  //     await axios.post('exploservice/contact', formData)
+  //     toast.success('Mensaje enviado exitosamente!!')
+  //     setTimeout(() => {
+  //       window.location.href = '/exploservice/company';
+  //     }, 2000);
+  //   } catch (error: any) {
+      
+  //     if (error?.response?.data?.message) {
+  //       const errorMessage = error.response.data.message;
+  //       toast.error(errorMessage);
+  //     } else {
+  //     toast.error('Error al enviar el mensaje.');
+  //     }
+  //   }
+  //   // setFormData({
+  //   //   name: '',
+  //   //   email: '',
+  //   //   subject: '',
+  //   //   message: '',
+  //   // })
+  // };
+  
+  // Estados globales para opciones
+  const langState = useSelector(selectLangState).lang;
+  const moonState = useSelector(selectMoonState).moon;
+
+  // constantes de estilos para dark-mode
   const containerColor = `${styles.container} ${moonState ? styles.containerWhite : ''}`;
   const inputColor = `${styles.input} ${moonState ? styles.backWhite : ''}`;
   const textareaColor = `${styles.textarea} ${moonState ? styles.backWhite : ''}`;
   const submitColor = `${styles.submit} ${moonState ? styles.backWhite : ''}`;
-
-
+  
+  
   return (
     <div className={containerColor}>
       <SliderComp/>
@@ -164,7 +242,7 @@ const ContactComp: React.FC = () => {
         </h4>
         <form
           className={styles.form}
-          onSubmit={handleSubmit}
+          // onSubmit={handleSubmit}
         >
           <div className={styles.inputBlock}>
             <label 
@@ -180,6 +258,7 @@ const ContactComp: React.FC = () => {
               placeholder={langState === 'es' ? 'Ingrese nombre...' :  'Enter name...'}
               className={inputColor}
             />
+            {errors.name && errors.name}
           </div>
           <div className={styles.inputBlock}>
             <label 
@@ -195,6 +274,7 @@ const ContactComp: React.FC = () => {
               className={inputColor}
               placeholder='Ingrese correo...'
             />
+            {errors.email && errors.email}
           </div>
           <div className={styles.inputBlock}>
             <label 
