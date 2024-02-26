@@ -1,16 +1,7 @@
 import styles from './_ContactComp.module.scss';
 import { useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
-import toast from 'react-hot-toast';
-// import {
-//   nameCorrectValidation,
-//   nameExistsValidation,
-//   emailCorrectValidation,
-//   emailExistsValidation,
-//   subjectExistsValidation,
-//   messageExistsValidation
-// } from '../../validations/ContactValidations';
 import SliderComp from '../sliderComp/SliderComp';
 import LinksComp from '../linksComp/LinksComp';
 import { selectLangState } from '../../redux/slices/langSlice';
@@ -26,6 +17,7 @@ export interface IFormDataShape {
 
 const ContactComp: React.FC = () => {
   
+  // Estado de datos del formulario
   const [formData, setFormData] = useState<IFormDataShape>({
     name: '',
     email: '',
@@ -33,7 +25,7 @@ const ContactComp: React.FC = () => {
     message: ''
   });
 
-  
+  // Estado de errores del formulario
   const [errors, setErrors] = useState<IFormDataShape>({
     name: '',
     email: '',
@@ -41,52 +33,23 @@ const ContactComp: React.FC = () => {
     message: ''
   });
   
-  // let submitOk = false;
+  // Comprobación de estados para enviar formulario
+  let submitOk = false;
   
-  // if(
-  //   formData.name !== '' &&
-  //   formData.email !== '' &&
-  //   formData.subject !== '' &&
-  //   formData.message !== '' &&
-  //   errors.name === '' &&
-  //   errors.email === '' &&
-  //   errors.subject === '' &&
-  //   errors.message === '' 
-  // ){
-  //   submitOk = true;
-  // };
+  if(
+    formData.name !== '' &&
+    formData.email !== '' &&
+    formData.subject !== '' &&
+    formData.message !== '' &&
+    errors.name === '' &&
+    errors.email === '' &&
+    errors.subject === '' &&
+    errors.message === '' 
+  ){
+    submitOk = true;
+  };
   
-  // console.log('submitOK: ', submitOk);
-  // console.log('formData: ', formData);
-  // console.log('errors: ', errors);
-  
-  // useEffect(() => {
-  //   nameCorrectValidation(formData, setErrors);
-  // },[formData.name])
-  
-  // useEffect(() => {
-  //   emailCorrectValidation(formData, setErrors);
-  // },[formData.email])
-  
-  // const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-  //   const { name, value } = e.target;
-  //   setFormData((prevData) => ({
-  //     ...prevData,
-  //     [name]: value,
-  //   }));
-  //   setErrors((prevData) => ({
-  //     ...prevData,
-  //     [name]: '',
-  //   }));
-  //   console.log('name y value in handleInputChange: ',name, value);
-  //   console.log('formData y errors in handleInputChange: ',formData, errors);
-  // };
-
-
-  // const handleSubmit = (event) = {
-  //   event.preventDefault();
-  // }
-
+  // Expresiones de validación
   const nameRegExp = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]*$/;
   const emailRegExp = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
 
@@ -147,22 +110,9 @@ const ContactComp: React.FC = () => {
     console.log('formData y errors in handleInputChange: ',formData, errors);
   }
 
-
-
-  // const nameHandler =(event:any)=>{
-  //   const name = event.target.value;
-  //   if(!regexName.test(name)){
-  //       setErrorName('El nombre debe contener solo letras.');
-  //   }else{
-  //       setGameContent({...gameContent,name:name});
-  //       setErrorName('');
-  //   };
-  // };
-
   const emptyMessage = 'Este campo debe ser completado.';
 
   const emptyValidationHandler =()=>{
-    // console.log('entrando a errorGenreIdsgHandler');
     if(!formData.name){
       setErrors((prevData) => ({
         ...prevData,
@@ -187,48 +137,7 @@ const ContactComp: React.FC = () => {
         message: emptyMessage,
       }));
     };
-
   };
-
-
-
-  
-  // const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (event) => {
-  //   console.log('errors in handleSubmit: ', errors)
-  //   console.log('formData in handleSubmit: ', formData)
-  //   event.preventDefault();
-  //   try {
-  //     if(!submitOk){
-  //       console.log('if en handleSubmit')
-  //       nameExistsValidation(formData, setErrors);
-  //       emailExistsValidation(formData, setErrors);
-  //       subjectExistsValidation(formData, setErrors);
-  //       return messageExistsValidation(formData, setErrors);
-  //       // console.log('errors in handleSubmit before return: ', errors)
-  //       // console.log('formData in handleSubmit before return: ', formData)
-  //       // return console.log('return in handleSubmit')
-  //     }
-  //     await axios.post('exploservice/contact', formData)
-  //     toast.success('Mensaje enviado exitosamente!!')
-  //     setTimeout(() => {
-  //       window.location.href = '/exploservice/company';
-  //     }, 2000);
-  //   } catch (error: any) {
-      
-  //     if (error?.response?.data?.message) {
-  //       const errorMessage = error.response.data.message;
-  //       toast.error(errorMessage);
-  //     } else {
-  //     toast.error('Error al enviar el mensaje.');
-  //     }
-  //   }
-  //   // setFormData({
-  //   //   name: '',
-  //   //   email: '',
-  //   //   subject: '',
-  //   //   message: '',
-  //   // })
-  // };
   
   // Estados globales para opciones
   const langState = useSelector(selectLangState).lang;
@@ -244,7 +153,17 @@ const ContactComp: React.FC = () => {
   const handleSubmit = (event:any) => {
     event.preventDefault();
     console.log('submit')
-    emptyValidationHandler()
+    if(!submitOk) return emptyValidationHandler();
+    submitForm();
+  }
+  
+  const submitForm = async () => {
+    try{
+      const response = await axios.post('http://localhost:5001/contact', formData)
+      console.log(response)
+    }catch(error:any){
+      console.log(error.message)
+    }
   }
   
   return (
@@ -306,7 +225,13 @@ const ContactComp: React.FC = () => {
               placeholder={langState === 'es' ? 'Ingrese nombre...' :  'Enter name...'}
               className={inputColor}
             />
-            {errors.name && errors.name}
+            {
+              errors.name 
+              && 
+              <p className={styles.errorMessage}>
+                {errors.name}
+              </p>
+            }
           </div>
           <div className={styles.inputBlock}>
             <label 
@@ -322,7 +247,13 @@ const ContactComp: React.FC = () => {
               className={inputColor}
               placeholder='Ingrese correo...'
             />
-            {errors.email && errors.email}
+            {
+              errors.email 
+              && 
+              <p className={styles.errorMessage}>
+                {errors.email}
+              </p>
+            }
           </div>
           <div className={styles.inputBlock}>
             <label 
@@ -338,7 +269,13 @@ const ContactComp: React.FC = () => {
               placeholder={langState === 'es' ? 'Ingrese asunto...' : 'Enter subject...'}
               className={inputColor}
             />
-            {errors.subject && errors.subject}
+            {
+              errors.subject 
+              && 
+              <p className={styles.errorMessage}>
+                {errors.subject}
+              </p>
+            }
           </div>
           <div className={styles.inputBlock}>
             <label 
@@ -353,7 +290,13 @@ const ContactComp: React.FC = () => {
               placeholder={langState === 'es' ? 'Ingrese su mensaje...' : 'Enter your message...'}
               className={textareaColor}
             />
-            {errors.message && errors.message}
+            {
+              errors.message 
+              && 
+              <p className={styles.errorMessage}>
+                {errors.message}
+              </p>
+            }
           </div>
           <button
             className={submitColor}
