@@ -1,138 +1,103 @@
-import { z } from 'zod'
-import { selectLangState } from '../redux/slices/langSlice'
-import { useSelector } from 'react-redux'
-
-// Definir el esquema de validación
-export const ContactSchema = () => {
-    // Obtener el estado del lenguaje
-    const langState: any = useSelector(selectLangState).lang;
-
-    // Definir los mensajes en ambos idiomas
-    const errorMessage = langState === 'es' ? 'Debe ingresar un nombre.' : 'You must enter a name.';
-    const lengthErrorMessage = langState === 'es' ? 'El nombre debe tener al menos 3 caracteres.' : 'The name must be at least 3 characters long.';
-    const maxLengthErrorMessage = langState === 'es' ? 'El nombre debe tener como máximo 50 caracteres.' : 'The name must be maximum 50 characters long.';
-
-    return z.object({
-        name: z
-            .string()
-            .min(1, { message: errorMessage })
-            .min(3, { message: lengthErrorMessage })
-            .max(50, { message: maxLengthErrorMessage }),
-        email: z
-            .string()
-            .min(1, { message: langState === 'es' ? 'Debe ingresar un correo.' : 'You must enter an email.' })
-            .email({ message: 'Por favor ingrese un correo válido.' }),
-        subject: z
-            .string()
-            .min(1, { message: langState === 'es' ? 'Debe ingresar un asunto.' : 'You must enter a subject.' }),
-        message: z
-            .string()
-            .min(1, { message: langState === 'es' ? 'Debe ingresar un mensaje.' : 'You must enter a message.' }),
-    });
-};
+import { FormDataShape } from "../components/contactComp/ContactComp"
 
 
+// REGEX
+const nameRegex = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
+// NAME VALIDATIONS
+export const nameCorrectValidation = (data: FormDataShape, setErrors: React.Dispatch<React.SetStateAction<FormDataShape>>) => {
+    
+    const { name } = data;
+ 
+    if (name !== '' && !nameRegex.test(name)){
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            name: "El nombre debe contener solo letras"
+        }))
+    } else {
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            name: '',
+        }));
+    };
+
+}
+export const nameExistsValidation = (data: FormDataShape, setErrors: React.Dispatch<React.SetStateAction<FormDataShape>>) => {
+    
+    const { name } = data;
+ 
+    if (name === ''){
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            name: 'Ingresa un nombre'
+        }))
+    } else {
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            name: ''
+        }))
+    };
+}
 
 
+// EMAIL VALIDATIONS
+export const emailCorrectValidation = (data: FormDataShape, setErrors: React.Dispatch<React.SetStateAction<FormDataShape>>) => {
 
+    const { email } = data;
 
+    if (email !== '' && !emailRegex.test(email)){
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            email: "Debe ser una dirección de email"
+        }))
+    } else {
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            email: '',
+        }));
+    };
+}
 
+export const emailExistsValidation = (data: FormDataShape, setErrors: React.Dispatch<React.SetStateAction<FormDataShape>>) => {
+    
+    const { email } = data;
+ 
+    if (email === ''){
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            email: "Ingresa un email"
+        }))
+    };
+}
 
+// SUBJECT VALIDATIONS
+export const subjectExistsValidation = (data: FormDataShape, setErrors: React.Dispatch<React.SetStateAction<FormDataShape>>) => {
+    
+    const { subject } = data;
+ 
+    if (subject === ''){
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            subject: 'Ingresa un asunto'
+        }))
+    } else {
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            subject: ''
+        }))
+    };
+}
 
-
-
-
-
-
-
-
-
-
-
-// import { z } from 'zod'
-// import { selectLangState } from '../redux/slices/langSlice'
-// import { useSelector } from 'react-redux'
-
-// // Obtener el estado del lenguaje
-// const langState: any = useSelector(selectLangState).lang;
-
-// // Definir los mensajes en ambos idiomas
-// const errorMessage = langState === 'es' ? 'Debe ingresar un nombre.' : 'You must enter a name.';
-// const lengthErrorMessage = langState === 'es' ? 'El nombre debe tener al menos 3 caracteres.' : 'The name must be at least 3 characters long.';
-// const maxLengthErrorMessage = langState === 'es' ? 'El nombre debe tener como máximo 50 caracteres.' : 'The name must be maximum 50 characters long.';
-
-// // Definir el esquema de validación
-// export const ContactSchema = z.object({
-//     name: z
-//         .string()
-//         .min(1, { message: errorMessage })
-//         .min(3, { message: lengthErrorMessage })
-//         .max(50, { message: maxLengthErrorMessage }),
-//     email: z
-//         .string()
-//         .min(1, { message: langState === 'es' ? 'Debe ingresar un correo.' : 'You must enter an email.' })
-//         .email({ message: 'Por favor ingrese un correo válido.' }),
-//     subject: z
-//         .string()
-//         .min(1, { message: langState === 'es' ? 'Debe ingresar un asunto.' : 'You must enter a subject.' }),
-//     message: z
-//         .string()
-//         .min(1, { message: langState === 'es' ? 'Debe ingresar un mensaje.' : 'You must enter a message.' }),
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { z } from 'zod'
-// import { selectLangState } from '../redux/slices/langSlice'
-// import { useSelector } from 'react-redux'
-
-// const langState:any = useSelector(selectLangState).lang;
-
-// export const ContactSchema = z.object({
-
-//     name: z
-//         .string()
-//         .min(1, {
-//             message: { langState === 'es' ? 'Debe ingresar un nombre.' : 'You must enter a name.' },
-//         })
-//         .min(3, {
-//             message: 'El nombre debe tener al menos de 3 caracteres.'
-//         })
-//         .max(50, {
-//             message: 'El nombre debe tener como máximo 50 carecteres.'
-//         }),
-//     email: z
-//             .string()
-//             .min(1, {
-//                 message: 'Debe ingresar un correo.'
-//             })
-//             .email({
-//                 message: 'Por favor ingrese un correo válido.'
-//             }),
-//     subject: z
-//             .string()
-//             .min(1, {
-//                 message: 'Debe ingresar un asunto.'
-//             }),
-//     message: z
-//         .string()
-//         .min(1, {
-//             message: 'Debe ingresar un mensaje.'
-//         }),
-// })
+// MESSAGE VALIDATIONS
+export const messageExistsValidation = (data: FormDataShape, setErrors: React.Dispatch<React.SetStateAction<FormDataShape>>) => {
+    
+    const { message } = data;
+ 
+    if (message === ''){
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            message: "Ingresa un mensaje"
+        }))
+    };
+}
