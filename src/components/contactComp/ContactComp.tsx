@@ -9,7 +9,7 @@ import { selectLangState } from '../../redux/slices/langSlice';
 import { selectMoonState } from '../../redux/slices/moonSlice';
 
 dotenv.config();
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'https://newportfolio-backend.onrender.com';
+// const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'https://newportfolio-backend.onrender.com';
 // const BACKEND_URL = 'http://localhost:5001'
 
 
@@ -167,7 +167,7 @@ const ContactComp: React.FC = () => {
   
   const submitForm = async () => {
     try{
-      const response = await axios.post(`${BACKEND_URL}/contact`, formData);
+      const response = await axios.post(`https://newportfolio-backend.onrender.com/contact`, formData);
       console.log(response)
     }catch(error:any){
       console.log(error.message)
