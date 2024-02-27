@@ -2,10 +2,16 @@ import styles from './_ContactComp.module.scss';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import axios from 'axios';
+import dotenv from 'dotenv';
 import SliderComp from '../sliderComp/SliderComp';
 import LinksComp from '../linksComp/LinksComp';
 import { selectLangState } from '../../redux/slices/langSlice';
 import { selectMoonState } from '../../redux/slices/moonSlice';
+
+dotenv.config();
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'https://newportfolio-backend.onrender.com';
+// const BACKEND_URL = 'http://localhost:5001'
+
 
 
 export interface IFormDataShape {
@@ -161,7 +167,7 @@ const ContactComp: React.FC = () => {
   
   const submitForm = async () => {
     try{
-      const response = await axios.post('http://localhost:5001/contact', formData)
+      const response = await axios.post(`${BACKEND_URL}/contact`, formData);
       console.log(response)
     }catch(error:any){
       console.log(error.message)

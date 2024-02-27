@@ -55,7 +55,7 @@ const ProjectsComp = () => {
               <div className={styles.linksContainer}>
                 <a
                   className={styles.link}
-                  href="#"
+                  href="https://triar.netlify.app/"
                   target="_blank"
                 >
                   {langState === 'es' ?
