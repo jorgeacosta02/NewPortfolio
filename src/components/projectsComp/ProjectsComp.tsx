@@ -2,7 +2,7 @@ import styles from './_ProjectsComp.module.scss'
 import { useSelector } from 'react-redux';
 import { selectMoonState } from '../../redux/slices/moonSlice';
 import { selectLangState } from '../../redux/slices/langSlice';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import triarLogo from '../../assets/images/logos&Brands/TriarLogo.png'
 import exploserviceLogoBrand from '../../assets/images/logos&Brands/ExploserviceLogoBrand.png'
 import craftBeerLogo from '../../assets/images/logos&Brands/craftBeerLogo.jpg'
@@ -49,8 +49,8 @@ const ProjectsComp = () => {
                 className={styles.projectDescription}
               >
                 {langState === 'es' ?
-                ' Aplicación para una clínica kinesiológica, desarrollada de forma individual, la que debe mostrar aspectos de ésta como instalaciones, especialidades, personal, etc., y funcionalidades como el manejo del sistema de turnos, registro de historias clínicas y chats privados entre profesionales y pacientes.' :
-                'Application for a kinesiology clinic, developed individually, which must show aspects of it such as facilities, specialties, staff, etc., and functionalities such as management of the shift system, registration of medical records and private chats between professionals and patients.'}
+                'Aplicación para una clínica kinesiológica, desarrollada de forma individual en modo freelance, la que debe mostrar aspectos de ésta como instalaciones, especialidades, personal, etc., y funcionalidades como el manejo del sistema de turnos, registro de historias clínicas y chats privados entre profesionales y pacientes.' :
+                'Application for a kinesiology clinic, developed individually in freelance mode, which must show aspects of it such as facilities, specialties, staff, etc., and functionalities such as management of the shift system, registration of clinical histories and private chats between professionals and patients.'}
               </p>
               <div className={styles.linksContainer}>
                 <a
@@ -62,14 +62,14 @@ const ProjectsComp = () => {
                   'Ir al sitio web':
                   'Go to the web site'}
                 </a>
-                <NavLink
+                {/* <NavLink
                   className={styles.link}
-                  to="/triar-detail"
+                  to="/triar"
                 >
                   {langState === 'es' ?
                   'Más sobre el sitio':
                   'More about the site'}
-                </NavLink>
+                </NavLink> */}
               </div>
             </li>
             <li
@@ -96,26 +96,27 @@ const ProjectsComp = () => {
                 className={styles.projectDescription}
               >
                 {langState === 'es' ?
-                'Aplicación para una empresa que presta servicios de perforación y voladura, desarrollada de forma individual, la cual muestra aspectos de la empresa como instalaciones, servicios, equipos, algunos trabajos, y como funciones debe permitir registrar el registro de partes diarios de producción e ingreso y egreso de insumos en almacenes, elaborando informres sobre esos temas.' :
-                'Application for a company that provides drilling and blasting services, developed individually, which shows aspects of the company such as facilities, services, equipment, some jobs, and as functions it must allow recording the registration of daily production and income parts and disbursement of supplies in warehouses, preparing reports on these topics.'}
+                'Aplicación para una empresa que presta servicios de perforación y voladura, desarrollada de forma individual en modo freelance,  la cual muestra aspectos de la empresa como instalaciones, servicios, equipos, algunos trabajos, y como funciones debe permitir registrar el registro de partes diarios de producción e ingreso y egreso de insumos en almacenes, elaborando informres sobre esos temas.' :
+                'Application for a company that provides drilling and blasting services, developed individually in freelance mode, which shows aspects of the company such as facilities, services, equipment, some jobs, and as functions it must allow recording the registration of daily production and income parts and disbursement of supplies in warehouses, preparing reports on these topics.'}
               </p>
               <div className={styles.linksContainer}>
                 <a
                   className={styles.link}
-                  href="https://page-in-progress.netlify.app/"             target="_blank"
+                  href="https://page-in-progress.netlify.app/"
+                  target="_blank"
                 >
                   {langState === 'es' ?
                   'Ir al sitio web':
                   'Go to the web site'}
                 </a>
-                <NavLink
+                {/* <NavLink
                   className={styles.link}
                   to="/exploservice-detail"
                 >
                   {langState === 'es' ?
                   'Más sobre el sitio':
                   'More about the site'}
-                </NavLink>
+                </NavLink> */}
               </div>
             </li> 
             <li
@@ -155,14 +156,14 @@ const ProjectsComp = () => {
                   'Ir al sitio web':
                   'Go to the web site'}
                 </a>
-                <NavLink
+                {/* <NavLink
                   className={styles.link}
                   to="/craftbeer-detail"
                 >
                   {langState === 'es' ?
                   'Más sobre el sitio':
                   'More about the site'}
-                </NavLink>
+                </NavLink> */}
               </div>
             </li>
             <li
@@ -195,20 +196,21 @@ const ProjectsComp = () => {
               <div className={styles.linksContainer}>
                 <a
                   className={styles.link}
-                  href="https://videogames-pi.netlify.app/"             target="_blank"
+                  href="https://videogames-pi.netlify.app/"
+                  target="_blank"
                 >
                   {langState === 'es' ?
                   'Ir al sitio web':
                   'Go to the web site'}
                 </a>
-                <NavLink
+                {/* <NavLink
                   className={styles.link}
                   to="/videogames-detail"
                 >
                   {langState === 'es' ?
                   'Más sobre el sitio':
                   'More about the site'}
-                </NavLink>
+                </NavLink> */}
               </div>
             </li>
         </ul>
