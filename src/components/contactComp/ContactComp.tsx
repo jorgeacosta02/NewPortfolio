@@ -16,6 +16,10 @@ export interface IFormDataShape {
 }
 
 const ContactComp: React.FC = () => {
+
+  // Estados globales para opciones
+  const langState = useSelector(selectLangState).lang;
+  const moonState = useSelector(selectMoonState).moon;
   
   // Estado de datos del formulario
   const [formData, setFormData] = useState<IFormDataShape>({
@@ -53,14 +57,14 @@ const ContactComp: React.FC = () => {
   const nameRegExp = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]*$/;
   const emailRegExp = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     // Valida solo letras
     if (name === 'name'){
       if(!nameRegExp.test(value)){
         setErrors((prevData) => ({
           ...prevData,
-          [name]: 'El nombre debe contener solo letras.',
+          [name]: langState === 'es' ? 'El nombre debe contener solo letras.' : 'The name must contain only letters.',
         }));
       }else{
         setFormData((prevData) => ({
@@ -74,12 +78,12 @@ const ContactComp: React.FC = () => {
       }
     }
 
-    // Valida formato de email
+    // Valida campo email
     if (name === 'email'){
       if(!emailRegExp.test(value)){
         setErrors((prevData) => ({
           ...prevData,
-          [name]: 'Debe ingresar un mail válido.',
+          [name]: langState === 'es' ? 'Debe ingresar un mail válido.': 'You must enter  a valid email.',
         }));
         setFormData((prevData) => ({
           ...prevData,
@@ -110,7 +114,9 @@ const ContactComp: React.FC = () => {
     console.log('formData y errors in handleInputChange: ',formData, errors);
   }
 
-  const emptyMessage = 'Este campo debe ser completado.';
+  const emptyMessage = langState === 'es' ?
+    'Este campo debe ser completado.' :
+    'This field must be filled out.';
 
   const emptyValidationHandler =()=>{
     if(!formData.name){
@@ -139,10 +145,6 @@ const ContactComp: React.FC = () => {
     };
   };
   
-  // Estados globales para opciones
-  const langState = useSelector(selectLangState).lang;
-  const moonState = useSelector(selectMoonState).moon;
-
   // constantes de estilos para dark-mode
   const containerColor = `${styles.container} ${moonState ? styles.containerWhite : ''}`;
   const inputColor = `${styles.input} ${moonState ? styles.backWhite : ''}`;
