@@ -2,7 +2,7 @@ import styles from './_ContactComp.module.scss';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import axios from 'axios';
-import { ToastOptions, toast } from 'react-hot-toast';
+// import { ToastOptions, toast } from 'react-hot-toast';
 import SliderComp from '../sliderComp/SliderComp';
 import LinksComp from '../linksComp/LinksComp';
 import MessageComp from '../messageComp/MessageComp';
@@ -16,6 +16,8 @@ export interface IFormDataShape {
   subject: string,
   message: string
 }
+
+let success:any = false
 
 const ContactComp: React.FC = () => {
 
@@ -154,6 +156,9 @@ const ContactComp: React.FC = () => {
   const submitColor = `${styles.submit} ${moonState ? styles.backWhite : ''}`;
   
 
+  
+
+  
   const handleSubmit = (event:any) => {
     event.preventDefault();
     console.log('submit')
@@ -161,6 +166,7 @@ const ContactComp: React.FC = () => {
     submitForm();
   }
   
+
   const submitForm = async () => {
     try{
       const response = await axios.post(
@@ -168,29 +174,35 @@ const ContactComp: React.FC = () => {
         'http://localhost:5001/contact',
          formData
       );
-      console.log('response', response);
+      console.log('response', response.data);
+      success = await response.data;
       setFormData({
         name:'',
         email:'',
         subject:'',
         message:''
       })
-      const toastOptions: ToastOptions = {
-        style: {
-          background: '#333',
-          color: '#fff',
-          zIndex: 2100,
-          position: 'absolute' // Posición del toast
-          // Otros estilos según sea necesario
-        },
-        position: 'top-right' // Posición del toast
-      };
+      setTimeout(() => {
+        success = false; // Cambiar el valor de success a null
+      }, 3000); // 3000 milisegundos = 3 segundos
+      // const toastOptions: ToastOptions = {
+      //   style: {
+      //     background: '#333',
+      //     color: '#fff',
+      //     zIndex: 2100,
+      //     position: 'absolute' // Posición del toast
+      //     // Otros estilos según sea necesario
+      //   },
+      //   position: 'top-right' // Posición del toast
+      // };
       
-      toast.success("Mensaje enviado correctamente", toastOptions);
+      // toast.success("Mensaje enviado correctamente", toastOptions);
     }catch(error:any){
       console.log(error.message)
     }
   }
+
+  console.log('success: ', success)
   
   return (
     // <div className={styles.mainContainer}>
@@ -335,9 +347,9 @@ const ContactComp: React.FC = () => {
             </button>
           </form>
         </div>
-      <MessageComp
+      {success === 'it was sent satisfactorily' && <MessageComp
         data={langState === 'es' ? 'Hola' : 'Hello'}
-      />
+      />}
       </div>
     // </div>
   )
