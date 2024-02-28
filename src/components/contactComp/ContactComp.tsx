@@ -163,6 +163,12 @@ const ContactComp: React.FC = () => {
     try{
       const response = await axios.post(`https://newportfolio-backend.onrender.com/contact`, formData);
       console.log(response)
+      setFormData({
+        name:'',
+        email:'',
+        subject:'',
+        message:''
+      })
     }catch(error:any){
       console.log(error.message)
     }
