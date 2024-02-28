@@ -2,6 +2,7 @@ import styles from './_ContactComp.module.scss';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import axios from 'axios';
+import { ToastOptions, toast } from 'react-hot-toast';
 import SliderComp from '../sliderComp/SliderComp';
 import LinksComp from '../linksComp/LinksComp';
 import { selectLangState } from '../../redux/slices/langSlice';
@@ -161,14 +162,30 @@ const ContactComp: React.FC = () => {
   
   const submitForm = async () => {
     try{
-      const response = await axios.post(`https://newportfolio-backend.onrender.com/contact`, formData);
-      console.log(response)
+      const response = await axios.post(
+        // 'https://newportfolio-backend.onrender.com/contact',
+        'http://localhost:5001/contact',
+         formData
+      );
+      console.log('response', response);
       setFormData({
         name:'',
         email:'',
         subject:'',
         message:''
       })
+      // const toastOptions: ToastOptions = {
+      //   style: {
+      //     background: '#333',
+      //     color: '#fff',
+      //     zIndex: 2100,
+      //     position: 'absolute' // Posición del toast
+      //     // Otros estilos según sea necesario
+      //   },
+      //   position: 'top-right' // Posición del toast
+      // };
+      
+      // toast.success("Mensaje enviado correctamente", toastOptions);
     }catch(error:any){
       console.log(error.message)
     }

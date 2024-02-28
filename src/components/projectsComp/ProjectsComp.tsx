@@ -12,11 +12,11 @@ import SliderComp from '../sliderComp/SliderComp';
 
 const ProjectsComp = () => {
 
-  const moonState = useSelector(selectMoonState);
+  const moonState = useSelector(selectMoonState).moon;
 
-  const containerColor = `${styles.container} ${moonState.moon ? styles.containerWhite : ''}`;
+  const containerColor = `${styles.container} ${moonState ? styles.containerWhite : ''}`;
 
-  const projectWhite = `${styles.project} ${moonState.moon ? styles.projectWhite : ''}`;
+  const projectWhite = `${styles.project} ${moonState ? styles.projectWhite : ''}`;
 
   const langState = useSelector(selectLangState).lang;
 
