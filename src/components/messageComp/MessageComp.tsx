@@ -5,19 +5,19 @@ import { selectMoonState } from '../../redux/slices/moonSlice'
 
 
 
-
-const MessageComp = () => {
+const MessageComp = (props:any) => {
 
     const moonState = useSelector(selectMoonState).moon;
     const langState = useSelector(selectLangState).lang;
-
     const containerColor = `${styles.container} ${moonState ? styles.containerWhite : ''}`;
+
+    const message = props.data;
 
     return (
         <div className={containerColor}>
             <div className={styles.dataContainer}>
                 <p className={styles.text}>
-                    {langState === 'es' ? 'Mensaje' : 'Message'}
+                    {message}
                 </p>
             </div>
         </div>

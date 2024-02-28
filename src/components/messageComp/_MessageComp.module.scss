@@ -1,18 +1,28 @@
 @use '../../styles/globals' as g;
 
 .container{
-    position: absolute;
+    position: fixed;
     width: 100vw;
-    height: 100%;
+    height: 100vh;
     top: 0;
     z-index: 3000;
-    font-size: 50px;
-    background-color: red;
+    background-color: rgba(0,0,0,.7);
+    @include g.create-flexbox(row, center);
     .dataContainer{
-        background-color: blue;
+        width: 50%;
+        height: 50vh;
+        color: inherit;
+        border: 1px solid g.$grey-color;
+        border-radius: 10px;
+        background-color: inherit;
+        @include g.create-flexbox(row, center);
         .text{
-            background-color: green;
-            color: red;
+            // width: 70%;
+            // height: 50%;
+            color: inherit;
+            font-size: 30px;
+            border-radius: 10px;
+            background-color: inherit;
 
         }
     }

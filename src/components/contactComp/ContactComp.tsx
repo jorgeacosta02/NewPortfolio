@@ -335,7 +335,9 @@ const ContactComp: React.FC = () => {
             </button>
           </form>
         </div>
-      <MessageComp/>
+      <MessageComp
+        data={langState === 'es' ? 'Hola' : 'Hello'}
+      />
       </div>
     // </div>
   )
