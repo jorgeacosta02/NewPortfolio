@@ -155,9 +155,6 @@ const ContactComp: React.FC = () => {
   const textareaColor = `${styles.textarea} ${moonState ? styles.backWhite : ''}`;
   const submitColor = `${styles.submit} ${moonState ? styles.backWhite : ''}`;
   
-
-  
-
   
   const handleSubmit = (event:any) => {
     event.preventDefault();
@@ -183,8 +180,9 @@ const ContactComp: React.FC = () => {
         message:''
       })
       setTimeout(() => {
+        console.log('setTimeout');
         success = false; // Cambiar el valor de success a null
-      }, 3000); // 3000 milisegundos = 3 segundos
+      }, 2000); // 3000 milisegundos = 3 segundos
       // const toastOptions: ToastOptions = {
       //   style: {
       //     background: '#333',
@@ -200,6 +198,10 @@ const ContactComp: React.FC = () => {
     }catch(error:any){
       console.log(error.message)
     }
+  }
+
+  const accept = () => {
+    success = false
   }
 
   console.log('success: ', success)
@@ -284,7 +286,7 @@ const ContactComp: React.FC = () => {
                 value={formData.email}
                 onChange={handleInputChange}
                 className={inputColor}
-                placeholder='Ingrese correo...'
+                placeholder={langState === 'es' ? 'Ingrese correo...' : 'Enter email...'}
               />
               {
                 errors.email 
@@ -347,11 +349,16 @@ const ContactComp: React.FC = () => {
             </button>
           </form>
         </div>
-      {success === 'it was sent satisfactorily' && <MessageComp
+      {success === 'it was sent satisfactorily' && 
+      <MessageComp
         data={langState === 'es' ? 'Hola' : 'Hello'}
       />}
-      </div>
-    // </div>
+      <button
+        onClick={accept}
+      >
+        {langState === 'es' ? 'Aceptar' : 'Accept'}
+      </button>
+    </div>
   )
 }
 
