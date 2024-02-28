@@ -2,7 +2,7 @@ import styles from './_ContactComp.module.scss';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import axios from 'axios';
-import { ToastOptions, toast } from 'react-hot-toast';
+// import { ToastOptions, toast } from 'react-hot-toast';
 import SliderComp from '../sliderComp/SliderComp';
 import LinksComp from '../linksComp/LinksComp';
 import { selectLangState } from '../../redux/slices/langSlice';
