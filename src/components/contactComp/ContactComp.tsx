@@ -1,5 +1,5 @@
 import styles from './_ContactComp.module.scss';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import axios from 'axios';
 // import { ToastOptions, toast } from 'react-hot-toast';
@@ -8,6 +8,7 @@ import LinksComp from '../linksComp/LinksComp';
 import MessageComp from '../messageComp/MessageComp';
 import { selectLangState } from '../../redux/slices/langSlice';
 import { selectMoonState } from '../../redux/slices/moonSlice';
+import { selectMessageState, toggleMessage } from '../../redux/slices/messageSlice';
 
 
 export interface IFormDataShape {
@@ -24,6 +25,9 @@ const ContactComp: React.FC = () => {
   // Estados globales para opciones
   const langState = useSelector(selectLangState).lang;
   const moonState = useSelector(selectMoonState).moon;
+  const messageState = useSelector(selectMessageState).message;
+
+  const dispatch = useDispatch()
   
   // Estado de datos del formulario
   const [formData, setFormData] = useState<IFormDataShape>({
@@ -163,6 +167,9 @@ const ContactComp: React.FC = () => {
     submitForm();
   }
   
+  const messageHandleClick = () => {
+    dispatch( toggleMessage() );
+  };
 
   const submitForm = async () => {
     try{
@@ -179,6 +186,9 @@ const ContactComp: React.FC = () => {
         subject:'',
         message:''
       })
+
+      messageHandleClick()
+
       setTimeout(() => {
         console.log('setTimeout');
         success = false; // Cambiar el valor de success a null
@@ -198,10 +208,6 @@ const ContactComp: React.FC = () => {
     }catch(error:any){
       console.log(error.message)
     }
-  }
-
-  const accept = () => {
-    success = false
   }
 
   console.log('success: ', success)
@@ -349,15 +355,10 @@ const ContactComp: React.FC = () => {
             </button>
           </form>
         </div>
-      {success === 'it was sent satisfactorily' && 
+      { messageState && 
       <MessageComp
         data={langState === 'es' ? 'Hola' : 'Hello'}
       />}
-      <button
-        onClick={accept}
-      >
-        {langState === 'es' ? 'Aceptar' : 'Accept'}
-      </button>
     </div>
   )
 }
