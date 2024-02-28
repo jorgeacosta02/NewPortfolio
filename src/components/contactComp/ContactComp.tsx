@@ -2,9 +2,10 @@ import styles from './_ContactComp.module.scss';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import axios from 'axios';
-// import { ToastOptions, toast } from 'react-hot-toast';
+import { ToastOptions, toast } from 'react-hot-toast';
 import SliderComp from '../sliderComp/SliderComp';
 import LinksComp from '../linksComp/LinksComp';
+import MessageComp from '../messageComp/MessageComp';
 import { selectLangState } from '../../redux/slices/langSlice';
 import { selectMoonState } from '../../redux/slices/moonSlice';
 
@@ -174,166 +175,169 @@ const ContactComp: React.FC = () => {
         subject:'',
         message:''
       })
-      // const toastOptions: ToastOptions = {
-      //   style: {
-      //     background: '#333',
-      //     color: '#fff',
-      //     zIndex: 2100,
-      //     position: 'absolute' // Posición del toast
-      //     // Otros estilos según sea necesario
-      //   },
-      //   position: 'top-right' // Posición del toast
-      // };
+      const toastOptions: ToastOptions = {
+        style: {
+          background: '#333',
+          color: '#fff',
+          zIndex: 2100,
+          position: 'absolute' // Posición del toast
+          // Otros estilos según sea necesario
+        },
+        position: 'top-right' // Posición del toast
+      };
       
-      // toast.success("Mensaje enviado correctamente", toastOptions);
+      toast.success("Mensaje enviado correctamente", toastOptions);
     }catch(error:any){
       console.log(error.message)
     }
   }
   
   return (
-    <div className={containerColor}>
-      <SliderComp/>
-      <div className={styles.dataMainContainer}>
-        <h4 className={styles.dataTitle}>
-          {langState === 'es' ? 'Mis datos de contacto' : 'My contact data'}
-        </h4>
-        <div className={styles.dataContainer}>
-          <div className={styles.data}>
-            <div className={styles.dataBlock}>
-              <h6>
-                {langState === 'es' ? 'Correo electrónico:' : 'Email:'}
-              </h6>
-              <p>
-                jorgeacostadeleon@yahoo.com
-              </p>
+    // <div className={styles.mainContainer}>
+      <div className={containerColor}>
+        <SliderComp/>
+        <div className={styles.dataMainContainer}>
+          <h4 className={styles.dataTitle}>
+            {langState === 'es' ? 'Mis datos de contacto' : 'My contact data'}
+          </h4>
+          <div className={styles.dataContainer}>
+            <div className={styles.data}>
+              <div className={styles.dataBlock}>
+                <h6>
+                  {langState === 'es' ? 'Correo electrónico:' : 'Email:'}
+                </h6>
+                <p>
+                  jorgeacostadeleon@yahoo.com
+                </p>
+              </div>
+              <div className={styles.dataBlock}>
+                <h6>
+                  {langState === 'es' ? 'Teléfono:' : 'Phone number:'}
+                </h6>
+                <p>
+                  +54 9 264-673 0581
+                </p>
+              </div>
+              <div className={styles.dataBlock}>
+                <h6>
+                  {langState === 'es' ? 'Domicilio:' : 'Address:'}
+                </h6>
+                <p>
+                  Barrio Cooperarq VIII - Manzana "A" - Casa 24 - Rivadavia - San Juan - Argentina. CP. 5400.
+                </p>
+              </div>
             </div>
-            <div className={styles.dataBlock}>
-              <h6>
-                {langState === 'es' ? 'Teléfono:' : 'Phone number:'}
-              </h6>
-              <p>
-                +54 9 264-673 0581
-              </p>
-            </div>
-            <div className={styles.dataBlock}>
-              <h6>
-                {langState === 'es' ? 'Domicilio:' : 'Address:'}
-              </h6>
-              <p>
-                Barrio Cooperarq VIII - Manzana "A" - Casa 24 - Rivadavia - San Juan - Argentina. CP. 5400.
-              </p>
-            </div>
+            <LinksComp/>
           </div>
-          <LinksComp/>
         </div>
-      </div>
-      <div className={styles.formContainer}>
-        <h4 className={styles.formTitle}>
-          {langState === 'es' ? 'Envíame un mensaje' : 'Send me a message'}
-        </h4>
-        <form
-          className={styles.form}
-          onSubmit={handleSubmit}
-        >
-          <div className={styles.inputBlock}>
-            <label 
-              htmlFor='name'>
-              {langState === 'es' ? 'Nombre' : 'Name'}
-            </label>
-            <input
-              type='text'
-              id='name'
-              name='name' 
-              value={formData.name}
-              onChange={handleInputChange} 
-              placeholder={langState === 'es' ? 'Ingrese nombre...' :  'Enter name...'}
-              className={inputColor}
-            />
-            {
-              errors.name 
-              && 
-              <p className={styles.errorMessage}>
-                {errors.name}
-              </p>
-            }
-          </div>
-          <div className={styles.inputBlock}>
-            <label 
-              htmlFor='email'>
-              {langState === 'es' ? 'Correo'  : 'Email'}
-            </label>
-            <input 
-              type='text'
-              id='email'
-              name='email'
-              value={formData.email}
-              onChange={handleInputChange}
-              className={inputColor}
-              placeholder='Ingrese correo...'
-            />
-            {
-              errors.email 
-              && 
-              <p className={styles.errorMessage}>
-                {errors.email}
-              </p>
-            }
-          </div>
-          <div className={styles.inputBlock}>
-            <label 
-              htmlFor='subject'>
-              {langState === 'es'  ? 'Asunto' : 'Subject'}
-            </label>
-            <input 
-              type="text"
-              id='subject'
-              name='subject'
-              value={formData.subject}
-              onChange={handleInputChange}
-              placeholder={langState === 'es' ? 'Ingrese asunto...' : 'Enter subject...'}
-              className={inputColor}
-            />
-            {
-              errors.subject 
-              && 
-              <p className={styles.errorMessage}>
-                {errors.subject}
-              </p>
-            }
-          </div>
-          <div className={styles.inputBlock}>
-            <label 
-              htmlFor='message'>
-              {langState === 'es' ? 'Mensaje' : 'Message'}
-            </label>
-            <textarea 
-              id='message'
-              name='message'
-              value={formData.message}
-              onChange={handleInputChange}
-              placeholder={langState === 'es' ? 'Ingrese su mensaje...' : 'Enter your message...'}
-              className={textareaColor}
-            />
-            {
-              errors.message 
-              && 
-              <p className={styles.errorMessage}>
-                {errors.message}
-              </p>
-            }
-          </div>
-          <button
-            className={submitColor}
-            type='submit'
+        <div className={styles.formContainer}>
+          <h4 className={styles.formTitle}>
+            {langState === 'es' ? 'Envíame un mensaje' : 'Send me a message'}
+          </h4>
+          <form
+            className={styles.form}
+            onSubmit={handleSubmit}
           >
-            <p>
-              { langState === 'es' ? 'Enviar' : 'Submit' }
-            </p>
-          </button>
-        </form>
+            <div className={styles.inputBlock}>
+              <label 
+                htmlFor='name'>
+                {langState === 'es' ? 'Nombre' : 'Name'}
+              </label>
+              <input
+                type='text'
+                id='name'
+                name='name' 
+                value={formData.name}
+                onChange={handleInputChange} 
+                placeholder={langState === 'es' ? 'Ingrese nombre...' :  'Enter name...'}
+                className={inputColor}
+              />
+              {
+                errors.name 
+                && 
+                <p className={styles.errorMessage}>
+                  {errors.name}
+                </p>
+              }
+            </div>
+            <div className={styles.inputBlock}>
+              <label 
+                htmlFor='email'>
+                {langState === 'es' ? 'Correo'  : 'Email'}
+              </label>
+              <input 
+                type='text'
+                id='email'
+                name='email'
+                value={formData.email}
+                onChange={handleInputChange}
+                className={inputColor}
+                placeholder='Ingrese correo...'
+              />
+              {
+                errors.email 
+                && 
+                <p className={styles.errorMessage}>
+                  {errors.email}
+                </p>
+              }
+            </div>
+            <div className={styles.inputBlock}>
+              <label 
+                htmlFor='subject'>
+                {langState === 'es'  ? 'Asunto' : 'Subject'}
+              </label>
+              <input 
+                type="text"
+                id='subject'
+                name='subject'
+                value={formData.subject}
+                onChange={handleInputChange}
+                placeholder={langState === 'es' ? 'Ingrese asunto...' : 'Enter subject...'}
+                className={inputColor}
+              />
+              {
+                errors.subject 
+                && 
+                <p className={styles.errorMessage}>
+                  {errors.subject}
+                </p>
+              }
+            </div>
+            <div className={styles.inputBlock}>
+              <label 
+                htmlFor='message'>
+                {langState === 'es' ? 'Mensaje' : 'Message'}
+              </label>
+              <textarea 
+                id='message'
+                name='message'
+                value={formData.message}
+                onChange={handleInputChange}
+                placeholder={langState === 'es' ? 'Ingrese su mensaje...' : 'Enter your message...'}
+                className={textareaColor}
+              />
+              {
+                errors.message 
+                && 
+                <p className={styles.errorMessage}>
+                  {errors.message}
+                </p>
+              }
+            </div>
+            <button
+              className={submitColor}
+              type='submit'
+            >
+              <p>
+                { langState === 'es' ? 'Enviar' : 'Submit' }
+              </p>
+            </button>
+          </form>
+        </div>
+      <MessageComp/>
       </div>
-    </div>
+    // </div>
   )
 }
 

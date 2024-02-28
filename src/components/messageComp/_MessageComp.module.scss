@@ -1,12 +1,23 @@
 @use '../../styles/globals' as g;
 
-.contanier{
+.container{
     position: absolute;
+    width: 100vw;
+    height: 100%;
+    top: 0;
     z-index: 3000;
-    background-color: rgba(0,0,0,.5);
-    color: g.$dark-black-color;
+    font-size: 50px;
+    background-color: red;
+    .dataContainer{
+        background-color: blue;
+        .text{
+            background-color: green;
+            color: red;
+
+        }
+    }
 }
 .containerWhite{
     background-color: rgba(255,255,255,.5);
-    color: g.$white-color;
+    color: g.$dark-black-color;
 }

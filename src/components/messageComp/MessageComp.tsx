@@ -9,12 +9,9 @@ import { selectMoonState } from '../../redux/slices/moonSlice'
 const MessageComp = () => {
 
     const moonState = useSelector(selectMoonState).moon;
+    const langState = useSelector(selectLangState).lang;
 
     const containerColor = `${styles.container} ${moonState ? styles.containerWhite : ''}`;
-
-    // const projectWhite = `${styles.project} ${moonState ? styles.projectWhite : ''}`;
-
-    const langState = useSelector(selectLangState).lang;
 
     return (
         <div className={containerColor}>
