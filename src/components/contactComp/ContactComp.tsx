@@ -18,7 +18,7 @@ export interface IFormDataShape {
   message: string
 }
 
-let queryResponse:any = false
+// let queryResponse:any = false
 
 const ContactComp: React.FC = () => {
 
@@ -179,7 +179,7 @@ const ContactComp: React.FC = () => {
          formData
       );
       console.log('response', response.status);
-      queryResponse = await response.status;
+      // queryResponse = await response.status;
       setFormData({
         name:'',
         email:'',
