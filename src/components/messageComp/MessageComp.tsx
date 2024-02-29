@@ -28,6 +28,7 @@ const MessageComp = (props:any) => {
                     {message}
                 </p>
                 <button
+                    className={styles.accept}
                     onClick={handleClick}
                 >
                     {langState === 'es' ? 'Aceptar' : 'Accept'}

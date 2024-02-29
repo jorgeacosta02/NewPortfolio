@@ -18,7 +18,7 @@ export interface IFormDataShape {
   message: string
 }
 
-let success:any = false
+let queryResponse:any = false
 
 const ContactComp: React.FC = () => {
 
@@ -178,8 +178,8 @@ const ContactComp: React.FC = () => {
         'http://localhost:5001/contact',
          formData
       );
-      console.log('response', response.data);
-      success = await response.data;
+      console.log('response', response.status);
+      queryResponse = await response.status;
       setFormData({
         name:'',
         email:'',
@@ -189,10 +189,6 @@ const ContactComp: React.FC = () => {
 
       messageHandleClick()
 
-      setTimeout(() => {
-        console.log('setTimeout');
-        success = false; // Cambiar el valor de success a null
-      }, 2000); // 3000 milisegundos = 3 segundos
       // const toastOptions: ToastOptions = {
       //   style: {
       //     background: '#333',
@@ -209,8 +205,6 @@ const ContactComp: React.FC = () => {
       console.log(error.message)
     }
   }
-
-  console.log('success: ', success)
   
   return (
     // <div className={styles.mainContainer}>
@@ -357,7 +351,10 @@ const ContactComp: React.FC = () => {
         </div>
       { messageState && 
       <MessageComp
-        data={langState === 'es' ? 'Hola' : 'Hello'}
+        data={ langState === 'es' ?
+                'Mensaje enviado exitosamente' :
+                'Message sent successfully'
+              }
       />}
     </div>
   )
