@@ -96,8 +96,8 @@ const ProjectsComp = () => {
                 className={styles.projectDescription}
               >
                 {langState === 'es' ?
-                'Aplicación para una empresa que presta servicios de perforación y voladura, desarrollada de forma individual en modo freelance,  la cual muestra aspectos de la empresa como instalaciones, servicios, equipos, algunos trabajos, y como funciones debe permitir registrar el registro de partes diarios de producción e ingreso y egreso de insumos en almacenes, elaborando informres sobre esos temas.' :
-                'Application for a company that provides drilling and blasting services, developed individually in freelance mode, which shows aspects of the company such as facilities, services, equipment, some jobs, and as functions it must allow recording the registration of daily production and income parts and disbursement of supplies in warehouses, preparing reports on these topics.'}
+                'Aplicación para una empresa que presta servicios de perforación y voladura, desarrollada de forma individual en modo freelance,  la cual muestra aspectos de la empresa como instalaciones, servicios, equipos, algunos trabajos, y como funciones actualmente brinda menejo de almacenes, permitiendo el ingreso de artículos, locaciones y movimientos de artículos entre locaciones, próximamente brindará informes sobre inventarios y movimientos. Además va a permietir el registro de partes diarios de producción, con los informes correspondientes.' :
+                'Application for a company that provides drilling and blasting services, developed individually in freelance mode, which shows aspects of the company such as facilities, services, equipment, some jobs, and as functions it currently provides warehouse management, allowing the entry of items, locations and movements of items between locations, will soon provide reports on inventories and movements. It will also allow the registration of daily production reports, with the corresponding reports.'}
               </p>
               <div className={styles.linksContainer}>
                 <a

@@ -2,7 +2,6 @@ import styles from './_ContactComp.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import axios from 'axios';
-// import { ToastOptions, toast } from 'react-hot-toast';
 import SliderComp from '../sliderComp/SliderComp';
 import LinksComp from '../linksComp/LinksComp';
 import MessageComp from '../messageComp/MessageComp';
