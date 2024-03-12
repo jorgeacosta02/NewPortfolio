@@ -4,11 +4,12 @@
     box-sizing: border-box;
     width: 100%;
     padding: 0 15vw;
-    background-color: red;
+    // background-color: red;
     @include g.create-flexbox(row, center);
     .dataContainer{
         box-sizing: border-box;
         position: absolute;
+        z-index: 2001;
         top: g.$mobile-NavBar-height;
         width: 90%;
         padding: 0;
@@ -17,6 +18,7 @@
         @include g.create-flexbox(column, center);
         gap: 3vw;
         @include g.display-large{
+            width: 70%;
             align-items: center;
             flex-direction: row;
             padding: 5vh 0;
@@ -24,7 +26,7 @@
             top: 20vh;
         }
         // background-color: blue;
-        z-index: 30;
+        // z-index: 30;
         .data{
             width: 100%;
             max-width: 500px;
@@ -34,6 +36,7 @@
             // background-color: red;
             @include g.display-large{
                 align-items: flex-start;
+                width: 80%;
             }
             .hi{
                 width: 100%;
@@ -103,6 +106,7 @@
         }
         .profileImg{
             position: relative;
+            z-index: 2001;
             width: min(70vw, 70vh);
             min-width: 100px;
             max-width: 250px;
@@ -113,5 +117,29 @@
             }
         }
 
+    }
+    .shape{
+        display: none;
+        @include g.display-large{
+            position: absolute;
+            box-sizing: border-box;
+            z-index: 2000;
+            background: linear-gradient(to right, rgb(0, 5, 64), blue); 
+            height: min(70vw, 70vh);
+            min-height: 100px;
+            max-height: 180px;
+            width: 22vw;
+            top: 37vh;
+            right: 0;
+            padding-left: 3%;
+            color: white;
+            @include g.create-flexbox(column, center);
+            .firstName{
+                font-size: 27px;
+            }
+            .lastName{
+                font-size: 19px;
+            }
+        }
     }
 }

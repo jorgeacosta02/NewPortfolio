@@ -17,7 +17,7 @@ const HomeComp = () => {
 
   return (
     <div className={styles.container}>
-        <SliderComp/>
+      <SliderComp/>
         <div className={styles.dataContainer}>
           <div className={dataColor}>
             <h4 className={styles.hi}>
@@ -40,13 +40,17 @@ const HomeComp = () => {
                 'Este es mi portafolio web, el cual muestra mis proyectos, habilidades y formación académica.' 
                 : 'This is my web portfolio, which shows my projects, skills and academic training.'}
             </p>
-            <LinksComp/>
+          <LinksComp/>
           </div>
             <img
               src={ProfileImg}
               className={styles.profileImg}
             />
-        </div>
+      </div>
+      <div className={styles.shape}>
+        <h4 className={styles.firstName}>Jorge</h4>
+        <p className={styles.lastName}>ACOSTA</p>
+      </div>
     </div>
   );
 }
