@@ -4,7 +4,8 @@ import { selectMoonState } from '../../redux/slices/moonSlice';
 import { selectLangState } from '../../redux/slices/langSlice';
 // import { NavLink } from 'react-router-dom';
 import triarLogo from '../../assets/images/logos&Brands/TriarLogo.png'
-import exploserviceLogoBrand from '../../assets/images/logos&Brands/ExploserviceLogoBrand.png'
+import exploserviceLogoBrandWhite from '../../assets/images/projects/Exploservice-Logo-Brand-white.png'
+import exploserviceLogoBrandBlack from '../../assets/images/projects/Exploservice-Logo-Brand-black.png'
 import craftBeerLogo from '../../assets/images/logos&Brands/craftBeerLogo.jpg'
 import videogamesImage from '../../assets/images/logos&Brands/Videogames.png'
 import SliderComp from '../sliderComp/SliderComp';
@@ -77,7 +78,7 @@ const ProjectsComp = () => {
               className={projectWhite}
             >
               <img
-                src={exploserviceLogoBrand}
+                src={moonState ? exploserviceLogoBrandBlack : exploserviceLogoBrandWhite}
                 alt="Exploservice Logo"
               />
               <div className={styles.projectTitleContainer}>
