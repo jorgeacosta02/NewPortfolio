@@ -124,21 +124,21 @@
             position: absolute;
             box-sizing: border-box;
             z-index: 2000;
-            background: linear-gradient(to right, rgb(0, 5, 64), blue); 
+            background: linear-gradient(to right, rgb(4, 8, 46), g.$main-color); 
             height: min(70vw, 70vh);
             min-height: 100px;
             max-height: 180px;
             width: 22vw;
             top: 37vh;
             right: 0;
-            padding-left: 3%;
+            padding-left: calc(90px - 5vw);
             color: white;
             @include g.create-flexbox(column, center);
             .firstName{
                 font-size: 27px;
             }
             .lastName{
-                font-size: 19px;
+                font-size: 18px;
             }
         }
     }
