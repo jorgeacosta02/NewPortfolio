@@ -9,7 +9,7 @@
     .dataContainer{
         box-sizing: border-box;
         position: absolute;
-        z-index: 2001;
+        z-index: 101;
         top: g.$mobile-NavBar-height;
         width: 90%;
         padding: 0;
@@ -106,7 +106,7 @@
         }
         .profileImg{
             position: relative;
-            z-index: 2001;
+            z-index: 101;
             width: min(70vw, 70vh);
             min-width: 100px;
             max-width: 250px;
@@ -123,7 +123,7 @@
         @include g.display-large{
             position: absolute;
             box-sizing: border-box;
-            z-index: 2000;
+            z-index: 100;
             background: linear-gradient(to right, rgb(4, 8, 46), g.$main-color); 
             height: min(70vw, 70vh);
             min-height: 100px;
